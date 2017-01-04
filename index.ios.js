@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+/* import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('ReactNativePlayground', () => ReactNativePlayground);
+AppRegistry.registerComponent('ReactNativePlayground', () => ReactNativePlayground); */
