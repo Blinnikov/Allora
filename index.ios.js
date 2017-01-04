@@ -4,18 +4,10 @@
  * @flow
  */
 
- import React, { Component } from 'react';
- import { Text, AppRegistry } from 'react-native';
+ import { AppRegistry } from 'react-native';
+ import ReactCalculator from './src/ReactCalculator';
 
- class ReactNativePlayground extends Component {
-   render() {
-     return (
-       <Text>Hello, React!</Text>
-     );
-   }
- }
-
- AppRegistry.registerComponent('ReactNativePlayground', () => ReactNativePlayground);
+ AppRegistry.registerComponent('ReactNativePlayground', () => ReactCalculator);
 
 /* import React, { Component } from 'react';
 import {
