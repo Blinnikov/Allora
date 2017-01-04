@@ -7,7 +7,7 @@
  import React, { Component } from 'react';
  import { Text, AppRegistry } from 'react-native';
 
- class ReactCalculator extends Component {
+ class ReactNativePlayground extends Component {
    render() {
      return (
        <Text>Hello, React!</Text>
@@ -15,7 +15,7 @@
    }
  }
 
- AppRegistry.registerComponent('ReactCalculator', () => ReactCalculator);
+ AppRegistry.registerComponent('ReactNativePlayground', () => ReactNativePlayground);
 
 /* import React, { Component } from 'react';
 import {
