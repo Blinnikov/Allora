@@ -4,7 +4,7 @@ import Styles from './Styles';
 
 const InputButton = ({value}) => (
   <View style={Styles.inputButton}>
-    <Text style={Style.inputButtonText}>{value}</Text>
+    <Text style={Styles.inputButtonText}>{value}</Text>
   </View>
 );
 
