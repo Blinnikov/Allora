@@ -9,6 +9,4 @@ const ReactCalculator = () => (
   </View>
 );
 
-
-
 export default ReactCalculator;
