@@ -7,7 +7,7 @@ import Styles from './Styles'
 const InputButtonSet = ({rows}) => (
   <View style={Styles.buttons}>
     {rows.map((row, index) =>
-        <InputButtonRow key={index} buttons={row} />
+      <InputButtonRow key={index} buttons={row} />
     )}
   </View>
 );
