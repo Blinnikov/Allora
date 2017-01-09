@@ -6,7 +6,15 @@ const Styles = StyleSheet.create({
   },
   display: {
     flex: 2,
-    backgroundColor: '#193441'
+    backgroundColor: '#193441',
+    justifyContent: 'center'
+  },
+  displayText: {
+    color: 'white',
+    fontSize: 58,
+    fontWeight: 'bold',
+    textAlign: 'right',
+    padding: 20
   },
   buttons: {
     flex: 8,

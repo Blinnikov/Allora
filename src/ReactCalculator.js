@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import InputButtonSet from './InputButtonSet';
 import Styles from './Styles';
 
@@ -22,7 +22,9 @@ class ReactCalculator extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <View style={Styles.display}></View>
+        <View style={Styles.display}>
+          <Text style={Styles.displayText}>{this.state.inputValue}</Text>
+        </View>
         <InputButtonSet rows={rows} />
       </View>
     );
