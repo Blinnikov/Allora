@@ -15,7 +15,9 @@ class ReactCalculator extends Component {
     super(props);
 
     this.state = {
-      inputValue: 0
+      previousInputValue: 0,
+      inputValue: 0,
+      selectedSymbol: null
     }
   }
 
@@ -23,15 +25,44 @@ class ReactCalculator extends Component {
     switch (typeof input) {
       case 'number':
         this._handleNumberInput(input);
+        break
+      case 'string':
+        this._handleStringInput(input);
         break;
       default:
         // just skip
     }
   }
 
-  _handleNumberInput(number) {
-    const inputValue = (this.state.inputValue * 10) + number;
+  _handleNumberInput(num) {
+    const inputValue = (this.state.inputValue * 10) + num;
     this.setState({ inputValue });
+  }
+
+  _handleStringInput(str) {
+    if (['/', '*', '+', '-'].includes(str)) {
+      this.setState({
+        selectedSymbol: str,
+        previousInputValue: this.state.inputValue,
+        inputValue: 0
+      });
+      return;
+    }
+
+    if (str === '=') {
+      const { selectedSymbol, inputValue, previousInputValue } = this.state;
+      if (!selectedSymbol) {
+        return;
+      }
+
+      const newInputValue = eval(`${previousInputValue}${selectedSymbol}${inputValue}`);
+      this.setState({
+        previousInputValue: 0,
+        inputValue: newInputValue,
+        selectedSymbol: null
+      });
+      return;
+    }
   }
 
   render() {
@@ -42,6 +73,7 @@ class ReactCalculator extends Component {
         </View>
         <InputButtonSet
           rows={rows}
+          selectedSymbol={this.state.selectedSymbol}
           onButtonClick={this._onButtonClick.bind(this)} />
       </View>
     );

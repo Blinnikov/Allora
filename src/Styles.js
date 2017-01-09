@@ -27,6 +27,9 @@ const Styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: '#91AA9D'
   },
+  inputButtonHighlight: {
+    backgroundColor: '#193441'
+  },
   inputButtonText: {
     fontSize: 22,
     fontWeight: 'bold',
