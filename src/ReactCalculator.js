@@ -19,13 +19,30 @@ class ReactCalculator extends Component {
     }
   }
 
+  _onButtonClick(input) {
+    switch (typeof input) {
+      case 'number':
+        this._handleNumberInput(input);
+        break;
+      default:
+        // just skip
+    }
+  }
+
+  _handleNumberInput(number) {
+    const inputValue = (this.state.inputValue * 10) + number;
+    this.setState({ inputValue });
+  }
+
   render() {
     return (
       <View style={Styles.container}>
         <View style={Styles.display}>
           <Text style={Styles.displayText}>{this.state.inputValue}</Text>
         </View>
-        <InputButtonSet rows={rows} />
+        <InputButtonSet
+          rows={rows}
+          onButtonClick={this._onButtonClick.bind(this)} />
       </View>
     );
   }
