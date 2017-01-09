@@ -10,11 +10,23 @@ const rows = [
   [0, '.', '=', '+']
 ];
 
-const ReactCalculator = () => (
-  <View style={Styles.container}>
-    <View style={Styles.display}></View>
-    <InputButtonSet rows={rows} />
-  </View>
-);
+class ReactCalculator extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inputValue: 0
+    }
+  }
+
+  render() {
+    return (
+      <View style={Styles.container}>
+        <View style={Styles.display}></View>
+        <InputButtonSet rows={rows} />
+      </View>
+    );
+  }
+};
 
 export default ReactCalculator;
