@@ -29,6 +29,19 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500'
   },
+  li: {
+    backgroundColor: '#FFF',
+    borderBottomColor: '#EEE',
+    borderColor: 'transparent',
+    borderWidth: 1,
+    paddingLeft: 16,
+    paddingTop: 14,
+    paddingBottom: 16
+  },
+  liText: {
+    color: '#333',
+    fontSize: 16
+  },
   action: {
     backgroundColor: constants.actionColor,
     borderColor: 'transparent',
