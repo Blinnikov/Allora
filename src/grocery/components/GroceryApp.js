@@ -26,7 +26,7 @@ class GroceryApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar />
+        <StatusBar title="Grocery List" />
         <ListView
           style={styles.listView}
           dataSource={this.state.dataSource}
