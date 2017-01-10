@@ -10,6 +10,25 @@ const styles = StyleSheet.create({
   listView: {
     flex: 1
   },
+  statusBar: {
+    backgroundColor: '#FFF',
+    height: 22
+  },
+  navBar: {
+    alignItems: 'center',
+    backgroundColor: '#FFF',
+    borderBottomColor: '#EEE',
+    borderColor: 'transparent',
+    borderWidth: 1,
+    justifyContent: 'center',
+    height: 44,
+    flexDirection: 'row'
+  },
+  navBarTitle: {
+    color: '#444',
+    fontSize: 16,
+    fontWeight: '500'
+  },
   action: {
     backgroundColor: constants.actionColor,
     borderColor: 'transparent',
