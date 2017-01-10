@@ -1,13 +1,18 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import { AppRegistry } from 'react-native';
+import * as firebase from 'firebase';
 
- import { AppRegistry } from 'react-native';
- import ReactCalculator from './src/ReactCalculator';
+import ReactCalculator from './src/ReactCalculator';
 
- AppRegistry.registerComponent('ReactNativePlayground', () => ReactCalculator);
+const config = {
+  apiKey: "AIzaSyAFYZpU99gMCgoYL8dMsp_iTupy1yq7lo4",
+  authDomain: "reactnativeplayground-a29b4.firebaseapp.com",
+  databaseURL: "https://reactnativeplayground-a29b4.firebaseio.com",
+  storageBucket: "reactnativeplayground-a29b4.appspot.com",
+  messagingSenderId: "260721422581"
+};
+const firebaseApp = firebase.initializeApp(config);
+
+AppRegistry.registerComponent('ReactNativePlayground', () => ReactCalculator);
 
 /* import React, { Component } from 'react';
 import {
