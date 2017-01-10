@@ -1,7 +1,7 @@
 import { AppRegistry } from 'react-native';
 import * as firebase from 'firebase';
 
-import ReactCalculator from './src/ReactCalculator';
+import ReactCalculator from './src/calculator/ReactCalculator';
 
 const config = {
   apiKey: "AIzaSyAFYZpU99gMCgoYL8dMsp_iTupy1yq7lo4",
