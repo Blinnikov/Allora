@@ -2,6 +2,7 @@ import { AppRegistry } from 'react-native';
 import * as firebase from 'firebase';
 
 import ReactCalculator from './src/calculator/ReactCalculator';
+import GroceryApp from './src/grocery/GroceryApp';
 
 const config = {
   apiKey: "AIzaSyAFYZpU99gMCgoYL8dMsp_iTupy1yq7lo4",
@@ -12,7 +13,7 @@ const config = {
 };
 const firebaseApp = firebase.initializeApp(config);
 
-AppRegistry.registerComponent('ReactNativePlayground', () => ReactCalculator);
+AppRegistry.registerComponent('ReactNativePlayground', () => GroceryApp);
 
 /* import React, { Component } from 'react';
 import {
