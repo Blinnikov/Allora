@@ -2,7 +2,7 @@ import { AppRegistry } from 'react-native';
 import * as firebase from 'firebase';
 
 import ReactCalculator from './src/calculator/ReactCalculator';
-import GroceryApp from './src/grocery/GroceryApp';
+import GroceryApp from './src/grocery/components/GroceryApp';
 
 const config = {
   apiKey: "AIzaSyAFYZpU99gMCgoYL8dMsp_iTupy1yq7lo4",
