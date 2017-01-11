@@ -20,7 +20,7 @@ class GroceryApp extends Component {
   constructor(props) {
     super(props);
 
-    this.itemsRef = firebaseApp.database().ref();
+    this.itemsRef = firebaseApp.database().ref().child('items');
 
     this.state = {
       dataSource: new ListView.DataSource({
