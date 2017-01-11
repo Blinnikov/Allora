@@ -67,8 +67,28 @@ class GroceryApp extends Component {
   }
 
   _renderItem(item) {
+    const onPress = () => {
+      AlertIOS.prompt(
+        'Complete',
+        null,
+        [
+          {
+            text: 'Complete',
+            onPress: () => this.itemsRef.child(item._key).remove(),
+            style: 'destructive'
+          },
+          {
+            text: 'Cancel',
+            onPress: () => console.log('Cancelled'),
+            style: 'cancel'
+          }
+        ],
+        'default'
+      )
+    };
+
     return (
-      <ListItem item={item} onPress={() => {}} />
+      <ListItem item={item} onPress={onPress} />
     )
   }
 
