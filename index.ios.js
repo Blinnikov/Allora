@@ -1,17 +1,7 @@
 import { AppRegistry } from 'react-native';
-import * as firebase from 'firebase';
 
 import ReactCalculator from './src/calculator/ReactCalculator';
 import GroceryApp from './src/grocery/components/GroceryApp';
-
-const config = {
-  apiKey: "AIzaSyAFYZpU99gMCgoYL8dMsp_iTupy1yq7lo4",
-  authDomain: "reactnativeplayground-a29b4.firebaseapp.com",
-  databaseURL: "https://reactnativeplayground-a29b4.firebaseio.com",
-  storageBucket: "reactnativeplayground-a29b4.appspot.com",
-  messagingSenderId: "260721422581"
-};
-const firebaseApp = firebase.initializeApp(config);
 
 AppRegistry.registerComponent('ReactNativePlayground', () => GroceryApp);
 
