@@ -7,20 +7,11 @@ import * as firebase from 'firebase';
 
 import styles from '../styles';
 
-const config = {
-  apiKey: "AIzaSyAFYZpU99gMCgoYL8dMsp_iTupy1yq7lo4",
-  authDomain: "reactnativeplayground-a29b4.firebaseapp.com",
-  databaseURL: "https://reactnativeplayground-a29b4.firebaseio.com",
-  storageBucket: "reactnativeplayground-a29b4.appspot.com",
-  messagingSenderId: "260721422581"
-};
-const firebaseApp = firebase.initializeApp(config);
-
 class GroceryApp extends Component {
   constructor(props) {
     super(props);
 
-    this.itemsRef = firebaseApp.database().ref().child('items');
+    this.itemsRef = firebase.database().ref('/items');
 
     this.state = {
       dataSource: new ListView.DataSource({
