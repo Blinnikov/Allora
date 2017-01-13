@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Text, TextInput, View } from 'react-native';
+import * as firebase from 'firebase';
 
 import Button from '../components/Button';
 import Header from '../components/Header';
+import Login from './Login';
 
 import styles from '../styles/common-styles';
 
@@ -17,12 +19,34 @@ class SignUp extends Component {
     }
   }
 
-  signUp() {
+  async signUp() {
+    try {
+      this.setState({
+        loaded: false
+      })
 
+      const { email, password } = this.state;
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+
+      this.setState({
+        email: '',
+        password: '',
+        loaded: true
+      });
+
+      // Navigate to home page, the user is auto logged in
+    } catch(error) {
+      this.setState({
+        loaded: true
+      })
+      alert(error.message);
+    }
   }
 
   goToLogin() {
-
+    this.props.navigator.push({
+      component: Login
+    });
   }
 
   render() {
