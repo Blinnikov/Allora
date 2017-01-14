@@ -6,6 +6,9 @@ import Header from '../components/Header';
 import Button from '../components/Button';
 import Login from './Login'
 
+import ReactCalculator from '../../calculator/ReactCalculator';
+import GroceryApp from '../../grocery/components/GroceryApp';
+
 import styles from '../styles/common-styles';
 
 class Account extends Component {
@@ -27,6 +30,18 @@ class Account extends Component {
     })
   }
 
+  goToCalcApp() {
+    this.props.navigator.push({
+      component: ReactCalculator
+    })
+  }
+
+  goToGroceryApp() {
+    this.props.navigator.push({
+      component: GroceryApp
+    })
+  }
+
   render() {
     const { user, loaded } = this.state;
     return (
@@ -35,6 +50,18 @@ class Account extends Component {
         <View style={styles.body}>
           <View style={pageStyles.emailContaniner}>
             <Text style={pageStyles.emailText}>{user.email}</Text>
+          </View>
+          <View style={styles.buttonsRow}>
+            <Button text='Calculator'
+              onPress={this.goToCalcApp.bind(this)}
+              buttonStyles={styles.primaryButton}
+              buttonTextStyles={styles.primaryButtonText}
+            />
+            <Button text='Grocery'
+              onPress={this.goToGroceryApp.bind(this)}
+              buttonStyles={styles.primaryButton}
+              buttonTextStyles={styles.primaryButtonText}
+            />
           </View>
           <Button
             text='Logout'
