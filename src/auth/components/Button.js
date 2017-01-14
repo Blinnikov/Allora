@@ -8,10 +8,10 @@ class Button extends Component {
         <TouchableHighlight
           underlayColor={'#E8E8E8'}
           onPress={this.props.onPress}
-          style={this.props.button_styles}
+          style={this.props.buttonStyles}
         >
           <View>
-            <Text style={this.props.button_text_styles}>{this.props.text}</Text>
+            <Text style={this.props.buttonTextStyles}>{this.props.text}</Text>
           </View>
         </TouchableHighlight>
       </View>

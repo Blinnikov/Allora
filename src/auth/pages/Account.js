@@ -39,8 +39,8 @@ class Account extends Component {
           <Button
             text='Logout'
             onPress={this.logout.bind(this)}
-            button_styles={styles.primaryButton}
-            button_text_styles={styles.primaryButtonText}
+            buttonStyles={styles.primaryButton}
+            buttonTextStyles={styles.primaryButtonText}
           />
         </View>
       </View>
