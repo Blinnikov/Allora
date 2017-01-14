@@ -66,7 +66,7 @@ class Login extends Component {
           <Button
             text='Login'
             onPress={this.login.bind(this)}
-            button_styles={styles.primary_button}
+            button_styles={styles.primaryButton}
             button_text_styles={styles.primaryButtonText}
           />
           <Button
