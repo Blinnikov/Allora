@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight} from 'react-native';
 
 class Button extends Component {
   render() {
@@ -10,7 +10,7 @@ class Button extends Component {
           onPress={this.props.onPress}
           style={this.props.buttonStyles}
         >
-          <View>
+          <View style={defaultButtonStyles.buttonContainer}>
             <Text style={this.props.buttonTextStyles}>{this.props.text}</Text>
           </View>
         </TouchableHighlight>
@@ -18,5 +18,12 @@ class Button extends Component {
     );
   }
 }
+
+const defaultButtonStyles = StyleSheet.create({
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  }
+})
 
 export default Button;

@@ -6,7 +6,6 @@ const commonStyles = StyleSheet.create({
   },
   body: {
     flex: 9,
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   textInput: {
@@ -34,6 +33,11 @@ const commonStyles = StyleSheet.create({
   image: {
     width: 100,
     height: 100
+  },
+  buttonsRow: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
   }
 });
 
