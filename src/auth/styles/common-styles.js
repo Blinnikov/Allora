@@ -14,20 +14,20 @@ const commonStyles = StyleSheet.create({
     borderColor: 'red',
     borderWidth: 1
   },
-  transparent_button: {
+  transparentButton: {
     marginTop: 10,
     padding: 15
   },
-  transparent_button_text: {
+  transparentButtonText: {
     color: '#0485A9',
     fontSize: 16
   },
-  primary_button: {
+  primaryButton: {
     margin: 10,
     padding: 15,
     backgroundColor: '#529ecc'
   },
-  primary_button_text: {
+  primaryButtonText: {
     color: '#FFF',
     fontSize: 18
   },

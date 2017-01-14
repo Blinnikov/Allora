@@ -67,13 +67,13 @@ class Login extends Component {
             text='Login'
             onPress={this.login.bind(this)}
             button_styles={styles.primary_button}
-            button_text_styles={styles.primary_button_text}
+            button_text_styles={styles.primaryButtonText}
           />
           <Button
             text='New here?'
             onPress={this.goToSignUp.bind(this)}
-            button_styles={styles.transparent_button}
-            button_text_styles={styles.transparent_button_text}
+            button_styles={styles.transparentButton}
+            button_text_styles={styles.transparentButtonText}
           />
         </View>
       </View>

@@ -70,14 +70,14 @@ class SignUp extends Component {
           <Button
             text='SignUp'
             onPress={this.signUp.bind(this)}
-            button_styles={styles.primary_button}
-            button_text_styles={styles.primary_button_text}
+            button_styles={styles.primaryButton}
+            button_text_styles={styles.primaryButtonText}
           />
           <Button
             text='Got an Account?'
             onPress={this.goToLogin.bind(this)}
-            button_styles={styles.transparent_button}
-            button_text_styles={styles.transparent_button_text}
+            button_styles={styles.transparentButton}
+            button_text_styles={styles.transparentButtonText}
           />
         </View>
       </View>
