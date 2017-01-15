@@ -4,7 +4,6 @@ import * as firebase from 'firebase';
 
 import Account from './Account';
 import SignUp from './SignUp';
-import Header from '../components/Header';
 import NavigationBarRouteMapper from '../components/NavigationBarRouteMapper';
 
 import styles from '../styles/common-styles';

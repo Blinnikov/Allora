@@ -3,7 +3,6 @@ import { AsyncStorage, Text, TextInput, View } from 'react-native';
 import * as firebase from 'firebase';
 
 import Button from '../components/Button';
-import Header from '../components/Header';
 import SignUp from './SignUp';
 import Account from './Account';
 

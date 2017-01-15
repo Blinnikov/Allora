@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import * as firebase from 'firebase';
 
-import Header from '../components/Header';
 import Button from '../components/Button';
 import Login from './Login'
 
