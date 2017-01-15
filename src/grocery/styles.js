@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 16,
     textAlign: 'center'
+  },
+  actionButtons: {
+    flexDirection: 'row'
   }
 });
 
