@@ -31,11 +31,14 @@ const styles = StyleSheet.create({
     fontWeight: '500'
   },
   li: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     backgroundColor: '#FFF',
     borderBottomColor: '#EEE',
     borderColor: 'transparent',
     borderWidth: 1,
     paddingLeft: 16,
+    paddingRight: 16,
     paddingTop: 14,
     paddingBottom: 16
   },
@@ -48,6 +51,7 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
     borderWidth: 1,
     paddingLeft: 16,
+    paddingRight: 16,
     paddingTop: 14,
     paddingBottom: 16
   },
