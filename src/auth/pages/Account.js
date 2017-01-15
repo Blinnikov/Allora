@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Navigator, StyleSheet, Text, View } from 'react-native';
 import * as firebase from 'firebase';
 
 import Button from '../components/Button';
@@ -24,20 +24,22 @@ class Account extends Component {
 
   async logout() {
     await firebase.auth().signOut();
-    this.props.navigator.push({
+    this.props.rootNavigator.push({
       component: Login
     })
   }
 
   goToCalcApp() {
     this.props.navigator.push({
-      component: ReactCalculator
+      component: ReactCalculator,
+      title: 'Calculator'
     })
   }
 
   goToGroceryApp() {
     this.props.navigator.push({
-      component: GroceryApp
+      component: GroceryApp,
+      title: 'Grocery List'
     })
   }
 
