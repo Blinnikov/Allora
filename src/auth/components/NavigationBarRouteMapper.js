@@ -21,21 +21,12 @@ const NavigationBarRouteMapper = {
 
   RightButton: function(route, navigator, index, navState) {
     return null;
-    return (
-      <TouchableOpacity
-        onPress={() => navigator.push(newRandomRoute())}
-        style={styles.navBarRightButton}>
-        <Text style={[styles.navBarText, styles.navBarButtonText]}>
-          Next
-        </Text>
-      </TouchableOpacity>
-    );
   },
 
   Title: function(route, navigator, index, navState) {
     return (
       <Text style={[styles.navBarText, styles.navBarTitleText]}>
-        {route.component.name} [{index}]
+        {route.title}
       </Text>
     );
   },
