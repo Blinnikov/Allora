@@ -54,7 +54,6 @@ class AuthApp extends Component {
     } else {
       return (
         <View style={styles.container}>
-          <Header text='React Native Firebase Auth' loaded={this.state.loaded} />
           <View style={styles.body}></View>
         </View>
       )
