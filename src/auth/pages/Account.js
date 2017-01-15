@@ -45,7 +45,6 @@ class Account extends Component {
     const { user, loaded } = this.state;
     return (
       <View style={styles.container}>
-        <Header text='Account' loaded={loaded} />
         <View style={styles.body}>
           <View style={pageStyles.emailContaniner}>
             <Text style={pageStyles.emailText}>{user.email}</Text>
