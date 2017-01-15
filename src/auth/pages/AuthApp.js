@@ -6,7 +6,7 @@ import AccountContainer from './AccountContainer';
 import SignUp from './SignUp';
 import NavigationBarRouteMapper from '../components/NavigationBarRouteMapper';
 
-import styles from '../styles/common-styles';
+import Styles from '../../Styles';
 
 class AuthApp extends Component {
   constructor(props) {
@@ -48,8 +48,8 @@ class AuthApp extends Component {
       );
     } else {
       return (
-        <View style={styles.container}>
-          <View style={styles.body}></View>
+        <View style={Styles.container}>
+          <View style={Styles.body}></View>
         </View>
       )
     }

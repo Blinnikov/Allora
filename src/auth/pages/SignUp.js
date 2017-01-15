@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { Text, View } from 'react-native';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { Sae } from 'react-native-textinput-effects';
+import Button from 'apsl-react-native-button';
 import * as firebase from 'firebase';
 
-import Button from '../components/Button';
 import Login from './Login';
 import AccountContainer from './AccountContainer';
 
-import styles from '../styles/common-styles';
+import Styles from '../../Styles';
 
 class SignUp extends Component {
   constructor(props) {
@@ -54,33 +56,44 @@ class SignUp extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.body}>
-          <TextInput
-            style={styles.textInput}
-            onChangeText={text => this.setState({email: text})}
-            value={this.state.email}
-            placeholder={'Email Address'}
+      <View style={Styles.container}>
+        <View style={Styles.body}>
+          <Sae
+            label={'Email Address'}
+            iconClass={FontAwesomeIcon}
+            iconName={'pencil'}
+            iconColor={'#3498db'}
+            labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
+            inputStyle={{color: 'black'}}
+            onChangeText={email => this.setState({email})}
+            autoCapitalize="none"
           />
-          <TextInput
-            style={styles.textInput}
-            value={this.state.password}
-            onChangeText={text => this.setState({password: text})}
-            placeholder={'Password'}
-            secureTextEntry={true}
+          <Sae
+            label={'Password'}
+            iconClass={FontAwesomeIcon}
+            iconName={'key'}
+            iconColor={'#3498db'}
+            labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
+            inputStyle={{color: 'black'}}
+            onChangeText={password => this.setState({password})}
+            password={true}
+            autoCapitalize="none"
           />
           <Button
             text='SignUp'
             onPress={this.signUp.bind(this)}
-            buttonStyles={styles.primaryButton}
-            buttonTextStyles={styles.primaryButtonText}
-          />
+            style={Styles.buttonPrimary}
+            textStyle={Styles.buttonPrimaryText}
+          >
+            Sign Up
+          </Button>
           <Button
-            text='Got an Account?'
             onPress={this.goToLogin.bind(this)}
-            buttonStyles={styles.transparentButton}
-            buttonTextStyles={styles.transparentButtonText}
-          />
+            style={Styles.buttonDefault}
+            textStyle={Styles.buttonDefaultText}
+          >
+            Got an Account?
+          </Button>
         </View>
       </View>
     );

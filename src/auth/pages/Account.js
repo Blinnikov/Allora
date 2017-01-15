@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Navigator, StyleSheet, Text, View } from 'react-native';
+import Button from 'apsl-react-native-button';
 import * as firebase from 'firebase';
 
-import Button from '../components/Button';
 import Login from './Login'
 
 import ReactCalculator from '../../calculator/ReactCalculator';
 import GroceryApp from '../../grocery/components/GroceryApp';
 
-import styles from '../styles/common-styles';
+import Styles from '../../Styles';
 
 class Account extends Component {
   constructor(props) {
@@ -46,29 +46,33 @@ class Account extends Component {
   render() {
     const { user, loaded } = this.state;
     return (
-      <View style={styles.container}>
-        <View style={styles.body}>
+      <View style={Styles.container}>
+        <View style={Styles.body}>
           <View style={pageStyles.emailContaniner}>
             <Text style={pageStyles.emailText}>{user.email}</Text>
           </View>
-          <View style={styles.buttonsRow}>
-            <Button text='Calculator'
+          <View style={Styles.buttonsRow}>
+            <Button
               onPress={this.goToCalcApp.bind(this)}
-              buttonStyles={styles.primaryButton}
-              buttonTextStyles={styles.primaryButtonText}
-            />
-            <Button text='Grocery'
+              style={Styles.buttonPrimary}
+            >
+              <Text style={Styles.buttonPrimaryText}>Calculator</Text>
+            </Button>
+            <Button
               onPress={this.goToGroceryApp.bind(this)}
-              buttonStyles={styles.primaryButton}
-              buttonTextStyles={styles.primaryButtonText}
-            />
+              style={Styles.buttonPrimary}
+              textStyle={Styles.buttonPrimaryText}
+            >
+              <Text style={Styles.buttonPrimaryText}>Grocery</Text>
+            </Button>
           </View>
           <Button
-            text='Logout'
             onPress={this.logout.bind(this)}
-            buttonStyles={styles.primaryButton}
-            buttonTextStyles={styles.primaryButtonText}
-          />
+            style={Styles.buttonDefault}
+            textStyle={Styles.buttonDefaultTextDestructive}
+          >
+            Logout
+          </Button>
         </View>
       </View>
     );

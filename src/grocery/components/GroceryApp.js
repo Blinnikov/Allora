@@ -3,8 +3,10 @@ import { View, Text, ListView, AlertIOS } from 'react-native';
 import StatusBar from './StatusBar';
 import ListItem from './ListItem';
 import ActionButton from './ActionButton';
+import Button from 'apsl-react-native-button';
 import * as firebase from 'firebase';
 
+import AppStyles from '../../Styles';
 import styles from '../styles';
 
 class GroceryApp extends Component {
@@ -32,10 +34,13 @@ class GroceryApp extends Component {
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
         />
-        <ActionButton
-          title="Add"
+        <Button
           onPress={() => this._addItem()}
-        />
+          style={[AppStyles.buttonSuccess, styles.addButton]}
+          textStyle={AppStyles.buttonPrimaryText}
+        >
+          Add
+        </Button>
       </View>
     );
   }
