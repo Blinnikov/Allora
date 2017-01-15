@@ -3,7 +3,6 @@ import Firebase from './src/firebase/firebase';
 
 import ReactCalculator from './src/calculator/ReactCalculator';
 import GroceryApp from './src/grocery/components/GroceryApp';
-import Login from './src/Login'
 import AuthApp from './src/auth/pages/AuthApp';
 
 Firebase.init();
