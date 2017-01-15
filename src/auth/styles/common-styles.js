@@ -5,7 +5,8 @@ const commonStyles = StyleSheet.create({
     flex: 1,
   },
   body: {
-    flex: 9,
+    flex: 1,
+    paddingTop: 64,
     backgroundColor: '#F5FCFF',
   },
   textInput: {

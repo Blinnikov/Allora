@@ -48,7 +48,6 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header text='Login' loaded={this.state.loaded} />
         <View style={styles.body}>
           <TextInput
             style={styles.textInput}

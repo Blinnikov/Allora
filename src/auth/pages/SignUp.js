@@ -52,7 +52,6 @@ class SignUp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header text='SignUp' loaded={this.state.loaded} />
         <View style={styles.body}>
           <TextInput
             style={styles.textInput}

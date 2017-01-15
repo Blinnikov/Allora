@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { AsyncStorage, Navigator, Text, View } from 'react-native';
+import { Navigator, View } from 'react-native';
 import * as firebase from 'firebase';
 
 import Account from './Account';
 import SignUp from './SignUp';
 import Header from '../components/Header';
+import NavigationBarRouteMapper from '../components/NavigationBarRouteMapper';
 
 import styles from '../styles/common-styles';
 
@@ -44,6 +45,11 @@ class AuthApp extends Component {
               return React.createElement(route.component, { navigator });
             }
           }}
+          navigationBar={
+            <Navigator.NavigationBar
+              routeMapper={NavigationBarRouteMapper}
+            />
+          }
         />
       );
     } else {
