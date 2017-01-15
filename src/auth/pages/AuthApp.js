@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navigator, View } from 'react-native';
 import * as firebase from 'firebase';
 
-import Account from './Account';
+import AccountContainer from './AccountContainer';
 import SignUp from './SignUp';
 import NavigationBarRouteMapper from '../components/NavigationBarRouteMapper';
 
@@ -22,7 +22,7 @@ class AuthApp extends Component {
 
   getInitialComponent() {
     firebase.auth().onAuthStateChanged(user => {
-      const component = user ? Account : SignUp;
+      const component = user ? AccountContainer : SignUp;
 
       this.setState({
         component,
@@ -44,11 +44,6 @@ class AuthApp extends Component {
               return React.createElement(route.component, { navigator });
             }
           }}
-          navigationBar={
-            <Navigator.NavigationBar
-              routeMapper={NavigationBarRouteMapper}
-            />
-          }
         />
       );
     } else {

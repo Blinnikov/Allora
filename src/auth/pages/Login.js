@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 
 import Button from '../components/Button';
 import SignUp from './SignUp';
-import Account from './Account';
+import AccountContainer from './AccountContainer';
 
 import styles from '../styles/common-styles';
 
@@ -27,7 +27,7 @@ class Login extends Component {
       const { email, password } = this.state;
       await firebase.auth().signInWithEmailAndPassword(email, password);
       this.props.navigator.push({
-        component: Account
+        component: AccountContainer
       });
     } catch (e) {
       alert(e.message);

@@ -4,7 +4,7 @@ import * as firebase from 'firebase';
 
 import Button from '../components/Button';
 import Login from './Login';
-import Account from './Account';
+import AccountContainer from './AccountContainer';
 
 import styles from '../styles/common-styles';
 
@@ -36,7 +36,7 @@ class SignUp extends Component {
 
       // Navigate to home page, the user is auto logged in
       this.props.navigator.push({
-        component: Account
+        component: AccountContainer
       });
     } catch(error) {
       this.setState({
