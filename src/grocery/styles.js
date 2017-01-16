@@ -62,11 +62,13 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   actionButtonsRow: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around'
+    justifyContent: 'flex-end'
   },
   actionButton: {
-    marginLeft: 10
+    marginLeft: 10,
+    marginBottom: 0
   },
   addButton: {
     marginTop: 10,
