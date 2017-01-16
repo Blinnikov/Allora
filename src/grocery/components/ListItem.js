@@ -3,8 +3,6 @@ import { View, Text, TouchableHighlight } from 'react-native';
 import Button from 'apsl-react-native-button';
 import Tts from 'react-native-tts';
 
-import ActionButton from './ActionButton';
-
 import AppStyles from '../../Styles';
 import styles from '../styles';
 
