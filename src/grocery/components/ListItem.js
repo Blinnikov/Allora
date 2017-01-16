@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, StyleSheet, Text, TouchableHighlight } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons'
 import Swipeout from 'react-native-swipeout';
 import Button from 'apsl-react-native-button';
 import Tts from 'react-native-tts';
@@ -23,7 +24,10 @@ class ListItem extends Component {
   render() {
     const {item, onPress, onSwipeLeft} = this.props;
     const swipeButtons =[{
-      text: 'Remove',
+      component:  <Icon
+                    name='ios-trash-outline'
+                    style={pageStyles.removeButtonStyle}
+                  />,
       backgroundColor: '#e74c3c',
       underlayColor: 'rgba(0, 0, 0, 0.6)',
       onPress: () => onSwipeLeft(item)
@@ -53,5 +57,14 @@ class ListItem extends Component {
     );
   }
 }
+
+const pageStyles = StyleSheet.create({
+  removeButtonStyle: {
+    fontSize: 32,
+    alignSelf: 'center',
+    paddingVertical: 19,
+    color: '#FFF'
+  }
+})
 
 export default ListItem;
