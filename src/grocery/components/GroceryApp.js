@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, ListView, AlertIOS } from 'react-native';
 import StatusBar from './StatusBar';
 import ListItem from './ListItem';
-import ActionButton from './ActionButton';
+import DynamicListItem from './DynamicListItem';
 import Button from 'apsl-react-native-button';
 import * as firebase from 'firebase';
 
@@ -83,7 +83,9 @@ class GroceryApp extends Component {
     };
 
     return (
-      <ListItem item={item} onPress={onPress} />
+      <DynamicListItem>
+        <ListItem item={item} onPress={onPress} />
+      </DynamicListItem>
     )
   }
 
