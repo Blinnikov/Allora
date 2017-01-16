@@ -73,14 +73,14 @@ class Login extends Component {
           />
           <Button
             onPress={this.login.bind(this)}
-            style={Styles.buttonPrimary}
+            style={[Styles.buttonPrimary, Styles.buttonLogin]}
             textStyle={Styles.buttonPrimaryText}
           >
             Login
           </Button>
           <Button
             onPress={this.goToSignUp.bind(this)}
-            style={Styles.buttonDefault}
+            style={[Styles.buttonDefault, Styles.buttonLogin]}
             textStyle={Styles.buttonDefaultText}
           >
             New here?

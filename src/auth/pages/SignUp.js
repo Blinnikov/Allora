@@ -82,14 +82,14 @@ class SignUp extends Component {
           <Button
             text='SignUp'
             onPress={this.signUp.bind(this)}
-            style={Styles.buttonPrimary}
+            style={[Styles.buttonPrimary, Styles.buttonLogin]}
             textStyle={Styles.buttonPrimaryText}
           >
             Sign Up
           </Button>
           <Button
             onPress={this.goToLogin.bind(this)}
-            style={Styles.buttonDefault}
+            style={[Styles.buttonDefault, Styles.buttonLogin]}
             textStyle={Styles.buttonDefaultText}
           >
             Got an Account?
