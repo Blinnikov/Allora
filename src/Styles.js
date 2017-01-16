@@ -1,10 +1,8 @@
 import { StyleSheet } from 'react-native';
 
 const button = {
-  marginTop: 10,
   paddingLeft: 10,
   paddingRight: 10,
-  marginBottom: 0,
   borderRadius: 0
 };
 
@@ -21,8 +19,6 @@ const Styles = StyleSheet.create({
     paddingRight: 16
   },
   buttonDefault: {
-    // marginTop: 10,
-    // padding: 15
     borderWidth: 0
   },
   buttonDefaultText: {
@@ -37,7 +33,6 @@ const Styles = StyleSheet.create({
   buttonPrimary: {
     ...button,
 
-    // padding: 15,
     borderColor: '#2980b9',
     backgroundColor: '#3498db',
   },
@@ -50,10 +45,22 @@ const Styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 18
   },
+  buttonLogin: {
+    marginTop: 10,
+    marginBottom: 0
+  },
+
+  // Account page
+  emailContaniner: {
+    padding: 20
+  },
+  emailText: {
+    fontSize: 18
+  },
   buttonsRow: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around'
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
   }
 });
 

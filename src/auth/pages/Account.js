@@ -48,8 +48,8 @@ class Account extends Component {
     return (
       <View style={Styles.container}>
         <View style={Styles.body}>
-          <View style={pageStyles.emailContaniner}>
-            <Text style={pageStyles.emailText}>{user.email}</Text>
+          <View style={Styles.emailContaniner}>
+            <Text style={Styles.emailText}>{user.email}</Text>
           </View>
           <View style={Styles.buttonsRow}>
             <Button
@@ -78,14 +78,5 @@ class Account extends Component {
     );
   }
 }
-
-const pageStyles = StyleSheet.create({
-  emailContaniner: {
-    padding: 20
-  },
-  emailText: {
-    fontSize: 18
-  }
-})
 
 export default Account;
