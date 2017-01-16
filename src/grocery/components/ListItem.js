@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
+import Swipeout from 'react-native-swipeout';
 import Button from 'apsl-react-native-button';
 import Tts from 'react-native-tts';
 
@@ -20,23 +21,35 @@ class ListItem extends Component {
   }
 
   render() {
-    const {item, onPress} = this.props;
+    const {item, onPress, onSwipeLeft} = this.props;
+    const swipeButtons =[{
+      text: 'Remove',
+      backgroundColor: '#e74c3c',
+      underlayColor: 'rgba(0, 0, 0, 0.6)',
+      onPress: () => onSwipeLeft(item)
+    }];
+
     return (
-      <TouchableHighlight onPress={onPress}>
-        <View style={styles.li}>
-          <Text style={styles.liText}>{item.title}</Text>
-          <View style={styles.actionButtonsRow}>
-            <Button onPress={() => this._playSound(item, 'it')}
-              style={[AppStyles.buttonSuccess, styles.actionButton]} >
-              <Text style={AppStyles.buttonPrimaryText}>IT</Text>
-            </Button>
-            <Button onPress={() => this._playSound(item, 'en')}
-              style={[AppStyles.buttonSuccess, styles.actionButton]} >
-              <Text style={AppStyles.buttonPrimaryText}>EN</Text>
-            </Button>
+      <Swipeout
+        right={swipeButtons}
+        autoClose={true}
+      >
+        <TouchableHighlight onPress={onPress}>
+          <View style={styles.li}>
+            <Text style={styles.liText}>{item.title}</Text>
+            <View style={styles.actionButtonsRow}>
+              <Button onPress={() => this._playSound(item, 'it')}
+                style={[AppStyles.buttonSuccess, styles.actionButton]} >
+                <Text style={AppStyles.buttonPrimaryText}>IT</Text>
+              </Button>
+              <Button onPress={() => this._playSound(item, 'en')}
+                style={[AppStyles.buttonSuccess, styles.actionButton]} >
+                <Text style={AppStyles.buttonPrimaryText}>EN</Text>
+              </Button>
+            </View>
           </View>
-        </View>
-      </TouchableHighlight>
+        </TouchableHighlight>
+      </Swipeout>
     );
   }
 }

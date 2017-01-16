@@ -64,7 +64,7 @@ class GroceryApp extends Component {
   }
 
   _renderItem(item) {
-    const onPress = () => {
+    const onSwipeLeft = () => {
       AlertIOS.prompt(
         'Complete',
         null,
@@ -90,7 +90,7 @@ class GroceryApp extends Component {
         itemToRemove={item._key === this.state.itemToRemove && item}
         onDidRemove={() => this._onDidRemove(item)}
       >
-        <ListItem item={item} onPress={onPress} />
+        <ListItem item={item} onSwipeLeft={onSwipeLeft} />
       </DynamicListItem>
     )
   }
