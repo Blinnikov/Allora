@@ -16,6 +16,7 @@ class GroceryApp extends Component {
     this.itemsRef = firebase.database().ref('/items');
 
     this.state = {
+      itemToRemove: null,
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
       })
@@ -56,6 +57,7 @@ class GroceryApp extends Component {
       });
 
       this.setState({
+        itemToRemove: null,
         dataSource: this.state.dataSource.cloneWithRows(items)
       });
     })
@@ -69,7 +71,7 @@ class GroceryApp extends Component {
         [
           {
             text: 'Complete',
-            onPress: () => this.itemsRef.child(item._key).remove(),
+            onPress: () => this._removeItem(item),
             style: 'destructive'
           },
           {
@@ -83,10 +85,24 @@ class GroceryApp extends Component {
     };
 
     return (
-      <DynamicListItem>
+      <DynamicListItem
+        shouldRemove={item._key === this.state.itemToRemove}
+        itemToRemove={item._key === this.state.itemToRemove && item}
+        onDidRemove={() => this._onDidRemove(item)}
+      >
         <ListItem item={item} onPress={onPress} />
       </DynamicListItem>
     )
+  }
+
+  _removeItem(item) {
+    this.setState({
+      itemToRemove: item._key
+    });
+  }
+
+  _onDidRemove(item) {
+    this.itemsRef.child(item._key).remove();
   }
 
   _addItem() {
