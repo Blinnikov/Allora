@@ -15,7 +15,6 @@ class Account extends Component {
     super(props);
 
     const user = firebase.auth().currentUser;
-    console.log(user);
     this.state = {
       user,
       loaded: true

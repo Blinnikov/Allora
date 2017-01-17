@@ -13,7 +13,9 @@ class GroceryApp extends Component {
   constructor(props) {
     super(props);
 
-    this.itemsRef = firebase.database().ref('/items');
+    const user = firebase.auth().currentUser;
+    const path = `/user/${user.uid}/items`;
+    this.itemsRef = firebase.database().ref(path);
 
     this.state = {
       itemToRemove: null,
