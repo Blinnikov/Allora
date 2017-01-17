@@ -22,6 +22,7 @@ class TabbedApp extends Component {
   }
 
   render() {
+    const rootNavigator = this.props.navigator;
     return (
       <TabBarIOS>
         <Icon.TabBarItem
@@ -49,7 +50,7 @@ class TabbedApp extends Component {
           selected={this.state.selectedTab === 'account'}
           onPress={() => this.setTab('account')}
         >
-          <AccountContainer />
+          <AccountContainer rootNavigator={rootNavigator} />
         </Icon.TabBarItem>
       </TabBarIOS>
     );

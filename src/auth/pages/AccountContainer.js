@@ -6,7 +6,7 @@ import Account from './Account';
 
 class AccountContainer extends Component {
   render() {
-    const rootNavigator = this.props.navigator;
+    const { rootNavigator } = this.props;
     return (
       <Navigator
         initialRoute={{component: Account}}
