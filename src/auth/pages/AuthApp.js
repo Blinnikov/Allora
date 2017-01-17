@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navigator, View } from 'react-native';
 import * as firebase from 'firebase';
 
-import AccountContainer from './AccountContainer';
+import TabbedApp from './TabbedApp';
 import SignUp from './SignUp';
 import NavigationBarRouteMapper from '../components/NavigationBarRouteMapper';
 
@@ -22,7 +22,7 @@ class AuthApp extends Component {
 
   getInitialComponent() {
     firebase.auth().onAuthStateChanged(user => {
-      const component = user ? AccountContainer : SignUp;
+      const component = user ? TabbedApp : SignUp;
 
       this.setState({
         component,

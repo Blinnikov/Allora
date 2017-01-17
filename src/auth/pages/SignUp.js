@@ -6,7 +6,7 @@ import Button from 'apsl-react-native-button';
 import * as firebase from 'firebase';
 
 import Login from './Login';
-import AccountContainer from './AccountContainer';
+import TabbedApp from './TabbedApp';
 
 import Styles from '../../Styles';
 
@@ -38,7 +38,7 @@ class SignUp extends Component {
 
       // Navigate to home page, the user is auto logged in
       this.props.navigator.push({
-        component: AccountContainer
+        component: TabbedApp
       });
     } catch(error) {
       this.setState({

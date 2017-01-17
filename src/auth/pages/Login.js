@@ -6,7 +6,7 @@ import { Sae } from 'react-native-textinput-effects';
 import * as firebase from 'firebase';
 
 import SignUp from './SignUp';
-import AccountContainer from './AccountContainer';
+import TabbedApp from './TabbedApp';
 
 import Styles from '../../Styles';
 
@@ -29,7 +29,7 @@ class Login extends Component {
       const { email, password } = this.state;
       await firebase.auth().signInWithEmailAndPassword(email, password);
       this.props.navigator.push({
-        component: AccountContainer
+        component: TabbedApp
       });
     } catch (e) {
       alert(e.message);
