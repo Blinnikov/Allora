@@ -28,50 +28,21 @@ class Account extends Component {
     })
   }
 
-  goToCalcApp() {
-    this.props.navigator.push({
-      component: ReactCalculator,
-      title: 'Calculator'
-    })
-  }
-
-  goToGroceryApp() {
-    this.props.navigator.push({
-      component: GroceryApp,
-      title: 'Grocery List'
-    })
-  }
-
   render() {
     const { user, loaded } = this.state;
     return (
       <View style={Styles.container}>
         <View style={Styles.body}>
-          <View style={Styles.emailContaniner}>
+          <View style={Styles.accountContaniner}>
             <Text style={Styles.emailText}>{user.email}</Text>
+              <Button
+                onPress={this.logout.bind(this)}
+                style={Styles.buttonDefault}
+                textStyle={Styles.buttonDefaultTextDestructive}
+              >
+                Logout
+              </Button>
           </View>
-          <View style={Styles.buttonsRow}>
-            <Button
-              onPress={this.goToCalcApp.bind(this)}
-              style={Styles.buttonPrimary}
-            >
-              <Text style={Styles.buttonPrimaryText}>Calculator</Text>
-            </Button>
-            <Button
-              onPress={this.goToGroceryApp.bind(this)}
-              style={Styles.buttonPrimary}
-              textStyle={Styles.buttonPrimaryText}
-            >
-              <Text style={Styles.buttonPrimaryText}>Grocery</Text>
-            </Button>
-          </View>
-          <Button
-            onPress={this.logout.bind(this)}
-            style={Styles.buttonDefault}
-            textStyle={Styles.buttonDefaultTextDestructive}
-          >
-            Logout
-          </Button>
         </View>
       </View>
     );

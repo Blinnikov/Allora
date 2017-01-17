@@ -54,16 +54,12 @@ const Styles = StyleSheet.create({
   },
 
   // Account page
-  emailContaniner: {
-    padding: 20
+  accountContaniner: {
+    flex: 1,
+    justifyContent: 'space-between'
   },
   emailText: {
     fontSize: 18
-  },
-  buttonsRow: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'flex-end'
   }
 });
 
