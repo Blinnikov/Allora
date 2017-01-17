@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TabBarIOS } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons'
 
 import GroceryApp from '../../grocery/components/GroceryApp';
 import ReactCalculator from '../../calculator/ReactCalculator';
@@ -23,13 +24,15 @@ class TabbedApp extends Component {
   render() {
     return (
       <TabBarIOS>
-        <TabBarIOS.Item
-          systemIcon='most-viewed'
+        <Icon.TabBarItem
+          title="Words"
+          iconName='ios-list-box-outline'
+          selectedIconName='ios-list-box'
           selected={this.state.selectedTab === 'words'}
           onPress={() => this.setTab('words')}
         >
           <GroceryApp />
-        </TabBarIOS.Item>
+        </Icon.TabBarItem>
         <TabBarIOS.Item
           systemIcon='recents'
           selected={this.state.selectedTab === 'calc'}

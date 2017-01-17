@@ -65,6 +65,6 @@ const pageStyles = StyleSheet.create({
     paddingVertical: 19,
     color: '#FFF'
   }
-})
+});
 
 export default ListItem;
