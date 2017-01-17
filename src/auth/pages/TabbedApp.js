@@ -33,20 +33,24 @@ class TabbedApp extends Component {
         >
           <GroceryApp />
         </Icon.TabBarItem>
-        <TabBarIOS.Item
-          systemIcon='recents'
+        <Icon.TabBarItem
+          title='Calculator'
+          iconName='ios-calculator-outline'
+          selectedIconName='ios-calculator'
           selected={this.state.selectedTab === 'calc'}
           onPress={() => this.setTab('calc')}
         >
           <ReactCalculator />
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          systemIcon='contacts'
+        </Icon.TabBarItem>
+        <Icon.TabBarItem
+          title='Account'
+          iconName='ios-contact-outline'
+          selectedIconName='ios-contact'
           selected={this.state.selectedTab === 'account'}
           onPress={() => this.setTab('account')}
         >
           <AccountContainer />
-        </TabBarIOS.Item>
+        </Icon.TabBarItem>
       </TabBarIOS>
     );
   }
