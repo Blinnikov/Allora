@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { sizes } from './constants';
 
 const button = {
   paddingLeft: 10,
@@ -9,6 +10,8 @@ const button = {
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: sizes.statusBar,
+    paddingBottom: sizes.tabBar
   },
   body: {
     flex: 1,

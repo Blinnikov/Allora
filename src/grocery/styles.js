@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
-import constants from './constants';
+import { sizes, colors } from '../constants';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 64,
+    paddingTop: sizes.statusBar,
+    paddingBottom: sizes.tabBar,
     backgroundColor: '#f2f2f2',
     justifyContent: 'center'
   },
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   action: {
-    backgroundColor: constants.actionColor,
+    backgroundColor: colors.actionColor,
     borderColor: 'transparent',
     borderWidth: 1,
     paddingLeft: 16,

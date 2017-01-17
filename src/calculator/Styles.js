@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { sizes } from '../constants';
 
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 64
+    paddingTop: sizes.statusBar,
+    paddingBottom: sizes.tabBar
   },
   display: {
     flex: 2,
