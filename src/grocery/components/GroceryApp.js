@@ -32,8 +32,10 @@ class GroceryApp extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar title='Grocery App' />
         <ListView
           style={styles.listView}
+          automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
         />
