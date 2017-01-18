@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { TabBarIOS } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import GroceryApp from '../../grocery/components/GroceryApp';
+import WordsTab from '../../grocery/components/WordsTab';
 import ReactCalculator from '../../calculator/ReactCalculator';
-import AccountContainer from './AccountContainer';
+import Account from './Account';
 
 class TabbedApp extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class TabbedApp extends Component {
           selected={this.state.selectedTab === 'words'}
           onPress={() => this.setTab('words')}
         >
-          <GroceryApp />
+          <WordsTab />
         </Icon.TabBarItem>
         <Icon.TabBarItem
           title='Calculator'
@@ -50,7 +50,7 @@ class TabbedApp extends Component {
           selected={this.state.selectedTab === 'account'}
           onPress={() => this.setTab('account')}
         >
-          <AccountContainer rootNavigator={rootNavigator} />
+          <Account rootNavigator={rootNavigator} />
         </Icon.TabBarItem>
       </TabBarIOS>
     );
