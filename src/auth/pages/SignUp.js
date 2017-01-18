@@ -56,8 +56,8 @@ class SignUp extends Component {
 
   render() {
     return (
-      <View style={Styles.container}>
-        <View style={Styles.body}>
+      <View style={CommonStyles.container}>
+        <View style={CommonStyles.body}>
           <Sae
             label={'Email Address'}
             iconClass={FontAwesomeIcon}
@@ -82,15 +82,15 @@ class SignUp extends Component {
           <Button
             text='SignUp'
             onPress={this.signUp.bind(this)}
-            style={[Styles.buttonPrimary, Styles.buttonLogin]}
-            textStyle={Styles.buttonPrimaryText}
+            style={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
+            textStyle={CommonStyles.buttonPrimaryText}
           >
             Sign Up
           </Button>
           <Button
             onPress={this.goToLogin.bind(this)}
-            style={[Styles.buttonDefault, Styles.buttonLogin]}
-            textStyle={Styles.buttonDefaultText}
+            style={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
+            textStyle={CommonStyles.buttonDefaultText}
           >
             Got an Account?
           </Button>

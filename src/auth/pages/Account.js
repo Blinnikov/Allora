@@ -30,14 +30,14 @@ class Account extends Component {
   render() {
     const { user, loaded } = this.state;
     return (
-      <View style={Styles.container}>
-        <View style={Styles.body}>
-          <View style={Styles.accountContaniner}>
-            <Text style={Styles.emailText}>{user.email}</Text>
+      <View style={CommonStyles.container}>
+        <View style={CommonStyles.body}>
+          <View style={CommonStyles.accountContaniner}>
+            <Text style={CommonStyles.emailText}>{user.email}</Text>
               <Button
                 onPress={this.logout.bind(this)}
-                style={Styles.buttonDefault}
-                textStyle={Styles.buttonDefaultTextDestructive}
+                style={CommonStyles.buttonDefault}
+                textStyle={CommonStyles.buttonDefaultTextDestructive}
               >
                 Logout
               </Button>
