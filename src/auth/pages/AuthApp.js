@@ -5,7 +5,7 @@ import * as firebase from 'firebase';
 import TabbedApp from './TabbedApp';
 import SignUp from './SignUp';
 
-import Styles from '../../Styles';
+import CommonStyles from '../../styles/Common';
 
 class AuthApp extends Component {
   constructor(props) {
@@ -47,8 +47,8 @@ class AuthApp extends Component {
       );
     } else {
       return (
-        <View style={Styles.container}>
-          <View style={Styles.body}></View>
+        <View style={CommonStyles.container}>
+          <View style={CommonStyles.body}></View>
         </View>
       )
     }

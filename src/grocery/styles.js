@@ -1,35 +1,25 @@
 import { StyleSheet } from 'react-native';
 import { sizes, colors } from '../constants';
 
+const container = {
+  flex: 1,
+  paddingTop: sizes.statusBar,
+  paddingBottom: sizes.tabBar,
+  backgroundColor: '#f2f2f2',
+  justifyContent: 'center'
+};
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: sizes.statusBar,
-    paddingBottom: sizes.tabBar,
-    backgroundColor: '#f2f2f2',
-    justifyContent: 'center'
+    ...container,
+    paddingTop: sizes.statusBar
+  },
+  navigationContainer: {
+    ...container,
+    paddingTop: sizes.statusBar + sizes.navigationBar + 1
   },
   listView: {
     flex: 1
-  },
-  statusBar: {
-    backgroundColor: '#FFF',
-    height: 22
-  },
-  navBar: {
-    alignItems: 'center',
-    backgroundColor: '#FFF',
-    borderBottomColor: '#EEE',
-    borderColor: 'transparent',
-    borderWidth: 1,
-    justifyContent: 'center',
-    height: 44,
-    flexDirection: 'row'
-  },
-  navBarTitle: {
-    color: '#444',
-    fontSize: 16,
-    fontWeight: '500'
   },
   li: {
     flexDirection: 'row',

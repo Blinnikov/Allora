@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { sizes } from './constants';
+import { sizes } from '../constants';
 
 const button = {
   paddingLeft: 10,
@@ -7,7 +7,7 @@ const button = {
   borderRadius: 0
 };
 
-const Styles = StyleSheet.create({
+const Common = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: sizes.statusBar,
@@ -15,7 +15,6 @@ const Styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    // paddingTop: 64,
     backgroundColor: '#F5FCFF',
     justifyContent: 'center',
     paddingLeft: 16,
@@ -63,4 +62,4 @@ const Styles = StyleSheet.create({
   }
 });
 
-export default Styles;
+export default Common;

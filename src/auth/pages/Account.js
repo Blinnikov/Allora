@@ -7,7 +7,7 @@ import Login from './Login'
 
 import ReactCalculator from '../../calculator/ReactCalculator';
 
-import Styles from '../../Styles';
+import CommonStyles from '../../styles/Common';
 
 class Account extends Component {
   constructor(props) {

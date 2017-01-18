@@ -5,7 +5,7 @@ import Swipeout from 'react-native-swipeout';
 import Button from 'apsl-react-native-button';
 import Tts from 'react-native-tts';
 
-import AppStyles from '../../Styles';
+import CommonStyles from '../../styles/Common';
 import styles from '../styles';
 
 class ListItem extends Component {
@@ -43,12 +43,12 @@ class ListItem extends Component {
             <Text style={styles.liText}>{item.title}</Text>
             <View style={styles.actionButtonsRow}>
               <Button onPress={() => this._playSound(item, 'it')}
-                style={[AppStyles.buttonSuccess, styles.actionButton]} >
-                <Text style={AppStyles.buttonPrimaryText}>IT</Text>
+                style={[CommonStyles.buttonSuccess, styles.actionButton]} >
+                <Text style={CommonStyles.buttonPrimaryText}>IT</Text>
               </Button>
               <Button onPress={() => this._playSound(item, 'en')}
-                style={[AppStyles.buttonSuccess, styles.actionButton]} >
-                <Text style={AppStyles.buttonPrimaryText}>EN</Text>
+                style={[CommonStyles.buttonSuccess, styles.actionButton]} >
+                <Text style={CommonStyles.buttonPrimaryText}>EN</Text>
               </Button>
             </View>
           </View>

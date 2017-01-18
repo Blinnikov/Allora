@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 import SignUp from './SignUp';
 import TabbedApp from './TabbedApp';
 
-import Styles from '../../Styles';
+import CommonStyles from '../../styles/Common';
 
 class Login extends Component {
   constructor(props) {
