@@ -4,7 +4,6 @@ import * as firebase from 'firebase';
 
 import TabbedApp from './TabbedApp';
 import SignUp from './SignUp';
-import NavigationBarRouteMapper from '../components/NavigationBarRouteMapper';
 
 import Styles from '../../Styles';
 

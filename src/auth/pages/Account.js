@@ -6,7 +6,6 @@ import * as firebase from 'firebase';
 import Login from './Login'
 
 import ReactCalculator from '../../calculator/ReactCalculator';
-import GroceryApp from '../../grocery/components/GroceryApp';
 
 import Styles from '../../Styles';
 
