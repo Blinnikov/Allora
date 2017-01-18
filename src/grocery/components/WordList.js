@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, ListView, AlertIOS } from 'react-native';
-import StatusBar from './StatusBar';
 import ListItem from './ListItem';
 import DynamicListItem from './DynamicListItem';
 import Button from 'apsl-react-native-button';
 import * as firebase from 'firebase';
 
-import AppStyles from '../../Styles';
+import CommonStyles from '../../styles/Common';
 import styles from '../styles';
 
 class WordList extends Component {
@@ -31,8 +30,7 @@ class WordList extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <StatusBar title='Grocery App' />
+      <View style={styles.navigationContainer}>
         <ListView
           style={styles.listView}
           automaticallyAdjustContentInsets={false}
@@ -41,8 +39,8 @@ class WordList extends Component {
         />
         <Button
           onPress={() => this._addItem()}
-          style={[AppStyles.buttonSuccess, styles.addButton]}
-          textStyle={AppStyles.buttonPrimaryText}
+          style={[CommonStyles.buttonSuccess, styles.addButton]}
+          textStyle={CommonStyles.buttonPrimaryText}
         >
           Add
         </Button>
