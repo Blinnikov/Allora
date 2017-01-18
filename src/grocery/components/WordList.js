@@ -9,7 +9,7 @@ import * as firebase from 'firebase';
 import AppStyles from '../../Styles';
 import styles from '../styles';
 
-class GroceryApp extends Component {
+class WordList extends Component {
   constructor(props) {
     super(props);
 
@@ -127,4 +127,4 @@ class GroceryApp extends Component {
 
 }
 
-export default GroceryApp;
+export default WordList;
