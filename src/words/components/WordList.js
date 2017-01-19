@@ -43,9 +43,12 @@ class WordList extends Component {
     itemsRef.on('value', snap => {
       const items = [];
       snap.forEach(record => {
+        const { word, translation, lang } = record.val();
         items.push({
-          title: record.val().title,
-          _key: record.key
+          _key: record.key,
+          word,
+          translation,
+          lang
         });
       });
 
@@ -59,11 +62,11 @@ class WordList extends Component {
   _renderItem(item) {
     const onSwipeLeft = () => {
       AlertIOS.prompt(
-        'Complete',
+        `Are you sure you want to remove '${item.word}'?`,
         null,
         [
           {
-            text: 'Complete',
+            text: 'Remove',
             onPress: () => this._removeItem(item),
             style: 'destructive'
           },
