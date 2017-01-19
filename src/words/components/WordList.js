@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import { View, Text, ListView, AlertIOS } from 'react-native';
 import ListItem from './ListItem';
 import DynamicListItem from './DynamicListItem';
-import Button from 'apsl-react-native-button';
-import * as firebase from 'firebase';
+import * as database from '../../firebase/database';
 
 import CommonStyles from '../../styles/Common';
-import styles from '../styles';
+import PageStyles from './WordList.Styles';
 
 class WordList extends Component {
   constructor(props) {
     super(props);
 
-    const user = firebase.auth().currentUser;
-    const path = `/user/${user.uid}/items`;
-    this.itemsRef = firebase.database().ref(path);
+    this.itemsRef = database.getItemsRef();
 
     this.state = {
       itemToRemove: null,
@@ -30,20 +27,13 @@ class WordList extends Component {
 
   render() {
     return (
-      <View style={styles.navigationContainer}>
+      <View style={CommonStyles.navigationContainer}>
         <ListView
-          style={styles.listView}
+          style={PageStyles.listView}
           automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
         />
-        <Button
-          onPress={() => this._addItem()}
-          style={[CommonStyles.buttonSuccess, styles.addButton]}
-          textStyle={CommonStyles.buttonPrimaryText}
-        >
-          Add
-        </Button>
       </View>
     );
   }
@@ -105,22 +95,6 @@ class WordList extends Component {
 
   _onDidRemove(item) {
     this.itemsRef.child(item._key).remove();
-  }
-
-  _addItem() {
-    AlertIOS.prompt(
-      'Add new item',
-      null,
-      [
-        {
-          text: 'Add',
-          onPress: text => {
-            this.itemsRef.push({title: text})
-          }
-        }
-      ],
-      'plain-text'
-    );
   }
 
 }
