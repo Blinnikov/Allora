@@ -1,24 +1,29 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, TouchableHighlight } from 'react-native';
+import { View, Text, TouchableHighlight, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import Swipeout from 'react-native-swipeout';
-import Button from 'apsl-react-native-button';
 import Tts from 'react-native-tts';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
 
-class ListItem extends Component {
-  _playSound(item, lang) {
-    if (lang === 'en') {
-      Tts.setDefaultLanguage('en-US');
-      Tts.speak(item.title);
-    }
+const getLang = (item) => {
+  if (item.lang.toLowerCase() === 'en') {
+    return 'en-US';
+  }
 
-    if (lang === 'it') {
-      Tts.setDefaultLanguage('it-IT');
-      Tts.speak(item.title);
-    }
+  if (item.lang.toLowerCase() === 'it') {
+    return 'it-IT';
+  }
+
+  throw new Error('Unsupported language');
+}
+
+class ListItem extends Component {
+  _playSound(item) {
+    const lang = getLang(item);
+    Tts.setDefaultLanguage(lang);
+    Tts.speak(item.word);
   }
 
   render() {
@@ -40,16 +45,17 @@ class ListItem extends Component {
       >
         <TouchableHighlight onPress={onPress}>
           <View style={PageStyles.li}>
-            <Text style={PageStyles.liText}>{item.title}</Text>
+            <Text style={PageStyles.liText}>{item.word}</Text>
             <View style={PageStyles.actionButtonsRow}>
-              <Button onPress={() => this._playSound(item, 'it')}
-                style={[CommonStyles.buttonSuccess, PageStyles.actionButton]} >
-                <Text style={CommonStyles.buttonPrimaryText}>IT</Text>
-              </Button>
-              <Button onPress={() => this._playSound(item, 'en')}
-                style={[CommonStyles.buttonSuccess, PageStyles.actionButton]} >
-                <Text style={CommonStyles.buttonPrimaryText}>EN</Text>
-              </Button>
+              <TouchableOpacity
+                onPress={() => this._playSound(item)}
+                style={PageStyles.soundButton}
+              >
+                <Icon
+                  name='ios-volume-up'
+                  style={PageStyles.soundButtonIcon}
+                />
+              </TouchableOpacity>
             </View>
           </View>
         </TouchableHighlight>

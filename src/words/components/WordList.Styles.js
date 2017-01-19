@@ -45,6 +45,11 @@ const WordListStyles = StyleSheet.create({
     marginLeft: 10,
     marginBottom: 0
   },
+  soundButtonIcon: {
+    fontSize: 40,
+    borderColor: 'blue',
+    color: '#5890FF'
+  },
   removeButtonStyle: {
     fontSize: 32,
     alignSelf: 'center',
