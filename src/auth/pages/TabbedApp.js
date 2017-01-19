@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TabBarIOS } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import WordsTab from '../../grocery/components/WordsTab';
+import WordsTab from '../../words/components/WordsTab';
 import ReactCalculator from '../../calculator/ReactCalculator';
 import Account from './Account';
 
