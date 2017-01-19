@@ -48,7 +48,7 @@ class Login extends Component {
 
   render() {
     return (
-      <View style={CommonStyles.container}>
+      <View style={CommonStyles.loginContainer}>
         <View style={CommonStyles.body}>
           <Sae
             label={'Email Address'}

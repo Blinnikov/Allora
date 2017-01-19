@@ -8,6 +8,9 @@ const button = {
 };
 
 const Common = StyleSheet.create({
+  loginContainer: {
+    flex: 1
+  },
   container: {
     flex: 1,
     paddingTop: sizes.statusBar,
