@@ -6,7 +6,7 @@ import Button from 'apsl-react-native-button';
 import Tts from 'react-native-tts';
 
 import CommonStyles from '../../styles/Common';
-import styles from '../styles';
+import PageStyles from './WordList.Styles';
 
 class ListItem extends Component {
   _playSound(item, lang) {
@@ -26,7 +26,7 @@ class ListItem extends Component {
     const swipeButtons =[{
       component:  <Icon
                     name='ios-trash-outline'
-                    style={pageStyles.removeButtonStyle}
+                    style={PageStyles.removeButtonStyle}
                   />,
       backgroundColor: '#e74c3c',
       underlayColor: 'rgba(0, 0, 0, 0.6)',
@@ -39,15 +39,15 @@ class ListItem extends Component {
         autoClose={true}
       >
         <TouchableHighlight onPress={onPress}>
-          <View style={styles.li}>
-            <Text style={styles.liText}>{item.title}</Text>
-            <View style={styles.actionButtonsRow}>
+          <View style={PageStyles.li}>
+            <Text style={PageStyles.liText}>{item.title}</Text>
+            <View style={PageStyles.actionButtonsRow}>
               <Button onPress={() => this._playSound(item, 'it')}
-                style={[CommonStyles.buttonSuccess, styles.actionButton]} >
+                style={[CommonStyles.buttonSuccess, PageStyles.actionButton]} >
                 <Text style={CommonStyles.buttonPrimaryText}>IT</Text>
               </Button>
               <Button onPress={() => this._playSound(item, 'en')}
-                style={[CommonStyles.buttonSuccess, styles.actionButton]} >
+                style={[CommonStyles.buttonSuccess, PageStyles.actionButton]} >
                 <Text style={CommonStyles.buttonPrimaryText}>EN</Text>
               </Button>
             </View>
@@ -57,14 +57,5 @@ class ListItem extends Component {
     );
   }
 }
-
-const pageStyles = StyleSheet.create({
-  removeButtonStyle: {
-    fontSize: 32,
-    alignSelf: 'center',
-    paddingVertical: 19,
-    color: '#FFF'
-  }
-});
 
 export default ListItem;

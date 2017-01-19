@@ -1,23 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { sizes, colors } from '../constants';
+import { sizes, colors } from '../../constants';
 
-const container = {
-  flex: 1,
-  paddingTop: sizes.statusBar,
-  paddingBottom: sizes.tabBar,
-  backgroundColor: '#f2f2f2',
-  justifyContent: 'center'
-};
-
-const styles = StyleSheet.create({
-  container: {
-    ...container,
-    paddingTop: sizes.statusBar
-  },
-  navigationContainer: {
-    ...container,
-    paddingTop: sizes.statusBar + sizes.navigationBar + 1
-  },
+const WordListStyles = StyleSheet.create({
   listView: {
     flex: 1
   },
@@ -61,12 +45,12 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginBottom: 0
   },
-  addButton: {
-    marginTop: 10,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 10
+  removeButtonStyle: {
+    fontSize: 32,
+    alignSelf: 'center',
+    paddingVertical: 19,
+    color: '#FFF'
   }
 });
 
-export default styles;
+export default WordListStyles;

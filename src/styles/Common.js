@@ -7,6 +7,14 @@ const button = {
   borderRadius: 0
 };
 
+const container = {
+  flex: 1,
+  paddingTop: sizes.statusBar,
+  paddingBottom: sizes.tabBar,
+  backgroundColor: '#f2f2f2',
+  justifyContent: 'center'
+};
+
 const Common = StyleSheet.create({
   loginContainer: {
     flex: 1
@@ -15,6 +23,10 @@ const Common = StyleSheet.create({
     flex: 1,
     paddingTop: sizes.statusBar,
     paddingBottom: sizes.tabBar
+  },
+  navigationContainer: {
+    ...container,
+    paddingTop: sizes.statusBar + sizes.navigationBar + 1
   },
   body: {
     flex: 1,
