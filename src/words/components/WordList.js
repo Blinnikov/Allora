@@ -31,6 +31,7 @@ class WordList extends Component {
         <ListView
           style={PageStyles.listView}
           automaticallyAdjustContentInsets={false}
+          removeClippedSubviews={false}
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
         />
