@@ -4,6 +4,9 @@ const WordAddStyles = StyleSheet.create({
   form: {
     flex: 1
   },
+  input: {
+    marginBottom: 15
+  },
   addButton: {
     marginTop: 10,
     marginLeft: 10,
