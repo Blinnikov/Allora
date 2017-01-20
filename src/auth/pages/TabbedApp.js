@@ -3,7 +3,6 @@ import { TabBarIOS } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import WordsTab from '../../words/components/WordsTab';
-import ReactCalculator from '../../calculator/ReactCalculator';
 import Account from './Account';
 
 class TabbedApp extends Component {
@@ -33,15 +32,6 @@ class TabbedApp extends Component {
           onPress={() => this.setTab('words')}
         >
           <WordsTab />
-        </Icon.TabBarItem>
-        <Icon.TabBarItem
-          title='Calculator'
-          iconName='ios-calculator-outline'
-          selectedIconName='ios-calculator'
-          selected={this.state.selectedTab === 'calc'}
-          onPress={() => this.setTab('calc')}
-        >
-          <ReactCalculator />
         </Icon.TabBarItem>
         <Icon.TabBarItem
           title='Account'

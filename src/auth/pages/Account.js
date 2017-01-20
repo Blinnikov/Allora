@@ -5,8 +5,6 @@ import * as firebase from 'firebase';
 
 import Login from './Login'
 
-import ReactCalculator from '../../calculator/ReactCalculator';
-
 import CommonStyles from '../../styles/Common';
 
 class Account extends Component {
