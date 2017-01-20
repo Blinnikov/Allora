@@ -3,6 +3,7 @@ import { Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
 import Button from 'apsl-react-native-button';
 import * as database from '../../firebase/database';
+import flags from '../flags'
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './WordAdd.Styles';
@@ -53,12 +54,12 @@ class WordAdd extends Component {
             selectedValue={this.state.lang}
             onValueChange={lang => this.setState({ lang })}
           >
-            <Picker.Item label='German' value='de' />
-            <Picker.Item label='Russian' value='ru' />
-            <Picker.Item label='English' value='en' />
-            <Picker.Item label='Italian' value='it' />
-            <Picker.Item label='Spanish' value='es' />
-            <Picker.Item label='French' value='fr' />
+            <Picker.Item label={`German ${flags.de}`} value='de' />
+            <Picker.Item label={`Russian ${flags.ru}`} value='ru' />
+            <Picker.Item label={`English ${flags.en}`} value='en' />
+            <Picker.Item label={`Italian ${flags.it}`} value='it' />
+            <Picker.Item label={`Spanish ${flags.es}`} value='es' />
+            <Picker.Item label={`French ${flags.fr}`} value='fr' />
           </Picker>
 
         </View>

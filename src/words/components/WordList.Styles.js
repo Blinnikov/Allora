@@ -18,9 +18,21 @@ const WordListStyles = StyleSheet.create({
     paddingTop: 14,
     paddingBottom: 16
   },
-  liText: {
+  liIcon: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10
+  },
+  liIconText: {
+    fontSize: 34
+  },
+  liTitle: {
     color: '#333',
     fontSize: 16
+  },
+  liSubtitle: {
+    fontSize: 12,
+    color: '#888'
   },
   action: {
     backgroundColor: colors.actionColor,

@@ -3,6 +3,7 @@ import { View, Text, TouchableHighlight, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import Swipeout from 'react-native-swipeout';
 import Tts from 'react-native-tts';
+import flags from '../flags'
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
@@ -45,7 +46,15 @@ class ListItem extends Component {
       >
         <TouchableHighlight onPress={onPress}>
           <View style={PageStyles.li}>
-            <Text style={PageStyles.liText}>{item.word}</Text>
+            <View style={PageStyles.liIcon}>
+              <Text style={PageStyles.liIconText}>
+                {flags[item.lang]}
+              </Text>
+            </View>
+            <View>
+              <Text style={PageStyles.liTitle}>{item.word}</Text>
+              <Text style={PageStyles.liSubtitle}>{item.translation}</Text>
+            </View>
             <View style={PageStyles.actionButtonsRow}>
               <TouchableOpacity
                 onPress={() => this._playSound(item)}
