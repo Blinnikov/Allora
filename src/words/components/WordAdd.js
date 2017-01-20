@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AlertIOS, Text, View } from 'react-native';
+import { Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
 import Button from 'apsl-react-native-button';
 import * as database from '../../firebase/database';
@@ -45,14 +45,22 @@ class WordAdd extends Component {
             onChangeText={translation => this.setState({ translation })}
             placeholder={'And of course the translation'}
           />
-        <FormLabel>Language</FormLabel>
-          <FormInput
-            containerStyle={PageStyles.input}
-            autoCapitalize="none"
-            value={this.state.lang}
-            onChangeText={lang => this.setState({ lang })}
-            placeholder={'What language is it?'}
-          />
+          <FormLabel>Language</FormLabel>
+          <Picker
+            style={{
+              paddingHorizontal: 15,
+            }}
+            selectedValue={this.state.lang}
+            onValueChange={lang => this.setState({ lang })}
+          >
+            <Picker.Item label='German' value='de' />
+            <Picker.Item label='Russian' value='ru' />
+            <Picker.Item label='English' value='en' />
+            <Picker.Item label='Italian' value='it' />
+            <Picker.Item label='Spanish' value='es' />
+            <Picker.Item label='French' value='fr' />
+          </Picker>
+
         </View>
         <Button
           onPress={() => this._addItem()}

@@ -8,15 +8,15 @@ import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
 
 const getLang = (item) => {
-  if (item.lang.toLowerCase() === 'en') {
+  if (item.lang === 'en') {
     return 'en-US';
   }
 
-  if (item.lang.toLowerCase() === 'it') {
+  if (item.lang === 'it') {
     return 'it-IT';
   }
 
-  throw new Error('Unsupported language');
+  return item.lang;
 }
 
 class ListItem extends Component {
