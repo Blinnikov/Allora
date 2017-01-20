@@ -6,7 +6,7 @@ import { Sae } from 'react-native-textinput-effects';
 import * as firebase from 'firebase';
 
 import SignUp from './SignUp';
-import TabbedApp from './TabbedApp';
+import TabbedApp from '../../TabbedApp';
 
 import CommonStyles from '../../styles/Common';
 

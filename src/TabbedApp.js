@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { TabBarIOS } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import WordsTab from '../../words/components/WordsTab';
-import Account from './Account';
+import WordsTab from './words/components/WordsTab';
+import Account from './auth/pages/Account';
 
 class TabbedApp extends Component {
   constructor(props) {

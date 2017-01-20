@@ -3,11 +3,11 @@ import { Navigator, View } from 'react-native';
 import * as firebase from 'firebase';
 
 import TabbedApp from './TabbedApp';
-import SignUp from './SignUp';
+import Login from './auth/pages/Login';
 
-import CommonStyles from '../../styles/Common';
+import CommonStyles from './styles/Common';
 
-class AuthApp extends Component {
+class Root extends Component {
   constructor(props) {
     super(props);
 
@@ -21,7 +21,7 @@ class AuthApp extends Component {
 
   getInitialComponent() {
     firebase.auth().onAuthStateChanged(user => {
-      const component = user ? TabbedApp : SignUp;
+      const component = user ? TabbedApp : Login;
 
       this.setState({
         component,
@@ -55,4 +55,4 @@ class AuthApp extends Component {
   }
 }
 
-export default AuthApp;
+export default Root;

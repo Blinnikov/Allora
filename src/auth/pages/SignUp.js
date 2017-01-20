@@ -6,7 +6,7 @@ import Button from 'apsl-react-native-button';
 import * as firebase from 'firebase';
 
 import Login from './Login';
-import TabbedApp from './TabbedApp';
+import TabbedApp from '../../TabbedApp';
 
 import CommonStyles from '../../styles/Common';
 
