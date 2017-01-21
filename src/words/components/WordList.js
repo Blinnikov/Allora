@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ListView, AlertIOS } from 'react-native';
+import I18n from 'react-native-i18n';
 import ListItem from './ListItem';
 import DynamicListItem from './DynamicListItem';
 import * as database from '../../firebase/database';
@@ -62,7 +63,7 @@ class WordList extends Component {
   _renderItem(item) {
     const onSwipeLeft = () => {
       AlertIOS.prompt(
-        `Are you sure you want to remove '${item.word}'?`,
+        I18n.t('wordList.removeMessage', { word: item.word}),
         null,
         [
           {

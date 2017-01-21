@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navigator } from 'react-native';
+import I18n from 'react-native-i18n';
 
 import NavigationBarRouteMapper from './NavigationBarRouteMapper';
 import WordList from './WordList';
@@ -14,7 +15,10 @@ class WordsTab extends Component {
   render() {
     return (
       <Navigator
-        initialRoute={{component: WordList, title: 'Your words'}}
+        initialRoute={{
+          component: WordList,
+          title: I18n.t('wordList.title'),
+        }}
         configureScene={() => {
           return Navigator.SceneConfigs.FloatFromBottom;
         }}
