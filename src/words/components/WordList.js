@@ -73,7 +73,7 @@ class WordList extends Component {
           },
           {
             text: 'Cancel',
-            onPress: () => console.log('Cancelled'),
+            onPress: () => {},
             style: 'cancel'
           }
         ],
