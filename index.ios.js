@@ -6,4 +6,4 @@ import Root from './src/Root';
 
 Firebase.init();
 
-AppRegistry.registerComponent('ReactNativePlayground', () => Root);
+AppRegistry.registerComponent('Allora', () => Root);
