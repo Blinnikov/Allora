@@ -14,7 +14,7 @@
     "react-native-i18n": "^1.0.0",
     "react-native-swipeout": "git+https://github.com/dancormier/react-native-swipeout",
     "react-native-textinput-effects": "^0.3.0",
-    "react-native-tts": "^0.4.0",
+    "react-native-tts": "^1.0.0",
     "react-native-vector-icons": "^4.0.0"
   },
   "devDependencies": {
