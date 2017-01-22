@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
-import Button from 'apsl-react-native-button';
+import { Button } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as database from '../../firebase/database';
 import flags from '../flags'
@@ -77,12 +77,11 @@ class WordAdd extends Component {
 
         </View>
         <Button
+          title={I18n.t('words.add.addButton')}
           onPress={() => this._addItem()}
-          style={[CommonStyles.buttonSuccess, PageStyles.addButton]}
+          buttonStyle={[CommonStyles.buttonSuccess, PageStyles.addButton]}
           textStyle={CommonStyles.buttonPrimaryText}
-        >
-          {I18n.t('words.add.addButton')}
-        </Button>
+        />
       </View>
     );
   }

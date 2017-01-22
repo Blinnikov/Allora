@@ -2,9 +2,8 @@ import { StyleSheet } from 'react-native';
 import { sizes } from '../constants';
 
 const button = {
-  paddingLeft: 10,
-  paddingRight: 10,
-  borderRadius: 0
+  marginLeft: 0,
+  marginRight: 0
 };
 
 const container = {
@@ -36,7 +35,8 @@ const Common = StyleSheet.create({
     paddingRight: 16
   },
   buttonDefault: {
-    borderWidth: 0
+    ...button,
+    backgroundColor: 'transparent'
   },
   buttonDefaultText: {
     color: '#2980b9',
@@ -51,7 +51,7 @@ const Common = StyleSheet.create({
     ...button,
 
     borderColor: '#2980b9',
-    backgroundColor: '#3498db',
+    backgroundColor: '#3498db'
   },
   buttonSuccess: {
     ...button,
@@ -63,8 +63,7 @@ const Common = StyleSheet.create({
     fontSize: 18
   },
   buttonLogin: {
-    marginTop: 10,
-    marginBottom: 0
+    marginTop: 10
   },
 
   // Account page

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import I18n from 'react-native-i18n';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import Button from 'apsl-react-native-button';
+import { Button } from 'react-native-elements';
 import { Sae } from 'react-native-textinput-effects';
 import * as firebase from 'firebase';
 
@@ -10,6 +10,8 @@ import SignUp from './SignUp';
 import TabbedApp from '../../TabbedApp';
 
 import CommonStyles from '../../styles/Common';
+
+const primaryColor='#3498db';
 
 class Login extends Component {
   constructor(props) {
@@ -55,7 +57,7 @@ class Login extends Component {
             label={I18n.t('auth.login.email')}
             iconClass={FontAwesomeIcon}
             iconName={'pencil'}
-            iconColor={'#3498db'}
+            iconColor={primaryColor}
             labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
             inputStyle={{color: 'black'}}
             onChangeText={email => this.setState({email})}
@@ -65,7 +67,7 @@ class Login extends Component {
             label={I18n.t('auth.login.password')}
             iconClass={FontAwesomeIcon}
             iconName={'key'}
-            iconColor={'#3498db'}
+            iconColor={primaryColor}
             labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
             inputStyle={{color: 'black'}}
             onChangeText={password => this.setState({password})}
@@ -73,19 +75,17 @@ class Login extends Component {
             autoCapitalize="none"
           />
           <Button
+            title={I18n.t('auth.login.loginButton')}
             onPress={this.login.bind(this)}
-            style={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
+            buttonStyle={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonPrimaryText}
-          >
-            {I18n.t('auth.login.loginButton')}
-          </Button>
+          />
           <Button
+            title={I18n.t('auth.login.goToSignUp')}
             onPress={this.goToSignUp.bind(this)}
-            style={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
+            buttonStyle={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonDefaultText}
-          >
-            {I18n.t('auth.login.goToSignUp')}
-          </Button>
+          />
         </View>
       </View>
     );

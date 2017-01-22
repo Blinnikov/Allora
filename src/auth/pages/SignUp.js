@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import I18n from 'react-native-i18n';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Sae } from 'react-native-textinput-effects';
-import Button from 'apsl-react-native-button';
+import { Button } from 'react-native-elements';
 import * as firebase from 'firebase';
 
 import Login from './Login';
@@ -81,20 +81,17 @@ class SignUp extends Component {
             autoCapitalize="none"
           />
           <Button
-            text='SignUp'
+            title={I18n.t('auth.login.signUp')}
             onPress={this.signUp.bind(this)}
-            style={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
+            buttonStyle={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonPrimaryText}
-          >
-            {I18n.t('auth.login.signUp')}
-          </Button>
+          />
           <Button
+            title={I18n.t('auth.login.goToLogin')}
             onPress={this.goToLogin.bind(this)}
-            style={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
+            buttonStyle={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonDefaultText}
-          >
-            {I18n.t('auth.login.goToLogin')}
-          </Button>
+          />
         </View>
       </View>
     );
