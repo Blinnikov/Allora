@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import I18n from 'react-native-i18n';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Sae } from 'react-native-textinput-effects';
 import Button from 'apsl-react-native-button';
@@ -59,7 +60,7 @@ class SignUp extends Component {
       <View style={CommonStyles.loginContainer}>
         <View style={CommonStyles.body}>
           <Sae
-            label={'Email Address'}
+            label={I18n.t('auth.login.email')}
             iconClass={FontAwesomeIcon}
             iconName={'pencil'}
             iconColor={'#3498db'}
@@ -69,7 +70,7 @@ class SignUp extends Component {
             autoCapitalize="none"
           />
           <Sae
-            label={'Password'}
+            label={I18n.t('auth.login.password')}
             iconClass={FontAwesomeIcon}
             iconName={'key'}
             iconColor={'#3498db'}
@@ -85,14 +86,14 @@ class SignUp extends Component {
             style={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonPrimaryText}
           >
-            Sign Up
+            {I18n.t('auth.login.signUp')}
           </Button>
           <Button
             onPress={this.goToLogin.bind(this)}
             style={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonDefaultText}
           >
-            Got an Account?
+            {I18n.t('auth.login.goToLogin')}
           </Button>
         </View>
       </View>

@@ -17,7 +17,7 @@ class WordsTab extends Component {
       <Navigator
         initialRoute={{
           component: WordList,
-          title: I18n.t('wordList.title'),
+          title: I18n.t('words.list.title'),
         }}
         configureScene={() => {
           return Navigator.SceneConfigs.FloatFromBottom;

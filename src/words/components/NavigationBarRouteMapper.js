@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View,  StyleSheet, TouchableOpacity } from 'react-native';
+import I18n from 'react-native-i18n';
 import Icon from 'react-native-vector-icons/Ionicons';
 import WordAdd from './WordAdd';
 
@@ -36,7 +37,7 @@ const NavigationBarRouteMapper = {
       <TouchableOpacity
         onPress={() => navigator.push({
           component: WordAdd,
-          title: 'Add new word'
+          title: I18n.t('words.add.title')
         })}
         style={NavBarStyles.navBarRightButton}>
         <Icon name='md-add' style={[

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from 'apsl-react-native-button';
+import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
 
 import Login from './Login'
@@ -32,13 +33,13 @@ class Account extends Component {
         <View style={CommonStyles.body}>
           <View style={CommonStyles.accountContaniner}>
             <Text style={CommonStyles.emailText}>{user.email}</Text>
-              <Button
-                onPress={this.logout.bind(this)}
-                style={CommonStyles.buttonDefault}
-                textStyle={CommonStyles.buttonDefaultTextDestructive}
-              >
-                Logout
-              </Button>
+            <Button
+              onPress={this.logout.bind(this)}
+              style={CommonStyles.buttonDefault}
+              textStyle={CommonStyles.buttonDefaultTextDestructive}
+            >
+              {I18n.t('auth.account.logout')}
+            </Button>
           </View>
         </View>
       </View>

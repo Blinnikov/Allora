@@ -26,7 +26,7 @@ class TabbedApp extends Component {
     return (
       <TabBarIOS>
         <Icon.TabBarItem
-          title={I18n.t('wordList.tab')}
+          title={I18n.t('words.tab')}
           iconName='ios-list-box-outline'
           selectedIconName='ios-list-box'
           selected={this.state.selectedTab === 'words'}

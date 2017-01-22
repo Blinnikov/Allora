@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
 import Button from 'apsl-react-native-button';
+import I18n from 'react-native-i18n';
 import * as database from '../../firebase/database';
 import flags from '../flags'
 
@@ -32,21 +33,21 @@ class WordAdd extends Component {
     return (
       <View style={CommonStyles.navigationContainer}>
         <View style={PageStyles.form}>
-          <FormLabel>Word</FormLabel>
+          <FormLabel>{I18n.t('words.add.wordLabel')}</FormLabel>
           <FormInput
             autoCapitalize="none"
             containerStyle={PageStyles.input}
             onChangeText={word => this.setState({ word })}
-            placeholder={'Please enter the word'}
+            placeholder={I18n.t('words.add.wordPlaceholder')}
           />
-          <FormLabel>Translation</FormLabel>
+        <FormLabel>{I18n.t('words.add.translationLabel')}</FormLabel>
           <FormInput
             autoCapitalize="none"
             containerStyle={PageStyles.input}
             onChangeText={translation => this.setState({ translation })}
-            placeholder={'And of course the translation'}
+            placeholder={I18n.t('words.add.translationPlaceholder')}
           />
-          <FormLabel>Language</FormLabel>
+        <FormLabel>{I18n.t('words.add.languageLabel')}</FormLabel>
           <Picker
             style={{
               paddingHorizontal: 15,
@@ -54,12 +55,24 @@ class WordAdd extends Component {
             selectedValue={this.state.lang}
             onValueChange={lang => this.setState({ lang })}
           >
-            <Picker.Item label={`German ${flags.de}`} value='de' />
-            <Picker.Item label={`Russian ${flags.ru}`} value='ru' />
-            <Picker.Item label={`English ${flags.en}`} value='en' />
-            <Picker.Item label={`Italian ${flags.it}`} value='it' />
-            <Picker.Item label={`Spanish ${flags.es}`} value='es' />
-            <Picker.Item label={`French ${flags.fr}`} value='fr' />
+            <Picker.Item
+              label={I18n.t('words.add.languages.de', {flag: flags.de})}
+              value='de' />
+            <Picker.Item
+              label={I18n.t('words.add.languages.ru', {flag: flags.ru})}
+              value='ru' />
+            <Picker.Item
+              label={I18n.t('words.add.languages.en', {flag: flags.en})}
+              value='en' />
+            <Picker.Item
+              label={I18n.t('words.add.languages.it', {flag: flags.it})}
+              value='it' />
+            <Picker.Item
+              label={I18n.t('words.add.languages.es', {flag: flags.es})}
+              value='es' />
+            <Picker.Item
+              label={I18n.t('words.add.languages.fr', {flag: flags.fr})}
+              value='fr' />
           </Picker>
 
         </View>
@@ -68,7 +81,7 @@ class WordAdd extends Component {
           style={[CommonStyles.buttonSuccess, PageStyles.addButton]}
           textStyle={CommonStyles.buttonPrimaryText}
         >
-          Add
+          {I18n.t('words.add.addButton')}
         </Button>
       </View>
     );

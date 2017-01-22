@@ -63,16 +63,16 @@ class WordList extends Component {
   _renderItem(item) {
     const onSwipeLeft = () => {
       AlertIOS.prompt(
-        I18n.t('wordList.removeMessage', { word: item.word}),
+        I18n.t('words.list.removeMessage', { word: item.word}),
         null,
         [
           {
-            text: 'Remove',
+            text: I18n.t('common.remove'),
             onPress: () => this._removeItem(item),
             style: 'destructive'
           },
           {
-            text: 'Cancel',
+            text: I18n.t('common.cancel'),
             onPress: () => {},
             style: 'cancel'
           }
