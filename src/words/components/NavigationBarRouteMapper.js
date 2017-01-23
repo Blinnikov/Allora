@@ -33,6 +33,10 @@ const NavigationBarRouteMapper = {
   },
 
   RightButton: function(route, navigator, index, navState) {
+    if (index !== 0) {
+      return null;
+    }
+    
     return (
       <TouchableOpacity
         onPress={() => navigator.push({
