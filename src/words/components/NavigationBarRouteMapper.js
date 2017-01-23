@@ -9,7 +9,7 @@ import { sizes } from '../../constants';
 import NavBarStyles from '../../styles/NavigationBar';
 
 const NavigationBarRouteMapper = {
-  LeftButton: function(route, navigator, index, navState) {
+  LeftButton: (route, navigator, index, navState) => {
     if (index === 0) {
       return null;
     }
@@ -32,11 +32,11 @@ const NavigationBarRouteMapper = {
     );
   },
 
-  RightButton: function(route, navigator, index, navState) {
+  RightButton: (route, navigator, index, navState) => {
     if (index !== 0) {
       return null;
     }
-    
+
     return (
       <TouchableOpacity
         onPress={() => navigator.push({
@@ -53,7 +53,7 @@ const NavigationBarRouteMapper = {
     );
   },
 
-  Title: function(route, navigator, index, navState) {
+  Title: (route, navigator, index, navState) => {
     return (
       <Text style={[NavBarStyles.navBarText, NavBarStyles.navBarTitleText]}>
         {route.title || route.component.name}
