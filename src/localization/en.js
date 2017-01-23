@@ -22,8 +22,9 @@ const en = Object.freeze({
       title: 'Your words',
       removeMessage: `Are you sure you want to remove '{{word}}'?`
     },
-    add: {
-      title: 'Add new word',
+    form: {
+      addTitle: 'Add new word',
+      editTitle: 'Edit the word',
       wordLabel: 'Word',
       wordPlaceholder: 'Please enter the word',
       translationLabel: 'Translation',
@@ -38,6 +39,7 @@ const en = Object.freeze({
         fr: 'French {{flag}}'
       },
       addButton: 'Add',
+      editButton: 'Save',
     }
   }
 });

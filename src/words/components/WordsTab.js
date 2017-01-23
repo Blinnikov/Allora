@@ -23,6 +23,10 @@ class WordsTab extends Component {
           return Navigator.SceneConfigs.FloatFromBottom;
         }}
         renderScene={(route, navigator) => {
+          if (route.readyComponent) {
+            return route.component;
+          }
+
           return React.createElement(route.component, { navigator });
         }}
         navigationBar={

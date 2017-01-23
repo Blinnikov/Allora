@@ -28,15 +28,23 @@ class ListItem extends Component {
   }
 
   render() {
-    const {item, onPress, onSwipeLeft} = this.props;
+    const {item, onPress, onEditPress, onRemovePress} = this.props;
     const swipeButtons =[{
+      component:  <Icon
+                    name='ios-create-outline'
+                    style={PageStyles.removeButtonStyle}
+                  />,
+      backgroundColor: '#2980b9',
+      underlayColor: 'rgba(0, 0, 0, 0.6)',
+      onPress: () => onEditPress(item)
+    }, {
       component:  <Icon
                     name='ios-trash-outline'
                     style={PageStyles.removeButtonStyle}
                   />,
       backgroundColor: '#e74c3c',
       underlayColor: 'rgba(0, 0, 0, 0.6)',
-      onPress: () => onSwipeLeft(item)
+      onPress: () => onRemovePress(item)
     }];
 
     return (

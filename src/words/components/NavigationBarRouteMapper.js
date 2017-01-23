@@ -37,7 +37,7 @@ const NavigationBarRouteMapper = {
       <TouchableOpacity
         onPress={() => navigator.push({
           component: WordAdd,
-          title: I18n.t('words.add.title')
+          title: I18n.t('words.form.addTitle')
         })}
         style={NavBarStyles.navBarRightButton}>
         <Icon name='md-add' style={[

@@ -24,9 +24,8 @@ class WordForm extends Component {
   _processItem() {
     const { editMode } = this.props;
     const wordItem = { word, translation, lang } = this.state;
-    console.log(wordItem);
     if (editMode) {
-      database.updateWordItem(this.props.key, wordItem);
+      database.updateWordItem(this.props.itemKey, wordItem);
     } else {
       database.addWordItem(wordItem);
     }
@@ -39,21 +38,23 @@ class WordForm extends Component {
     return (
       <View style={CommonStyles.navigationContainer}>
         <View style={PageStyles.form}>
-          <FormLabel>{I18n.t('words.add.wordLabel')}</FormLabel>
+          <FormLabel>{I18n.t('words.form.wordLabel')}</FormLabel>
           <FormInput
+            value={this.state.word}
             autoCapitalize="none"
             containerStyle={PageStyles.input}
             onChangeText={word => this.setState({ word })}
-            placeholder={I18n.t('words.add.wordPlaceholder')}
+            placeholder={I18n.t('words.form.wordPlaceholder')}
           />
-        <FormLabel>{I18n.t('words.add.translationLabel')}</FormLabel>
+        <FormLabel>{I18n.t('words.form.translationLabel')}</FormLabel>
           <FormInput
+            value={this.state.translation}
             autoCapitalize="none"
             containerStyle={PageStyles.input}
             onChangeText={translation => this.setState({ translation })}
-            placeholder={I18n.t('words.add.translationPlaceholder')}
+            placeholder={I18n.t('words.form.translationPlaceholder')}
           />
-        <FormLabel>{I18n.t('words.add.languageLabel')}</FormLabel>
+        <FormLabel>{I18n.t('words.form.languageLabel')}</FormLabel>
           <Picker
             style={{
               paddingHorizontal: 15,
@@ -62,22 +63,22 @@ class WordForm extends Component {
             onValueChange={lang => this.setState({ lang })}
           >
             <Picker.Item
-              label={I18n.t('words.add.languages.de', {flag: flags.de})}
+              label={I18n.t('words.form.languages.de', {flag: flags.de})}
               value='de' />
             <Picker.Item
-              label={I18n.t('words.add.languages.ru', {flag: flags.ru})}
+              label={I18n.t('words.form.languages.ru', {flag: flags.ru})}
               value='ru' />
             <Picker.Item
-              label={I18n.t('words.add.languages.en', {flag: flags.en})}
+              label={I18n.t('words.form.languages.en', {flag: flags.en})}
               value='en' />
             <Picker.Item
-              label={I18n.t('words.add.languages.it', {flag: flags.it})}
+              label={I18n.t('words.form.languages.it', {flag: flags.it})}
               value='it' />
             <Picker.Item
-              label={I18n.t('words.add.languages.es', {flag: flags.es})}
+              label={I18n.t('words.form.languages.es', {flag: flags.es})}
               value='es' />
             <Picker.Item
-              label={I18n.t('words.add.languages.fr', {flag: flags.fr})}
+              label={I18n.t('words.form.languages.fr', {flag: flags.fr})}
               value='fr' />
           </Picker>
 

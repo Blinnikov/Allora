@@ -6,7 +6,7 @@ const WordAdd = ({navigator}) => {
   return (
     <WordForm
       lang='en'
-      actionButtonTitle={I18n.t('words.add.addButton')}
+      actionButtonTitle={I18n.t('words.form.addButton')}
       navigator={navigator}
     />
   );

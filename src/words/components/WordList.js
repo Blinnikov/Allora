@@ -3,6 +3,7 @@ import { View, Text, ListView, AlertIOS } from 'react-native';
 import I18n from 'react-native-i18n';
 import ListItem from './ListItem';
 import DynamicListItem from './DynamicListItem';
+import WordEdit from './WordEdit'
 import * as database from '../../firebase/database';
 
 import CommonStyles from '../../styles/Common';
@@ -61,7 +62,7 @@ class WordList extends Component {
     })
   }
 
-  _onSwipeLeft = ({key, word}) => {
+  _onRemoveButtonPress = ({key, word}) => {
     AlertIOS.prompt(
       I18n.t('words.list.removeMessage', { word }),
       null,
@@ -79,7 +80,22 @@ class WordList extends Component {
       ],
       'default'
     )
-  };
+  }
+
+  _onEditButtonPress = (item) => {
+    const { navigator } = this.props;
+    const { word, translation, lang } = item;
+    const Component =
+      <WordEdit
+        item={item}
+        navigator={navigator}
+      />
+    navigator.push({
+      readyComponent: true,
+      component: Component,
+      title: I18n.t('words.form.editTitle')
+    })
+  }
 
   _renderItem(item) {
     return (
@@ -87,7 +103,10 @@ class WordList extends Component {
         shouldRemove={item.shouldRemove}
         onDidRemove={() => this._onDidRemove(item)}
       >
-        <ListItem item={item} onSwipeLeft={() => this._onSwipeLeft(item)} />
+        <ListItem item={item}
+          onRemovePress={() => this._onRemoveButtonPress(item)}
+          onEditPress={() => this._onEditButtonPress(item)}
+        />
       </DynamicListItem>
     )
   }
