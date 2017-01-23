@@ -12,10 +12,10 @@ class WordList extends Component {
   constructor(props) {
     super(props);
 
+    this._data = null;
     this.itemsRef = database.getItemsRef();
 
     this.state = {
-      itemToRemove: null,
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
       })
@@ -46,60 +46,66 @@ class WordList extends Component {
       snap.forEach(record => {
         const { word, translation, lang } = record.val();
         items.push({
-          _key: record.key,
+          key: record.key,
           word,
           translation,
-          lang
+          lang,
+          shouldRemove: false
         });
       });
 
+      this._data = items;
       this.setState({
-        itemToRemove: null,
-        dataSource: this.state.dataSource.cloneWithRows(items)
+        dataSource: this.state.dataSource.cloneWithRows(this._data)
       });
     })
   }
 
-  _renderItem(item) {
-    const onSwipeLeft = () => {
-      AlertIOS.prompt(
-        I18n.t('words.list.removeMessage', { word: item.word}),
-        null,
-        [
-          {
-            text: I18n.t('common.remove'),
-            onPress: () => this._removeItem(item),
-            style: 'destructive'
-          },
-          {
-            text: I18n.t('common.cancel'),
-            onPress: () => {},
-            style: 'cancel'
-          }
-        ],
-        'default'
-      )
-    };
+  _onSwipeLeft = ({key, word}) => {
+    AlertIOS.prompt(
+      I18n.t('words.list.removeMessage', { word }),
+      null,
+      [
+        {
+          text: I18n.t('common.remove'),
+          onPress: () => this._removeItem(key),
+          style: 'destructive'
+        },
+        {
+          text: I18n.t('common.cancel'),
+          onPress: () => {},
+          style: 'cancel'
+        }
+      ],
+      'default'
+    )
+  };
 
+  _renderItem(item) {
     return (
       <DynamicListItem
-        shouldRemove={item._key === this.state.itemToRemove}
-        itemToRemove={item._key === this.state.itemToRemove && item}
+        shouldRemove={item.shouldRemove}
         onDidRemove={() => this._onDidRemove(item)}
       >
-        <ListItem item={item} onSwipeLeft={onSwipeLeft} />
+        <ListItem item={item} onSwipeLeft={() => this._onSwipeLeft(item)} />
       </DynamicListItem>
     )
   }
 
-  _removeItem(item) {
+  _removeItem(key) {
+    this._data = this._data.map(item => {
+      return {
+        ...item,
+        shouldRemove: item.key === key
+      }
+    })
     this.setState({
-      itemToRemove: item._key
+      dataSource: this.state.dataSource.cloneWithRows(this._data)
     });
   }
 
   _onDidRemove(item) {
-    this.itemsRef.child(item._key).remove();
+    this.itemsRef.child(item.key).remove();
   }
 
 }
