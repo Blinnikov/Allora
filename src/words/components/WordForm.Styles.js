@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const WordAddStyles = StyleSheet.create({
+const WordFormStyles = StyleSheet.create({
   form: {
     flex: 1
   },
@@ -15,4 +15,4 @@ const WordAddStyles = StyleSheet.create({
   }
 });
 
-export default WordAddStyles;
+export default WordFormStyles;

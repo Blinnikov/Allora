@@ -7,7 +7,7 @@ import * as database from '../../firebase/database';
 import flags from '../flags'
 
 import CommonStyles from '../../styles/Common';
-import PageStyles from './WordAdd.Styles';
+import PageStyles from './WordForm.Styles';
 
 class WordForm extends Component {
   constructor(props) {
