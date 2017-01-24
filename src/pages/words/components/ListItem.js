@@ -5,7 +5,7 @@ import Swipeout from 'react-native-swipeout';
 import Tts from 'react-native-tts';
 import flags from '../flags'
 
-import CommonStyles from '../../styles/Common';
+import CommonStyles from '../../../styles/Common';
 import PageStyles from './WordList.Styles';
 
 const getLang = (item) => {

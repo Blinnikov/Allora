@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Navigator, View } from 'react-native';
 import * as firebase from 'firebase';
 
-import TabbedApp from './TabbedApp';
-import Login from './auth/pages/Login';
+import MainPage from './pages/MainPage';
+import Login from './pages/auth/Login';
 
 import CommonStyles from './styles/Common';
 
@@ -21,7 +21,7 @@ class Root extends Component {
 
   getInitialComponent() {
     firebase.auth().onAuthStateChanged(user => {
-      const component = user ? TabbedApp : Login;
+      const component = user ? MainPage : Login;
 
       this.setState({
         component,

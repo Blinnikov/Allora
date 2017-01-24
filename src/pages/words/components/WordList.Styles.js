@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { sizes, colors } from '../../constants';
+import { sizes, colors } from '../../../constants';
 
 const WordListStyles = StyleSheet.create({
   listView: {

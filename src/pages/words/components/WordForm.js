@@ -3,10 +3,10 @@ import { Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 import I18n from 'react-native-i18n';
-import * as database from '../../firebase/database';
+import * as database from '../../../firebase/database';
 import flags from '../flags'
 
-import CommonStyles from '../../styles/Common';
+import CommonStyles from '../../../styles/Common';
 import PageStyles from './WordForm.Styles';
 
 class WordForm extends Component {

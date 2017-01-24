@@ -4,9 +4,9 @@ import I18n from 'react-native-i18n';
 import Icon from 'react-native-vector-icons/Ionicons';
 import WordAdd from './WordAdd';
 
-import { sizes } from '../../constants';
+import { sizes } from '../../../constants';
 
-import NavBarStyles from '../../styles/NavigationBar';
+import NavBarStyles from '../../../styles/NavigationBar';
 
 const NavigationBarRouteMapper = {
   LeftButton: (route, navigator, index, navState) => {

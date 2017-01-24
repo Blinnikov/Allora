@@ -4,9 +4,9 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import I18n from 'react-native-i18n';
 
 import WordsTab from './words/components/WordsTab';
-import Account from './auth/pages/Account';
+import Account from './account/Account';
 
-class TabbedApp extends Component {
+class MainPage extends Component {
   constructor(props) {
     super(props);
 
@@ -48,4 +48,4 @@ class TabbedApp extends Component {
   }
 }
 
-export default TabbedApp;
+export default MainPage;

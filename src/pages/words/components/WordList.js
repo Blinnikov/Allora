@@ -4,9 +4,9 @@ import I18n from 'react-native-i18n';
 import ListItem from './ListItem';
 import DynamicListItem from './DynamicListItem';
 import WordEdit from './WordEdit'
-import * as database from '../../firebase/database';
+import * as database from '../../../firebase/database';
 
-import CommonStyles from '../../styles/Common';
+import CommonStyles from '../../../styles/Common';
 import PageStyles from './WordList.Styles';
 
 class WordList extends Component {

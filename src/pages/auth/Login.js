@@ -2,57 +2,51 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import I18n from 'react-native-i18n';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import { Sae } from 'react-native-textinput-effects';
 import { Button } from 'react-native-elements';
+import { Sae } from 'react-native-textinput-effects';
 import * as firebase from 'firebase';
 
-import Login from './Login';
-import TabbedApp from '../../TabbedApp';
+import SignUp from './SignUp';
+import MainPage from '../MainPage';
 
 import CommonStyles from '../../styles/Common';
 
-class SignUp extends Component {
+const primaryColor='#3498db';
+
+class Login extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      loaded: true,
       email: '',
-      password: ''
+      password: '',
+      loaded: true
     }
   }
 
-  async signUp() {
-    try {
-      this.setState({
-        loaded: false
-      })
-
-      const { email, password } = this.state;
-      await firebase.auth().createUserWithEmailAndPassword(email, password);
-
-      this.setState({
-        email: '',
-        password: '',
-        loaded: true
-      });
-
-      // Navigate to home page, the user is auto logged in
-      this.props.navigator.push({
-        component: TabbedApp
-      });
-    } catch(error) {
-      this.setState({
-        loaded: true
-      })
-      alert(error.message);
-    }
-  }
-
-  goToLogin() {
-    this.props.navigator.push({
-      component: Login
+  async login() {
+    this.setState({
+      loaded: false
     });
+
+    try {
+      const { email, password } = this.state;
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      this.props.navigator.push({
+        component: MainPage
+      });
+    } catch (e) {
+      alert(e.message);
+    } finally {
+      this.setState({
+        loaded: true
+      });
+    }
+  }
+
+  goToSignUp() {
+    this.props.navigator.push({
+      component: SignUp
+    })
   }
 
   render() {
@@ -63,7 +57,7 @@ class SignUp extends Component {
             label={I18n.t('auth.login.email')}
             iconClass={FontAwesomeIcon}
             iconName={'pencil'}
-            iconColor={'#3498db'}
+            iconColor={primaryColor}
             labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
             inputStyle={{color: 'black'}}
             onChangeText={email => this.setState({email})}
@@ -73,7 +67,7 @@ class SignUp extends Component {
             label={I18n.t('auth.login.password')}
             iconClass={FontAwesomeIcon}
             iconName={'key'}
-            iconColor={'#3498db'}
+            iconColor={primaryColor}
             labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
             inputStyle={{color: 'black'}}
             onChangeText={password => this.setState({password})}
@@ -81,14 +75,14 @@ class SignUp extends Component {
             autoCapitalize="none"
           />
           <Button
-            title={I18n.t('auth.login.signUp')}
-            onPress={this.signUp.bind(this)}
+            title={I18n.t('auth.login.loginButton')}
+            onPress={this.login.bind(this)}
             buttonStyle={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonPrimaryText}
           />
           <Button
-            title={I18n.t('auth.login.goToLogin')}
-            onPress={this.goToLogin.bind(this)}
+            title={I18n.t('auth.login.goToSignUp')}
+            onPress={this.goToSignUp.bind(this)}
             buttonStyle={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
             textStyle={CommonStyles.buttonDefaultText}
           />
@@ -98,4 +92,4 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp;
+export default Login;

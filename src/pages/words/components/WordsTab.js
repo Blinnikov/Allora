@@ -5,7 +5,7 @@ import I18n from 'react-native-i18n';
 import NavigationBarRouteMapper from './NavigationBarRouteMapper';
 import WordList from './WordList';
 
-import NavBarStyles from '../../styles/NavigationBar';
+import NavBarStyles from '../../../styles/NavigationBar';
 
 class WordsTab extends Component {
   constructor(props) {

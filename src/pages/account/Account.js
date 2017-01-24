@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
 
-import Login from './Login'
+import Login from '../auth/Login'
 
 import CommonStyles from '../../styles/Common';
 
