@@ -35,7 +35,7 @@ class TabbedApp extends Component {
           <WordsTab />
         </Icon.TabBarItem>
         <Icon.TabBarItem
-          title='Account'
+          title={I18n.t('account.tab')}
           iconName='ios-contact-outline'
           selectedIconName='ios-contact'
           selected={this.state.selectedTab === 'account'}
