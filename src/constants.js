@@ -1,4 +1,6 @@
 const colors = Object.freeze({
+  bodyBackgroundColor: '#EFF0F3',
+  barsBackgroundColor: '#F9F9F9',
   actionColor: '#24CE84'
 });
 
