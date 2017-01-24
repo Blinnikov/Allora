@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ListView, AlertIOS } from 'react-native';
+import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
 import I18n from 'react-native-i18n';
 import ListItem from './ListItem';
 import DynamicListItem from './DynamicListItem';
@@ -17,6 +17,7 @@ class WordList extends Component {
     this.itemsRef = database.getItemsRef();
 
     this.state = {
+      loading: true,
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
       })
@@ -28,6 +29,10 @@ class WordList extends Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <ActivityIndicator size='large' style={CommonStyles.body} />;
+    }
+
     return (
       <View style={CommonStyles.navigationContainer}>
         <ListView
@@ -57,6 +62,7 @@ class WordList extends Component {
 
       this._data = items;
       this.setState({
+        loading: false,
         dataSource: this.state.dataSource.cloneWithRows(this._data)
       });
     })
