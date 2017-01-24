@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { sizes } from '../constants';
+import { sizes, colors } from '../constants';
 
 const button = {
   marginLeft: 0,
@@ -10,7 +10,7 @@ const container = {
   flex: 1,
   paddingTop: sizes.statusBar,
   paddingBottom: sizes.tabBar,
-  backgroundColor: '#f2f2f2',
+  backgroundColor: colors.bodyBackgroundColor,
   justifyContent: 'center'
 };
 
@@ -25,11 +25,11 @@ const Common = StyleSheet.create({
   },
   navigationContainer: {
     ...container,
-    paddingTop: sizes.statusBar + sizes.navigationBar + 1
+    paddingTop: sizes.statusBar + sizes.navigationBar
   },
   body: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: colors.bodyBackgroundColor,
     justifyContent: 'center',
     paddingLeft: 16,
     paddingRight: 16

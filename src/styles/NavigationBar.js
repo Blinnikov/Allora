@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../constants'
 
 const NavigationBar = StyleSheet.create({
   navBar: {
-    backgroundColor: 'white',
+    backgroundColor: colors.barsBackgroundColor,
+    borderWidth: 1,
     borderColor: 'transparent',
     borderBottomColor: '#EEE',
   },
