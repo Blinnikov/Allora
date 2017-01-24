@@ -25,7 +25,7 @@ const NavigationBarRouteMapper = {
             style={[NavBarStyles.navBarButtonText, NavBarStyles.navBarButtonIcon]}
           />
           <Text style={[NavBarStyles.navBarText, NavBarStyles.navBarButtonText]}>
-            {' '}{previousRoute.title}
+            {' '}{I18n.t('words.form.backButton')}
           </Text>
         </View>
       </TouchableOpacity>
