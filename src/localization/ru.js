@@ -28,7 +28,7 @@ const ru = Object.freeze({
       editTitle: 'Редактирование',
       backButton: 'Назад',
       wordLabel: 'Слово',
-      wordPlaceholder: 'По;алуйста введите слово',
+      wordPlaceholder: 'Пожалуйста введите слово',
       translationLabel: 'Перевод',
       translationPlaceholder: 'И его перевод',
       languageLabel: 'Язык',
