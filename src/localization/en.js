@@ -11,10 +11,11 @@ const en = Object.freeze({
       goToSignUp: 'New here?',
       signUp: 'Sign Up',
       goToLogin: 'Do you already have an account?'
-    },
-    account: {
-      logout: 'Logout'
     }
+  },
+  account: {
+    tab: 'Account',
+    logout: 'Logout'
   },
   words: {
     tab: 'Words',
@@ -25,6 +26,7 @@ const en = Object.freeze({
     form: {
       addTitle: 'Add new word',
       editTitle: 'Edit the word',
+      backButton: 'Back',
       wordLabel: 'Word',
       wordPlaceholder: 'Please enter the word',
       translationLabel: 'Translation',

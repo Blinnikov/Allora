@@ -34,7 +34,7 @@ class Account extends Component {
           <View style={CommonStyles.accountContaniner}>
             <Text style={CommonStyles.emailText}>{user.email}</Text>
             <Button
-              title={I18n.t('auth.account.logout')}
+              title={I18n.t('account.logout')}
               backgroundColor='transparent'
               onPress={this.logout.bind(this)}
               style={CommonStyles.buttonDefault}
