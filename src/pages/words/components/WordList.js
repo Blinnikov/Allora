@@ -30,11 +30,14 @@ class WordList extends Component {
 
   render() {
     if (this.state.loading) {
-      return <ActivityIndicator size='large' style={CommonStyles.body} />;
+      return <ActivityIndicator
+        size='large'
+        style={CommonStyles.pageContainer}
+      />;
     }
 
     return (
-      <View style={CommonStyles.navigationContainer}>
+      <View style={CommonStyles.pageContainer}>
         <ListView
           style={PageStyles.listView}
           automaticallyAdjustContentInsets={false}

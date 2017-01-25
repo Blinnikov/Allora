@@ -36,7 +36,7 @@ class WordForm extends Component {
   render() {
     const { actionButtonTitle } = this.props;
     return (
-      <View style={CommonStyles.navigationContainer}>
+      <View style={CommonStyles.pageContainer}>
         <View style={PageStyles.form}>
           <FormLabel>{I18n.t('words.form.wordLabel')}</FormLabel>
           <FormInput
