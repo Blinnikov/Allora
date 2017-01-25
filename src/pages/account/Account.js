@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Text, View } from 'react-native';
+import { Button, List, ListItem } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
 
@@ -19,7 +19,7 @@ class Account extends Component {
     };
   }
 
-  async logout() {
+  async _logout() {
     await firebase.auth().signOut();
     this.props.rootNavigator.push({
       component: Login
@@ -29,19 +29,15 @@ class Account extends Component {
   render() {
     const { user, loaded } = this.state;
     return (
-      <View style={CommonStyles.container}>
-        <View style={CommonStyles.body}>
-          <View style={CommonStyles.accountContaniner}>
-            <Text style={CommonStyles.emailText}>{user.email}</Text>
-            <Button
-              title={I18n.t('account.logout')}
-              backgroundColor='transparent'
-              onPress={this.logout.bind(this)}
-              style={CommonStyles.buttonDefault}
-              textStyle={CommonStyles.buttonDefaultTextDestructive}
-            />
-          </View>
-        </View>
+      <View style={CommonStyles.fullHeightContainer}>
+        <Text style={CommonStyles.emailText}>{user.email}</Text>
+        <Button
+          title={I18n.t('account.logout')}
+          backgroundColor='transparent'
+          onPress={this._logout.bind(this)}
+          style={CommonStyles.buttonDefault}
+          textStyle={CommonStyles.buttonDefaultTextDestructive}
+        />
       </View>
     );
   }
