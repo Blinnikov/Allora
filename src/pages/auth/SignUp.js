@@ -9,6 +9,7 @@ import * as firebase from 'firebase';
 import Login from './Login';
 import MainPage from '../MainPage';
 
+import PageStyles from './Login.Styles'
 import CommonStyles from '../../styles/Common';
 
 class SignUp extends Component {
@@ -57,42 +58,43 @@ class SignUp extends Component {
 
   render() {
     return (
-      <View style={CommonStyles.loginContainer}>
-        <View style={CommonStyles.body}>
-          <Sae
-            label={I18n.t('auth.login.email')}
-            iconClass={FontAwesomeIcon}
-            iconName={'pencil'}
-            iconColor={'#3498db'}
-            labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
-            inputStyle={{color: 'black'}}
-            onChangeText={email => this.setState({email})}
-            autoCapitalize="none"
-          />
-          <Sae
-            label={I18n.t('auth.login.password')}
-            iconClass={FontAwesomeIcon}
-            iconName={'key'}
-            iconColor={'#3498db'}
-            labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
-            inputStyle={{color: 'black'}}
-            onChangeText={password => this.setState({password})}
-            password={true}
-            autoCapitalize="none"
-          />
-          <Button
-            title={I18n.t('auth.login.signUp')}
-            onPress={this.signUp.bind(this)}
-            buttonStyle={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
-            textStyle={CommonStyles.buttonPrimaryText}
-          />
-          <Button
-            title={I18n.t('auth.login.goToLogin')}
-            onPress={this.goToLogin.bind(this)}
-            buttonStyle={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
-            textStyle={CommonStyles.buttonDefaultText}
-          />
-        </View>
+      <View style={[
+          CommonStyles.fullHeightContainer,
+          PageStyles.loginPageContainer
+        ]}>
+        <Sae
+          label={I18n.t('auth.login.email')}
+          iconClass={FontAwesomeIcon}
+          iconName={'pencil'}
+          iconColor={'#3498db'}
+          labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
+          inputStyle={{color: 'black'}}
+          onChangeText={email => this.setState({email})}
+          autoCapitalize="none"
+        />
+        <Sae
+          label={I18n.t('auth.login.password')}
+          iconClass={FontAwesomeIcon}
+          iconName={'key'}
+          iconColor={'#3498db'}
+          labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
+          inputStyle={{color: 'black'}}
+          onChangeText={password => this.setState({password})}
+          password={true}
+          autoCapitalize="none"
+        />
+        <Button
+          title={I18n.t('auth.login.signUp')}
+          onPress={this.signUp.bind(this)}
+          buttonStyle={[CommonStyles.buttonPrimary, CommonStyles.buttonLogin]}
+          textStyle={CommonStyles.buttonPrimaryText}
+        />
+        <Button
+          title={I18n.t('auth.login.goToLogin')}
+          onPress={this.goToLogin.bind(this)}
+          buttonStyle={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
+          textStyle={CommonStyles.buttonDefaultText}
+        />
       </View>
     );
   }
