@@ -6,33 +6,29 @@ const button = {
   marginRight: 0
 };
 
-const container = {
+const fullHeightContainer = {
   flex: 1,
-  paddingTop: sizes.statusBar,
-  paddingBottom: sizes.tabBar,
+  flexDirection: 'column',
   backgroundColor: colors.bodyBackgroundColor,
   justifyContent: 'center'
-};
+}
+
+const tabBarContainer = {
+  ...fullHeightContainer,
+  paddingBottom: sizes.tabBar
+}
+
+const navBarContainer = {
+  ...fullHeightContainer,
+  paddingTop: sizes.statusBar + sizes.navigationBar
+}
 
 const Common = StyleSheet.create({
-  loginContainer: {
-    flex: 1
+  fullHeightContainer: {
+    ...fullHeightContainer
   },
-  container: {
-    flex: 1,
-    paddingTop: sizes.statusBar,
-    paddingBottom: sizes.tabBar
-  },
-  navigationContainer: {
-    ...container,
-    paddingTop: sizes.statusBar + sizes.navigationBar
-  },
-  body: {
-    flex: 1,
-    backgroundColor: colors.bodyBackgroundColor,
-    justifyContent: 'center',
-    paddingLeft: 16,
-    paddingRight: 16
+  pageContainer: {
+    ...navBarContainer
   },
   buttonDefault: {
     ...button,
@@ -64,15 +60,6 @@ const Common = StyleSheet.create({
   },
   buttonLogin: {
     marginTop: 10
-  },
-
-  // Account page
-  accountContaniner: {
-    flex: 1,
-    justifyContent: 'space-between'
-  },
-  emailText: {
-    fontSize: 18
   }
 });
 
