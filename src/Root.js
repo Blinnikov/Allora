@@ -47,8 +47,7 @@ class Root extends Component {
       );
     } else {
       return (
-        <View style={CommonStyles.container}>
-          <View style={CommonStyles.body}></View>
+        <View>
         </View>
       )
     }
