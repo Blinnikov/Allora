@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import { Button, List, ListItem } from 'react-native-elements';
+import { View } from 'react-native';
+import { Button, List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
 
 import Login from '../auth/Login'
 
+import PageStyles from './Account.Styles';
 import CommonStyles from '../../styles/Common';
+
+const list = [
+  {
+    title: 'Appointments',
+    icon: 'ios-flag-outline'
+  },
+  {
+    title: 'Trips',
+    icon: 'ios-jet-outline'
+  },
+]
 
 class Account extends Component {
   constructor(props) {
@@ -30,14 +42,23 @@ class Account extends Component {
     const { user, loaded } = this.state;
     return (
       <View style={CommonStyles.fullHeightContainer}>
-        <Text style={CommonStyles.emailText}>{user.email}</Text>
-        <Button
-          title={I18n.t('account.logout')}
-          backgroundColor='transparent'
-          onPress={this._logout.bind(this)}
-          style={CommonStyles.buttonDefault}
-          textStyle={CommonStyles.buttonDefaultTextDestructive}
-        />
+        <Text h4 style={PageStyles.email}>{user.email}</Text>
+        <List>
+          {
+            list.map((item, i) => (
+              <ListItem
+                key={i}
+                title={item.title}
+                leftIcon={{name: item.icon, type: 'ionicon'}}
+                />
+            ))
+          }
+          <ListItem
+            title={I18n.t('account.logout')}
+            leftIcon={{name: 'ios-log-out', type: 'ionicon'}}
+            onPress={this._logout.bind(this)}
+            />
+        </List>
       </View>
     );
   }
