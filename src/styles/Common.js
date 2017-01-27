@@ -28,7 +28,8 @@ const Common = StyleSheet.create({
     ...fullHeightContainer
   },
   pageContainer: {
-    ...navBarContainer
+    ...navBarContainer,
+    ...tabBarContainer
   },
   buttonDefault: {
     ...button,
