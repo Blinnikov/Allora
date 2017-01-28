@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { Button, List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
+import * as database from '../../firebase/database';
 
 import Login from '../auth/Login'
 
@@ -31,6 +32,11 @@ class Account extends Component {
     };
   }
 
+  _getRandom() {
+    const res = database.getRandomWord();
+    alert(`${res.word} - ${res.translation}`);
+  }
+
   async _logout() {
     await firebase.auth().signOut();
     this.props.rootNavigator.push({
@@ -53,6 +59,11 @@ class Account extends Component {
                 />
             ))
           }
+          <ListItem
+            title={'Get random word'}
+            leftIcon={{name: 'ios-repeat', type: 'ionicon'}}
+            onPress={this._getRandom.bind(this)}
+            />
           <ListItem
             title={I18n.t('account.logout')}
             leftIcon={{name: 'ios-log-out', type: 'ionicon'}}
