@@ -68,7 +68,7 @@ class WordList extends Component {
         loading: false,
         dataSource: this.state.dataSource.cloneWithRows(this._data)
       });
-    })
+    });
   }
 
   _onRemoveButtonPress = ({key, word}) => {
