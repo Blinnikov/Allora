@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Navigator, View } from 'react-native';
+import { AppState, Navigator, PushNotificationIOS, View } from 'react-native';
 import * as firebase from 'firebase';
-
+import * as NotificationScheduler from './services/NotificationScheduler';
 import MainPage from './pages/MainPage';
 import Login from './pages/auth/Login';
 
@@ -28,6 +28,30 @@ class Root extends Component {
         loaded: true
       })
     })
+  }
+
+  componentDidMount() {
+    this._requestPermissions();
+    AppState.addEventListener('change', this._handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this._handleAppStateChange);
+  }
+
+  _requestPermissions() {
+    PushNotificationIOS.checkPermissions(permissions => {
+      if (!permissions.alert) {
+        PushNotificationIOS.requestPermissions();
+      }
+    });
+  }
+
+  _handleAppStateChange(currentAppState) {
+    console.log(currentAppState);
+    if (currentAppState === 'background') {
+      NotificationScheduler.run();
+    }
   }
 
   render() {
