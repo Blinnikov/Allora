@@ -27,6 +27,7 @@ const en = Object.freeze({
       addTitle: 'Add new word',
       editTitle: 'Edit the word',
       backButton: 'Back',
+      done: 'Done',
       wordLabel: 'Word',
       wordPlaceholder: 'Please enter the word',
       translationLabel: 'Translation',
