@@ -17,13 +17,21 @@ const flags = Object.freeze({
   'de': '🇩🇪',
   'ru': '🇷🇺',
   'fr': '🇫🇷'
-})
+});
+
+const intervals = Object.freeze({
+  second: 1000,
+  minute: 60000, // 60 * 1000
+  hour: 3600000, // 60 * 60 * 1000
+  day: 86400000 // 24 * 60 * 60 * 1000
+});
 
 const constants = Object.freeze({
   colors,
   sizes,
-  flags
+  flags,
+  intervals
 });
 
-export { colors, sizes, flags };
+export { colors, sizes, flags, intervals };
 export default constants;
