@@ -20,7 +20,7 @@ class WordForm extends Component {
       lang: props.lang
     }
 
-    this.props.emitter.on('words.form.done', () => this._processItem());
+    this._processItem = this._processItem.bind(this);
   }
 
   _processItem() {
@@ -33,6 +33,14 @@ class WordForm extends Component {
     }
 
     this.props.navigator.pop();
+  }
+
+  componentDidMount() {
+    this.props.emitter.on('words.form.done', this._processItem);
+  }
+
+  componentWillUnmount() {
+    this.props.emitter.removeListener('words.form.done', this._processItem);
   }
 
   render() {
