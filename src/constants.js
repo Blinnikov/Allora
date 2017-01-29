@@ -10,10 +10,20 @@ const sizes = Object.freeze({
   tabBar: 49
 });
 
+const flags = Object.freeze({
+  'it': '🇮🇹',
+  'es': '🇪🇸',
+  'en': '🇺🇸',
+  'de': '🇩🇪',
+  'ru': '🇷🇺',
+  'fr': '🇫🇷'
+})
+
 const constants = Object.freeze({
   colors,
-  sizes
+  sizes,
+  flags
 });
 
-export { colors, sizes };
+export { colors, sizes, flags };
 export default constants;
