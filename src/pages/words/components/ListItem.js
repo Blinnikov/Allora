@@ -3,7 +3,7 @@ import { View, Text, TouchableHighlight, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import Swipeout from 'react-native-swipeout';
 import Tts from 'react-native-tts';
-import flags from '../flags'
+import { flags } from '../../../constants'
 
 import CommonStyles from '../../../styles/Common';
 import PageStyles from './WordList.Styles';
