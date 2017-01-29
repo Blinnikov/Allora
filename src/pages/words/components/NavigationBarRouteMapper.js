@@ -8,7 +8,7 @@ import { sizes } from '../../../constants';
 
 import NavBarStyles from '../../../styles/NavigationBar';
 
-const NavigationBarRouteMapper = {
+const NavigationBarRouteMapper = (emitter) => ({
   LeftButton: (route, navigator, index, navState) => {
     if (index === 0) {
       return null;
@@ -33,24 +33,38 @@ const NavigationBarRouteMapper = {
   },
 
   RightButton: (route, navigator, index, navState) => {
-    if (index !== 0) {
-      return null;
+    console.log(navState);
+
+    if (index === 0) {
+      return (
+        <TouchableOpacity
+          onPress={() => navigator.push({
+            component: WordAdd,
+            title: I18n.t('words.form.addTitle')
+          })}
+          style={NavBarStyles.navBarRightButton}>
+          <Icon name='md-add' style={[
+              NavBarStyles.navBarText,
+              NavBarStyles.navBarButtonText,
+              NavBarStyles.navBarButtonIcon
+            ]}/>
+        </TouchableOpacity>
+      );
     }
 
-    return (
-      <TouchableOpacity
-        onPress={() => navigator.push({
-          component: WordAdd,
-          title: I18n.t('words.form.addTitle')
-        })}
-        style={NavBarStyles.navBarRightButton}>
-        <Icon name='md-add' style={[
-            NavBarStyles.navBarText,
-            NavBarStyles.navBarButtonText,
-            NavBarStyles.navBarButtonIcon
-          ]}/>
-      </TouchableOpacity>
-    );
+    if (index === 1) {
+      return (
+        <TouchableOpacity
+          onPress={() => emitter.emit('words.form.done')}
+          style={NavBarStyles.navBarRightButton}>
+          <Text style={[NavBarStyles.navBarText, NavBarStyles.navBarButtonText]}>
+            {' '}{I18n.t('words.form.done')}
+          </Text>
+        </TouchableOpacity>
+      );
+    }
+
+    return null;
   },
 
   Title: (route, navigator, index, navState) => {
@@ -60,6 +74,6 @@ const NavigationBarRouteMapper = {
       </Text>
     );
   },
-};
+});
 
 export default NavigationBarRouteMapper;

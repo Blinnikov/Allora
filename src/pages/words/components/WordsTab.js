@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navigator } from 'react-native';
 import I18n from 'react-native-i18n';
+import EventEmitter from 'events';
 
 import NavigationBarRouteMapper from './NavigationBarRouteMapper';
 import WordList from './WordList';
@@ -13,6 +14,8 @@ class WordsTab extends Component {
   }
 
   render() {
+    const emitter = new EventEmitter();
+    const mapper = NavigationBarRouteMapper(emitter);
     return (
       <Navigator
         initialRoute={{
@@ -27,11 +30,11 @@ class WordsTab extends Component {
             return route.component;
           }
 
-          return React.createElement(route.component, { navigator });
+          return React.createElement(route.component, { navigator, emitter });
         }}
         navigationBar={
           <Navigator.NavigationBar
-            routeMapper={NavigationBarRouteMapper}
+            routeMapper={mapper}
             style={NavBarStyles.navBar}
           />
         }
