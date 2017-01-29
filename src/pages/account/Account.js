@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { PushNotificationIOS, View } from 'react-native';
 import { Button, List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
-import * as database from '../../firebase/database';
+import * as NotificationScheduler from '../../services/NotificationScheduler';
 
 import Login from '../auth/Login'
 
 import PageStyles from './Account.Styles';
 import CommonStyles from '../../styles/Common';
-
-const list = [
-  {
-    title: 'Appointments',
-    icon: 'ios-flag-outline'
-  },
-  {
-    title: 'Trips',
-    icon: 'ios-jet-outline'
-  },
-]
 
 class Account extends Component {
   constructor(props) {
@@ -33,8 +22,8 @@ class Account extends Component {
   }
 
   _getRandom() {
-    const res = database.getRandomWord();
-    alert(`${res.word} - ${res.translation}`);
+    const res = NotificationScheduler.getRandomMessage();
+    alert(res);
   }
 
   async _logout() {
@@ -50,15 +39,6 @@ class Account extends Component {
       <View style={CommonStyles.fullHeightContainer}>
         <Text h4 style={PageStyles.email}>{user.email}</Text>
         <List>
-          {
-            list.map((item, i) => (
-              <ListItem
-                key={i}
-                title={item.title}
-                leftIcon={{name: item.icon, type: 'ionicon'}}
-                />
-            ))
-          }
           <ListItem
             title={'Get random word'}
             leftIcon={{name: 'ios-repeat', type: 'ionicon'}}
