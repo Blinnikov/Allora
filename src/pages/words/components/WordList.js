@@ -92,12 +92,13 @@ class WordList extends Component {
   }
 
   _onEditButtonPress = (item) => {
-    const { navigator } = this.props;
+    const { navigator, emitter } = this.props;
     const { word, translation, lang } = item;
     const Component =
       <WordEdit
         item={item}
         navigator={navigator}
+        emitter={emitter}
       />
     navigator.push({
       readyComponent: true,

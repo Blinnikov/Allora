@@ -19,6 +19,8 @@ class WordForm extends Component {
       translation: props.translation,
       lang: props.lang
     }
+
+    this.props.emitter.on('words.form.done', () => this._processItem());
   }
 
   _processItem() {
@@ -83,12 +85,6 @@ class WordForm extends Component {
           </Picker>
 
         </View>
-        <Button
-          title={actionButtonTitle}
-          onPress={() => this._processItem()}
-          buttonStyle={[CommonStyles.buttonSuccess, PageStyles.addButton]}
-          textStyle={CommonStyles.buttonPrimaryText}
-        />
       </View>
     );
   }
