@@ -54,7 +54,7 @@ class WordList extends Component {
       const items = [];
       snap.forEach(record => {
         const { word, translation, lang } = record.val();
-        items.push({
+        items.unshift({
           key: record.key,
           word,
           translation,
