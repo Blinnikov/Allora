@@ -14,7 +14,9 @@ const en = Object.freeze({
     }
   },
   account: {
+    title: 'Account',
     tab: 'Account',
+    settings: 'Settings',
     logout: 'Logout'
   },
   words: {
