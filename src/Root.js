@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppState, Navigator, PushNotificationIOS, View } from 'react-native';
 import * as firebase from 'firebase';
-import * as NotificationScheduler from './services/NotificationScheduler';
+import * as Notifications from './services/Notifications';
 import MainPage from './pages/MainPage';
 import Login from './pages/auth/Login';
 
@@ -48,9 +48,8 @@ class Root extends Component {
   }
 
   _handleAppStateChange(currentAppState) {
-    console.log(currentAppState);
     if (currentAppState === 'background') {
-      NotificationScheduler.run();
+      Notifications.schedule();
     }
   }
 

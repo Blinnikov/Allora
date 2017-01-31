@@ -3,7 +3,7 @@ import { PushNotificationIOS, View } from 'react-native';
 import { Button, List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
-import * as NotificationScheduler from '../../services/NotificationScheduler';
+import * as Notifications from '../../services/Notifications';
 
 import Login from '../auth/Login'
 import Settings from './Settings';
@@ -23,7 +23,7 @@ class Account extends Component {
   }
 
   _getRandom() {
-    const res = NotificationScheduler.getRandomMessage();
+    const res = Notifications.getRandomMessage();
     alert(res);
   }
 
