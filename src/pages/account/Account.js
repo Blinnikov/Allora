@@ -32,7 +32,7 @@ class Account extends Component {
 
     navigator.push({
       component: Settings,
-      title: I18n.t('account.settings')
+      title: I18n.t('account.settings.title')
     })
   }
 
@@ -55,7 +55,7 @@ class Account extends Component {
             onPress={this._getRandom.bind(this)}
           />
           <ListItem
-            title={I18n.t('account.settings')}
+            title={I18n.t('account.settings.title')}
             leftIcon={{name: 'ios-settings', type: 'ionicon'}}
             onPress={this._goToSettingsPage.bind(this)}
           />
