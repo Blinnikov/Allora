@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import I18n from 'react-native-i18n';
 
 import WordsTab from './words/components/WordsTab';
-import Account from './account/Account';
+import AccountTab from './account/AccountTab';
 
 class MainPage extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class MainPage extends Component {
           selected={this.state.selectedTab === 'account'}
           onPress={() => this.setTab('account')}
         >
-          <Account rootNavigator={rootNavigator} />
+          <AccountTab rootNavigator={rootNavigator} />
         </Icon.TabBarItem>
       </TabBarIOS>
     );

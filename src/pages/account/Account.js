@@ -6,6 +6,7 @@ import * as firebase from 'firebase';
 import * as NotificationScheduler from '../../services/NotificationScheduler';
 
 import Login from '../auth/Login'
+import Settings from './Settings';
 
 import PageStyles from './Account.Styles';
 import CommonStyles from '../../styles/Common';
@@ -26,6 +27,15 @@ class Account extends Component {
     alert(res);
   }
 
+  _goToSettingsPage() {
+    const { navigator } = this.props;
+
+    navigator.push({
+      component: Settings,
+      title: I18n.t('account.settings')
+    })
+  }
+
   async _logout() {
     await firebase.auth().signOut();
     this.props.rootNavigator.push({
@@ -43,12 +53,17 @@ class Account extends Component {
             title={'Get random word'}
             leftIcon={{name: 'ios-repeat', type: 'ionicon'}}
             onPress={this._getRandom.bind(this)}
-            />
+          />
+          <ListItem
+            title={I18n.t('account.settings')}
+            leftIcon={{name: 'ios-settings', type: 'ionicon'}}
+            onPress={this._goToSettingsPage.bind(this)}
+          />
           <ListItem
             title={I18n.t('account.logout')}
             leftIcon={{name: 'ios-log-out', type: 'ionicon'}}
             onPress={this._logout.bind(this)}
-            />
+          />
         </List>
       </View>
     );
