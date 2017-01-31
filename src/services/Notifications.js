@@ -1,4 +1,5 @@
 import { PushNotificationIOS } from 'react-native';
+import UserSettings from './UserSettings';
 import * as database from '../firebase/database';
 import { flags, intervals } from '../constants';
 
@@ -25,19 +26,18 @@ const scheduleSporadicNotification = (date) => {
   });
 }
 
-const cancelScheduledNotifications = () => {
-  PushNotificationIOS.getScheduledLocalNotifications(response => {
-    console.log('Scheduled', response);
-  })
+const cancellAll = () => {
   PushNotificationIOS.cancelAllLocalNotifications();
-  PushNotificationIOS.getScheduledLocalNotifications(response => {
-    console.log('After cancelling', response);
-  })
 }
 
-const run = () => {
-  cancelScheduledNotifications();
+const schedule = async () => {
+  const enableNotifications = await UserSettings.enableNotifications;
+  if(!enableNotifications) {
+    return;
+  }
+
+  cancellAll();
   scheduleNotifications(5, 1, 'minute');
 };
 
-export { getRandomMessage, run };
+export { getRandomMessage, schedule, cancellAll };
