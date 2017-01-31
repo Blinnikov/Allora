@@ -16,7 +16,10 @@ const en = Object.freeze({
   account: {
     title: 'Account',
     tab: 'Account',
-    settings: 'Settings',
+    settings: {
+      title: 'Settings',
+      enableNotifications: 'Enable notifications'
+    },
     logout: 'Logout'
   },
   words: {
