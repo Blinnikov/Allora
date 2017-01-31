@@ -33,8 +33,6 @@ const NavigationBarRouteMapperFactory = (emitter) => ({
   },
 
   RightButton: (route, navigator, index, navState) => {
-    console.log(navState);
-
     if (index === 0) {
       return (
         <TouchableOpacity
