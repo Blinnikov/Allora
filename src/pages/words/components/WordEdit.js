@@ -3,7 +3,6 @@ import WordForm from './WordForm';
 import I18n from 'react-native-i18n';
 
 const WordEdit = ({navigator, emitter, item}) => {
-  console.log('Word edit form', emitter);
   return (
     <WordForm
       navigator={navigator}
