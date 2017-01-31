@@ -37,7 +37,7 @@ const schedule = async () => {
   }
 
   cancellAll();
-  scheduleNotifications(5, 1, 'minute');
+  scheduleNotifications(48, 30, 'minute');
 };
 
 export { getRandomMessage, schedule, cancellAll };
