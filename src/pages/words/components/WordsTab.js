@@ -3,7 +3,7 @@ import { Navigator } from 'react-native';
 import I18n from 'react-native-i18n';
 import EventEmitter from 'events';
 
-import NavigationBarRouteMapper from './NavigationBarRouteMapper';
+import NavigationBarRouteMapperFactory from './NavigationBarRouteMapperFactory';
 import WordList from './WordList';
 
 import NavBarStyles from '../../../styles/NavigationBar';
@@ -15,7 +15,7 @@ class WordsTab extends Component {
 
   render() {
     const emitter = new EventEmitter();
-    const mapper = NavigationBarRouteMapper(emitter);
+    const mapper = NavigationBarRouteMapperFactory(emitter);
     return (
       <Navigator
         initialRoute={{

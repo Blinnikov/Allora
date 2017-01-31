@@ -8,7 +8,7 @@ import { sizes } from '../../../constants';
 
 import NavBarStyles from '../../../styles/NavigationBar';
 
-const NavigationBarRouteMapper = (emitter) => ({
+const NavigationBarRouteMapperFactory = (emitter) => ({
   LeftButton: (route, navigator, index, navState) => {
     if (index === 0) {
       return null;
@@ -76,4 +76,4 @@ const NavigationBarRouteMapper = (emitter) => ({
   },
 });
 
-export default NavigationBarRouteMapper;
+export default NavigationBarRouteMapperFactory;
