@@ -3,6 +3,7 @@ import { Switch, Text, View } from 'react-native';
 import { FormLabel, FormInput, List, ListItem } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import UserSettings from '../../services/UserSettings';
+import * as Notifications from '../../services/Notifications';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Settings.Styles';
@@ -30,7 +31,11 @@ class Settings extends Component {
     this.setState({
       enableNotifications: value
     });
+
     UserSettings.enableNotifications = value;
+    if (!value) {
+      Notifications.cancellAll();
+    }
   }
 
   render() {
