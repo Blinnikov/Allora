@@ -104,7 +104,7 @@ class WordList extends Component {
       readyComponent: true,
       component: Component,
       title: I18n.t('words.form.editTitle')
-    })
+    });
   }
 
   _renderItem(item) {
