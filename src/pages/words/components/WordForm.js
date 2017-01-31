@@ -56,7 +56,7 @@ class WordForm extends Component {
             onChangeText={word => this.setState({ word })}
             placeholder={I18n.t('words.form.wordPlaceholder')}
           />
-        <FormLabel>{I18n.t('words.form.translationLabel')}</FormLabel>
+          <FormLabel>{I18n.t('words.form.translationLabel')}</FormLabel>
           <FormInput
             value={this.state.translation}
             autoCapitalize="none"
@@ -64,7 +64,7 @@ class WordForm extends Component {
             onChangeText={translation => this.setState({ translation })}
             placeholder={I18n.t('words.form.translationPlaceholder')}
           />
-        <FormLabel>{I18n.t('words.form.languageLabel')}</FormLabel>
+          <FormLabel>{I18n.t('words.form.languageLabel')}</FormLabel>
           <Picker
             style={{
               paddingHorizontal: 15,
@@ -91,7 +91,6 @@ class WordForm extends Component {
               label={I18n.t('words.form.languages.fr', {flag: flags.fr})}
               value='fr' />
           </Picker>
-
         </View>
       </View>
     );
