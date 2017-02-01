@@ -11,7 +11,7 @@ const getRandomMessage = () => {
 
 const scheduleNotifications = (count = 64, interval = 1, intervalType = 'minute') => {
   const intervalValue = interval * intervals[intervalType];
-  let currentTimeToSchedule = (new Date()).getTime() + 10 * intervals.second;
+  let currentTimeToSchedule = Date.now();
 
   for (var i = 0; i < count; i++) {
     currentTimeToSchedule += intervalValue;
