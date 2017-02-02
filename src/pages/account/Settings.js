@@ -53,20 +53,16 @@ class Settings extends Component {
   _goToSettingsInterval() {
     const { navigator } = this.props;
     navigator.push({
-      component: SettingsInterval
-    });
-  }
-
-  _goToSettingsIntervalType() {
-    const { navigator } = this.props;
-    navigator.push({
-      component: SettingsIntervalType
+      component: SettingsInterval,
+      title: 'Interval Settings'
     });
   }
 
   render() {
     const { enableNotifications, interval, intervalType } = this.state;
-    const message = `${interval} ${intervalType}`;
+    const message = interval && intervalType
+                      ? `${interval} ${intervalType}`
+                      : 'Not set';
 
     return (
       <View style={CommonStyles.pageContainer}>
