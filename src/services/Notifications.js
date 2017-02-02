@@ -36,8 +36,11 @@ const schedule = async () => {
     return;
   }
 
+  const interval = await UserSettings.notificationsInterval;
+  const intervalType = await UserSettings.notificationsIntervalType;
+
   cancellAll();
-  scheduleNotifications(48, 30, 'minute');
+  scheduleNotifications(48, interval, intervalType);
 };
 
 export { getRandomMessage, schedule, cancellAll };
