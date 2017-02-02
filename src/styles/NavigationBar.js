@@ -24,7 +24,7 @@ const NavigationBar = StyleSheet.create({
     paddingRight: 20,
   },
   navBarButtonText: {
-    color: '#5890FF',
+    color: colors.primaryColor,
   },
   navBarButtonIcon: {
     fontSize: 24,

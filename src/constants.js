@@ -1,7 +1,8 @@
 const colors = Object.freeze({
   bodyBackgroundColor: '#EFF0F3',
   barsBackgroundColor: '#F9F9F9',
-  actionColor: '#24CE84'
+  actionColor: '#24CE84',
+  primaryColor: '#5890FF'
 });
 
 const sizes = Object.freeze({
