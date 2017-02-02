@@ -9,6 +9,7 @@ import NavBarStyles from '../../styles/NavigationBar';
 
 class AccountTab extends Component {
   render() {
+    const { rootNavigator } = this.props;
     return (
       <Navigator
         // TODO: Hide nav bar on the first page
@@ -20,7 +21,7 @@ class AccountTab extends Component {
           return Navigator.SceneConfigs.FloatFromRight;
         }}
         renderScene={(route, navigator) => {
-          return React.createElement(route.component, { navigator });
+          return React.createElement(route.component, { navigator, rootNavigator });
         }}
         navigationBar={
           <Navigator.NavigationBar
