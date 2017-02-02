@@ -8,7 +8,7 @@ import CommonStyles from '../../styles/Common';
 import PageStyles from './Settings.Styles';
 
 const availableIntervals = ['1', '5', '10', '15', '30', '45', '60'];
-const availableTypes = ['minute', 'hour', 'day'];
+const availableTypes = ['second', 'minute', 'hour', 'day'];
 
 const checkIcon = <Icon name='ios-checkmark-outline' style={PageStyles.check} />;
 
