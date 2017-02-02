@@ -3,7 +3,7 @@ import { Navigator } from 'react-native';
 import I18n from 'react-native-i18n';
 
 import NavigationBarRouteMapper from './NavigationBarRouteMapper';
-import Account from './Account'
+import Account from './Account';
 
 import NavBarStyles from '../../styles/NavigationBar';
 

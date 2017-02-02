@@ -5,7 +5,7 @@ import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
 import * as Notifications from '../../services/Notifications';
 
-import Login from '../auth/Login'
+import Login from '../auth/Login';
 import Settings from './Settings';
 
 import PageStyles from './Account.Styles';
