@@ -5,8 +5,7 @@ import I18n from 'react-native-i18n';
 import UserSettings from '../../services/UserSettings';
 import * as Notifications from '../../services/Notifications';
 
-import SettingsInterval from './Settings.Interval'
-import SettingsIntervalType from './Settings.IntervalType'
+import SettingsInterval from './Settings.Interval';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Settings.Styles';
@@ -18,13 +17,19 @@ class Settings extends Component {
     this.state = {
       enableNotifications: false
     };
-    this.fillInitialState()
+
+    this._loadSettings();
   }
 
-  async fillInitialState() {
-    const enableNotifications = await UserSettings.enableNotifications
+  async _loadSettings() {
+    const enableNotifications = await UserSettings.enableNotifications;
+    const interval = await UserSettings.notificationsInterval;
+    const intervalType = await UserSettings.notificationsIntervalType;
+
     this.setState({
-      enableNotifications
+      enableNotifications,
+      interval,
+      intervalType
     });
   }
 
@@ -39,6 +44,10 @@ class Settings extends Component {
     if (!value) {
       Notifications.cancellAll();
     }
+  }
+
+  componentWillReceiveProps() {
+    this._loadSettings();
   }
 
   _goToSettingsInterval() {
@@ -56,7 +65,9 @@ class Settings extends Component {
   }
 
   render() {
-    const { enableNotifications } = this.state;
+    const { enableNotifications, interval, intervalType } = this.state;
+    const message = `${interval} ${intervalType}`;
+
     return (
       <View style={CommonStyles.pageContainer}>
         <View style={PageStyles.form}>
@@ -76,12 +87,10 @@ class Settings extends Component {
             enableNotifications && (
               <List>
                 <ListItem
-                  title={'Repeat interval'}
+                  title={'Repeat every'}
+                  rightTitle={message}
+                  rightTitleStyle={PageStyles.rightTitle}
                   onPress={() => this._goToSettingsInterval()}
-                />
-                <ListItem
-                  title={'Interval type'}
-                  onPress={() => this._goToSettingsIntervalType()}
                 />
               </List>
             )
