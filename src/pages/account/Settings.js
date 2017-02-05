@@ -60,16 +60,19 @@ class Settings extends Component {
 
   render() {
     const { enableNotifications, interval, intervalType } = this.state;
-    const message = interval && intervalType
-                      ? `${interval} ${intervalType}`
-                      : 'Not set';
+    let message = I18n.t('settings.interval.notset');
+    if (interval && intervalType) {
+      const pl = interval === '1' ? 'sing' : 'pl';
+      const intervalMessage = I18n.t(`settings.interval.${pl}.${intervalType}`);
+      message = `${interval} ${intervalMessage}`;
+    }
 
     return (
       <View style={CommonStyles.pageContainer}>
         <View style={PageStyles.form}>
           <List>
             <ListItem
-              title={I18n.t('account.settings.enableNotifications')}
+              title={I18n.t('settings.enableNotifications')}
               hideChevron={true}
               label={
                 <Switch
@@ -83,7 +86,7 @@ class Settings extends Component {
             enableNotifications && (
               <List>
                 <ListItem
-                  title={'Repeat every'}
+                  title={I18n.t('settings.repeat')}
                   rightTitle={message}
                   rightTitleStyle={PageStyles.rightTitle}
                   onPress={() => this._goToSettingsInterval()}
