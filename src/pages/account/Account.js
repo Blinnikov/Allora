@@ -32,7 +32,7 @@ class Account extends Component {
 
     navigator.push({
       component: Settings,
-      title: I18n.t('account.settings.title')
+      title: I18n.t('settings.title')
     })
   }
 
@@ -50,12 +50,12 @@ class Account extends Component {
         <Text h4 style={PageStyles.email}>{user.email}</Text>
         <List>
           <ListItem
-            title={'Get random word'}
+            title={I18n.t('account.random')}
             leftIcon={{name: 'ios-repeat', type: 'ionicon'}}
             onPress={this._getRandom.bind(this)}
           />
           <ListItem
-            title={I18n.t('account.settings.title')}
+            title={I18n.t('settings.title')}
             leftIcon={{name: 'ios-settings', type: 'ionicon'}}
             onPress={this._goToSettingsPage.bind(this)}
           />
