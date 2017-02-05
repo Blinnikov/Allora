@@ -16,11 +16,28 @@ const en = Object.freeze({
   account: {
     title: 'Account',
     tab: 'Account',
-    settings: {
-      title: 'Settings',
-      enableNotifications: 'Enable notifications'
-    },
+    random: 'Get random word',
     logout: 'Logout'
+  },
+  settings: {
+    title: 'Settings',
+    enableNotifications: 'Enable notifications',
+    repeat: 'Repeat every',
+    interval: {
+      notset: 'Not set',
+      sing: {
+        second: 'second',
+        minute: 'minute',
+        hour: 'hour',
+        day: 'day'
+      },
+      pl: {
+        second: 'seconds',
+        minute: 'minutes',
+        hour: 'hours',
+        day: 'days'
+      }
+    },
   },
   words: {
     tab: 'Words',
