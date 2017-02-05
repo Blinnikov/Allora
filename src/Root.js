@@ -54,26 +54,23 @@ class Root extends Component {
   }
 
   render() {
-    if(this.state.component) {
-      return (
-        <Navigator
-          initialRoute={{component: this.state.component}}
-          configureScene={() => {
-            return Navigator.SceneConfigs.FloatFromRight;
-          }}
-          renderScene={(route, navigator) => {
-            if (route.component) {
-              return React.createElement(route.component, { navigator });
-            }
-          }}
-        />
-      );
-    } else {
-      return (
-        <View>
-        </View>
-      )
+    if(!this.state.component) {
+      return null;
     }
+
+    return (
+      <Navigator
+        initialRoute={{component: this.state.component}}
+        configureScene={() => {
+          return Navigator.SceneConfigs.FloatFromRight;
+        }}
+        renderScene={(route, navigator) => {
+          if (route.component) {
+            return React.createElement(route.component, { navigator });
+          }
+        }}
+      />
+    );
   }
 }
 
