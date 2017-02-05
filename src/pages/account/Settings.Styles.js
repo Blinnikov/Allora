@@ -6,17 +6,16 @@ const SettingsStyles = StyleSheet.create({
     flex: 1
   },
   listItem: {
-    height: 44,
-    paddingTop: 12,
-    paddingBottom: 12
+    height: 42,
+    paddingTop: 0,
+    paddingBottom: 0,
+    justifyContent: 'center'
   },
   rightTitle: {
     fontSize: 16,
     color: '#999'
   },
-  check: {
-    fontSize: 30,
-    alignSelf: 'center',
+  rightIcon: {
     paddingRight: 10,
     color: colors.primaryColor
   }

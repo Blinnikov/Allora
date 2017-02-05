@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import I18n from 'react-native-i18n';
 import UserSettings from '../../services/UserSettings';
 
 import CommonStyles from '../../styles/Common';
@@ -48,22 +49,26 @@ class SettingsInterval extends Component {
 
   render() {
     const { interval, intervalType } = this.state;
+    const plural = interval === '1' ? 'sing' : 'pl';
+
     return (
       <View style={CommonStyles.pageContainer}>
         <View style={PageStyles.form}>
           <List>
             {
               availableIntervals.map(availableInterval => {
-                const label = availableInterval === interval
-                  ? checkIcon
-                  : null;
+                const hideChevron = availableInterval !== interval;
 
                 return (
                   <ListItem key={availableInterval}
                     title={availableInterval}
                     onPress={() => this._checkInterval(availableInterval)}
-                    hideChevron={true}
-                    label={label}
+                    hideChevron={hideChevron}
+                    rightIcon={{
+                      name: 'ios-checkmark-outline',
+                      type: 'ionicon',
+                      style: PageStyles.rightIcon
+                    }}
                     containerStyle={PageStyles.listItem}
                   />
                 );
@@ -73,17 +78,19 @@ class SettingsInterval extends Component {
           <List>
             {
               availableTypes.map(availableType => {
-                const label = availableType === intervalType
-                  ? checkIcon
-                  : null;
+                const hideChevron = availableType !== intervalType;
 
                 return (
                   <ListItem
                     key={availableType}
                     onPress={() => this._checkIntervalType(availableType)}
-                    title={availableType}
-                    hideChevron={true}
-                    label={label}
+                    title={I18n.t(`settings.interval.${plural}.${availableType}`)}
+                    hideChevron={hideChevron}
+                    rightIcon={{
+                      name: 'ios-checkmark-outline',
+                      type: 'ionicon',
+                      style: PageStyles.rightIcon
+                    }}
                     containerStyle={PageStyles.listItem}
                   />
                 );
