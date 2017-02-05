@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View,  StyleSheet, TouchableOpacity } from 'react-native';
-import I18n from 'react-native-i18n';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import NavBarStyles from '../../styles/NavigationBar';
@@ -22,7 +21,7 @@ const NavigationBarRouteMapper = {
             style={[NavBarStyles.navBarButtonText, NavBarStyles.navBarButtonIcon]}
           />
           <Text style={[NavBarStyles.navBarText, NavBarStyles.navBarButtonText]}>
-            {' '}{I18n.t('words.form.backButton')}
+            {' '}{previousRoute.title}
           </Text>
         </View>
       </TouchableOpacity>
