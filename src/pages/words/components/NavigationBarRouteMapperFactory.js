@@ -14,7 +14,6 @@ const NavigationBarRouteMapperFactory = (emitter) => ({
       return null;
     }
 
-    var previousRoute = navState.routeStack[index - 1];
     return (
       <TouchableOpacity
         onPress={() => navigator.pop()}
