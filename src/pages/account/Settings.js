@@ -34,7 +34,7 @@ class Settings extends Component {
   }
 
   async _toggleNotifications() {
-    const { enableNotifications } = this.state
+    const { enableNotifications } = this.state;
     const value = !enableNotifications;
     this.setState({
       enableNotifications: value
@@ -102,6 +102,6 @@ class Settings extends Component {
 
 Settings.propTypes = {
   navigator: PropTypes.object.isRequired
-}
+};
 
 export default Settings;

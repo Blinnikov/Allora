@@ -18,7 +18,7 @@ class SettingsInterval extends Component {
       interval: '',
       intervalType: ''
     };
-    this._fillInitialState()
+    this._fillInitialState();
   }
 
   async _fillInitialState() {

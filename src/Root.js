@@ -24,8 +24,8 @@ class Root extends Component {
       this.setState({
         component,
         loaded: true
-      })
-    })
+      });
+    });
   }
 
   componentDidMount() {

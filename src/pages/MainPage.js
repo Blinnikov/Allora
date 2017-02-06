@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { TabBarIOS } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 import I18n from 'react-native-i18n';
 
 import WordsTab from './words/components/WordsTab';
@@ -50,6 +50,6 @@ class MainPage extends Component {
 
 MainPage.propTypes = {
   navigator: PropTypes.object.isRequired
-}
+};
 
 export default MainPage;

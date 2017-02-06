@@ -11,7 +11,7 @@ class DynamicListItem extends Component {
     this.state = {
       height: new Animated.Value(this._defaultHeight),
       opacity: new Animated.Value(0)
-    }
+    };
   }
 
   componentDidMount() {
@@ -57,6 +57,6 @@ class DynamicListItem extends Component {
 
 DynamicListItem.propTypes = {
   children: PropTypes.object.isRequired
-}
+};
 
 export default DynamicListItem;

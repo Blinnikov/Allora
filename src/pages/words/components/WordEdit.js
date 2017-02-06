@@ -15,12 +15,12 @@ const WordEdit = ({navigator, emitter, item}) => {
       actionButtonTitle={I18n.t('words.form.editButton')}
     />
   );
-}
+};
 
 WordEdit.propTypes = {
   navigator: PropTypes.object.isRequired,
   emitter: PropTypes.object.isRequired,
   item: PropTypes.object.isRequired,
-}
+};
 
 export default WordEdit;

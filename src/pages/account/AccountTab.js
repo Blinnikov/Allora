@@ -31,6 +31,6 @@ const AccountTab = ({rootNavigator}) => (
 
 AccountTab.propTypes = {
   rootNavigator: PropTypes.object.isRequired
-}
+};
 
 export default AccountTab;

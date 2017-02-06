@@ -11,17 +11,17 @@ const fullHeightContainer = {
   flexDirection: 'column',
   backgroundColor: colors.bodyBackgroundColor,
   justifyContent: 'center'
-}
+};
 
 const tabBarContainer = {
   ...fullHeightContainer,
   paddingBottom: sizes.tabBar
-}
+};
 
 const navBarContainer = {
   ...fullHeightContainer,
   paddingTop: sizes.statusBar + sizes.navigationBar
-}
+};
 
 const Common = StyleSheet.create({
   fullHeightContainer: {

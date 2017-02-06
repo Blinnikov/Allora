@@ -11,7 +11,7 @@ import SignUp from './SignUp';
 import MainPage from '../MainPage';
 
 import CommonStyles from '../../styles/Common';
-import PageStyles from './Login.Styles'
+import PageStyles from './Login.Styles';
 
 class Login extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Login extends Component {
       email: '',
       password: '',
       loaded: true
-    }
+    };
   }
 
   async login() {
@@ -46,7 +46,7 @@ class Login extends Component {
   goToSignUp() {
     this.props.navigator.push({
       component: SignUp
-    })
+    });
   }
 
   render() {
@@ -95,6 +95,6 @@ class Login extends Component {
 
 Login.propTypes = {
   navigator: PropTypes.object.isRequired
-}
+};
 
 export default Login;

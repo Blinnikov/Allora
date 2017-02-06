@@ -11,11 +11,11 @@ const WordAdd = ({navigator, emitter}) => {
       emitter={emitter}
     />
   );
-}
+};
 
 WordAdd.propTypes = {
   navigator: PropTypes.object.isRequired,
   emitter: PropTypes.object.isRequired,
-}
+};
 
 export default WordAdd;

@@ -10,7 +10,7 @@ import { colors } from '../../constants';
 import Login from './Login';
 import MainPage from '../MainPage';
 
-import PageStyles from './Login.Styles'
+import PageStyles from './Login.Styles';
 import CommonStyles from '../../styles/Common';
 
 class SignUp extends Component {
@@ -21,14 +21,14 @@ class SignUp extends Component {
       loaded: true,
       email: '',
       password: ''
-    }
+    };
   }
 
   async signUp() {
     try {
       this.setState({
         loaded: false
-      })
+      });
 
       const { email, password } = this.state;
       await firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -46,7 +46,7 @@ class SignUp extends Component {
     } catch(error) {
       this.setState({
         loaded: true
-      })
+      });
       alert(error.message);
     }
   }
@@ -103,6 +103,6 @@ class SignUp extends Component {
 
 SignUp.propTypes = {
   navigator: PropTypes.object.isRequired
-}
+};
 
 export default SignUp;

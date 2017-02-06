@@ -22,6 +22,7 @@
     "plugin:react-native/all"
   ],
   "rules": {
+    "semi": [2, "always"],
     "no-console": 2,
 
     "react/display-name": 0,

@@ -33,14 +33,14 @@ class Account extends Component {
     navigator.push({
       component: Settings,
       title: I18n.t('settings.title')
-    })
+    });
   }
 
   async _logout() {
     await firebase.auth().signOut();
     this.props.rootNavigator.push({
       component: Login
-    })
+    });
   }
 
   render() {
@@ -73,6 +73,6 @@ class Account extends Component {
 Account.propTypes = {
   navigator: PropTypes.object.isRequired,
   rootNavigator: PropTypes.object.isRequired
-}
+};
 
 export default Account;

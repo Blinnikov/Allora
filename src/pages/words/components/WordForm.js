@@ -3,7 +3,7 @@ import { Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as database from '../../../firebase/database';
-import { flags } from '../../../constants'
+import { flags } from '../../../constants';
 
 import CommonStyles from '../../../styles/Common';
 import PageStyles from './WordForm.Styles';
@@ -17,7 +17,7 @@ class WordForm extends Component {
       word: props.word,
       translation: props.translation,
       lang: props.lang
-    }
+    };
 
     this._processItem = this._processItem.bind(this);
   }
@@ -102,6 +102,6 @@ WordForm.propTypes = {
   lang: PropTypes.string,
   editMode: PropTypes.bool,
   itemKey: PropTypes.string
-}
+};
 
 export default WordForm;

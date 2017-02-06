@@ -4,7 +4,7 @@ const getItemsRef = () => {
   const user = firebase.auth().currentUser;
   const path = `/user/${user.uid}/items`;
   return firebase.database().ref(path);
-}
+};
 
 const addWordItem = ({word = '', translation = '', lang}) => {
   getItemsRef().push({
@@ -13,7 +13,7 @@ const addWordItem = ({word = '', translation = '', lang}) => {
     lang,
     added: Date.now()
   });
-}
+};
 
 const updateWordItem = (key, {word, translation, lang}) => {
   getItemsRef().child(key)
@@ -23,7 +23,7 @@ const updateWordItem = (key, {word, translation, lang}) => {
       lang,
       updated: Date.now()
     });
-}
+};
 
 const getRandomWord = () => {
   let result;
@@ -48,6 +48,6 @@ const getRandomWord = () => {
   });
 
   return result;
-}
+};
 
 export { getItemsRef, addWordItem, updateWordItem, getRandomWord };

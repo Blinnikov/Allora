@@ -7,7 +7,7 @@ const getRandomMessage = () => {
   const { word, translation, lang } = database.getRandomWord();
   const flag = flags[lang];
   return `${flag} ${word} - ${translation}`;
-}
+};
 
 const scheduleNotifications = (count = 64, interval = 1, intervalType = 'minute') => {
   const intervalValue = interval * intervals[intervalType];
@@ -15,7 +15,7 @@ const scheduleNotifications = (count = 64, interval = 1, intervalType = 'minute'
 
   for (var i = 0; i < count; i++) {
     currentTimeToSchedule += intervalValue;
-    scheduleSporadicNotification(currentTimeToSchedule)
+    scheduleSporadicNotification(currentTimeToSchedule);
   }
 };
 
@@ -24,11 +24,11 @@ const scheduleSporadicNotification = (date) => {
     alertBody: getRandomMessage(),
     fireDate: date
   });
-}
+};
 
 const cancellAll = () => {
   PushNotificationIOS.cancelAllLocalNotifications();
-}
+};
 
 const schedule = async () => {
   const enableNotifications = await UserSettings.enableNotifications;

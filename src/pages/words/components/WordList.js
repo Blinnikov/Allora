@@ -3,7 +3,7 @@ import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
 import I18n from 'react-native-i18n';
 import ListItem from './ListItem';
 import DynamicListItem from './DynamicListItem';
-import WordEdit from './WordEdit'
+import WordEdit from './WordEdit';
 import * as database from '../../../firebase/database';
 
 import CommonStyles from '../../../styles/Common';
@@ -21,7 +21,7 @@ class WordList extends Component {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2
       })
-    }
+    };
   }
 
   componentDidMount() {
@@ -88,7 +88,7 @@ class WordList extends Component {
         }
       ],
       'default'
-    )
+    );
   }
 
   _onEditButtonPress(item) {
@@ -98,7 +98,7 @@ class WordList extends Component {
         item={item}
         navigator={navigator}
         emitter={emitter}
-      />
+      />;
     navigator.push({
       readyComponent: true,
       component: Component,
@@ -117,7 +117,7 @@ class WordList extends Component {
           onEditPress={() => this._onEditButtonPress(item)}
         />
       </DynamicListItem>
-    )
+    );
   }
 
   _removeItem(key) {
@@ -125,8 +125,8 @@ class WordList extends Component {
       return {
         ...item,
         shouldRemove: item.key === key
-      }
-    })
+      };
+    });
     this.setState({
       dataSource: this.state.dataSource.cloneWithRows(this._data)
     });
@@ -141,6 +141,6 @@ class WordList extends Component {
 WordList.propTypes = {
   navigator: PropTypes.object.isRequired,
   emitter: PropTypes.object.isRequired
-}
+};
 
 export default WordList;
