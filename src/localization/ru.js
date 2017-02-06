@@ -21,7 +21,7 @@ const ru = Object.freeze({
     tab: 'Слова',
     list: {
       title: 'Ваши слова',
-      removeMessage: `Вы уверены, что хотите удалить '{{word}}'?`
+      removeMessage: 'Вы уверены, что хотите удалить "{{word}}"?'
     },
     form: {
       addTitle: 'Добавить слово',

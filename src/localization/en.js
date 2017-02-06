@@ -43,7 +43,7 @@ const en = Object.freeze({
     tab: 'Words',
     list: {
       title: 'Your words',
-      removeMessage: `Are you sure you want to remove '{{word}}'?`
+      removeMessage: 'Are you sure you want to remove "{{word}}"?'
     },
     form: {
       addTitle: 'Add new word',

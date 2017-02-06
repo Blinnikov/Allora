@@ -23,6 +23,7 @@
   ],
   "rules": {
     "semi": [2, "always"],
+    "quotes": [2, "single"],
     "no-console": 2,
 
     "react/display-name": 0,
