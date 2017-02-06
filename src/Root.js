@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { AppState, Navigator, PushNotificationIOS, View } from 'react-native';
+import { AppState, Navigator, PushNotificationIOS } from 'react-native';
 import * as firebase from 'firebase';
 import * as Notifications from './services/Notifications';
 import MainPage from './pages/MainPage';
 import Login from './pages/auth/Login';
-
-import CommonStyles from './styles/Common';
 
 class Root extends Component {
   constructor(props) {

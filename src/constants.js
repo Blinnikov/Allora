@@ -1,4 +1,26 @@
 const colors = Object.freeze({
+  $accountFontColor: '#666',
+
+  // Word list
+  $liRightTitleColor: '#999',
+  $liBackgroundColor: '#FFF',
+  $liBorderColor: '#EEE',
+  $liTitleColor: '#333',
+  $liSubtitleColor: '#888',
+  $liActionText: '#FFF',
+  $actionButtonTextColor:  '#FFF',
+
+  // Common
+  $buttonPrimaryText:  '#FFF',
+
+  // nav bar
+  $navBarTitleTextColor: '#373E4D',
+  $navBarBorderBottomColor: '#EEE',
+
+  $black: 'black',
+  $loginLabelColor: 'rgba(0, 0, 0, 0.5)',
+
+  transparent: 'transparent',
   bodyBackgroundColor: '#EFF0F3',
   barsBackgroundColor: '#F9F9F9',
   actionColor: '#24CE84',

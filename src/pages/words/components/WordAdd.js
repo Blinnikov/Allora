@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 import WordForm from './WordForm';
 import I18n from 'react-native-i18n';
 
@@ -11,6 +11,11 @@ const WordAdd = ({navigator, emitter}) => {
       emitter={emitter}
     />
   );
+}
+
+WordAdd.propTypes = {
+  navigator: PropTypes.object.isRequired,
+  emitter: PropTypes.object.isRequired,
 }
 
 export default WordAdd;

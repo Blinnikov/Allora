@@ -1,13 +1,12 @@
 import React from 'react';
-import { Text, View,  StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import I18n from 'react-native-i18n';
 import Icon from 'react-native-vector-icons/Ionicons';
 import WordAdd from './WordAdd';
 
-import { sizes } from '../../../constants';
-
 import NavBarStyles from '../../../styles/NavigationBar';
 
+/*eslint no-unused-vars: 0*/
 const NavigationBarRouteMapperFactory = (emitter) => ({
   LeftButton: (route, navigator, index, navState) => {
     if (index === 0) {
@@ -15,10 +14,8 @@ const NavigationBarRouteMapperFactory = (emitter) => ({
     }
 
     return (
-      <TouchableOpacity
-        onPress={() => navigator.pop()}
-        style={NavBarStyles.navBarLeftButton}>
-        <View style={{ flexDirection: 'row' }}>
+      <TouchableOpacity onPress={() => navigator.pop()}>
+        <View style={NavBarStyles.navBarLeftButton}>
           <Icon
             name='ios-arrow-back'
             style={[NavBarStyles.navBarButtonText, NavBarStyles.navBarButtonIcon]}

@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../constants';
 
 const styles = StyleSheet.create({
   email: {
     alignSelf: 'center',
-    color: '#666'
+    color: colors.$accountFontColor
   }
 });
 

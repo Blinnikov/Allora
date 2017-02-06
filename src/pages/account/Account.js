@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { PushNotificationIOS, View } from 'react-native';
-import { Button, List, ListItem, Text } from 'react-native-elements';
+import React, { Component, PropTypes } from 'react';
+import { View } from 'react-native';
+import { List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
 import * as Notifications from '../../services/Notifications';
@@ -44,7 +44,7 @@ class Account extends Component {
   }
 
   render() {
-    const { user, loaded } = this.state;
+    const { user } = this.state;
     return (
       <View style={CommonStyles.fullHeightContainer}>
         <Text h4 style={PageStyles.email}>{user.email}</Text>
@@ -68,6 +68,11 @@ class Account extends Component {
       </View>
     );
   }
+}
+
+Account.propTypes = {
+  navigator: PropTypes.object.isRequired,
+  rootNavigator: PropTypes.object.isRequired
 }
 
 export default Account;

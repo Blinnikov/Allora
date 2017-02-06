@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
 import I18n from 'react-native-i18n';
 import ListItem from './ListItem';
@@ -71,7 +71,7 @@ class WordList extends Component {
     });
   }
 
-  _onRemoveButtonPress = ({key, word}) => {
+  _onRemoveButtonPress({key, word}) {
     AlertIOS.prompt(
       I18n.t('words.list.removeMessage', { word }),
       null,
@@ -91,9 +91,8 @@ class WordList extends Component {
     )
   }
 
-  _onEditButtonPress = (item) => {
+  _onEditButtonPress(item) {
     const { navigator, emitter } = this.props;
-    const { word, translation, lang } = item;
     const Component =
       <WordEdit
         item={item}
@@ -137,6 +136,11 @@ class WordList extends Component {
     this.itemsRef.child(item.key).remove();
   }
 
+}
+
+WordList.propTypes = {
+  navigator: PropTypes.object.isRequired,
+  emitter: PropTypes.object.isRequired
 }
 
 export default WordList;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { TabBarIOS } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import I18n from 'react-native-i18n';
@@ -46,6 +46,10 @@ class MainPage extends Component {
       </TabBarIOS>
     );
   }
+}
+
+MainPage.propTypes = {
+  navigator: PropTypes.object.isRequired
 }
 
 export default MainPage;

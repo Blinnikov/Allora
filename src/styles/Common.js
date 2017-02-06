@@ -33,30 +33,18 @@ const Common = StyleSheet.create({
   },
   buttonDefault: {
     ...button,
-    backgroundColor: 'transparent'
+    backgroundColor: colors.transparent
   },
   buttonDefaultText: {
-    color: '#2980b9',
+    color: colors.primaryColor,
     fontSize: 16
-  },
-  buttonDefaultTextDestructive: {
-    color: '#e74c3c',
-    fontSize: 16,
-    fontWeight: '500'
   },
   buttonPrimary: {
     ...button,
-
-    borderColor: '#2980b9',
-    backgroundColor: '#3498db'
-  },
-  buttonSuccess: {
-    ...button,
-    borderColor: '#27ae60',
-    backgroundColor: '#2ecc71',
+    backgroundColor: colors.primaryColor
   },
   buttonPrimaryText: {
-    color: '#FFF',
+    color: colors.$buttonPrimaryText,
     fontSize: 18
   },
   buttonLogin: {

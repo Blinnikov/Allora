@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
 import I18n from 'react-native-i18n';
 import UserSettings from '../../services/UserSettings';
 
@@ -10,8 +9,6 @@ import PageStyles from './Settings.Styles';
 
 const availableIntervals = ['1', '5', '10', '15', '30', '45', '60'];
 const availableTypes = ['second', 'minute', 'hour', 'day'];
-
-const checkIcon = <Icon name='ios-checkmark-outline' style={PageStyles.check} />;
 
 class SettingsInterval extends Component {
   constructor(props) {

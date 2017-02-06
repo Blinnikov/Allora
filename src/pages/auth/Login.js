@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { View } from 'react-native';
 import I18n from 'react-native-i18n';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import { Button } from 'react-native-elements';
 import { Sae } from 'react-native-textinput-effects';
 import * as firebase from 'firebase';
+import { colors } from '../../constants';
 
 import SignUp from './SignUp';
 import MainPage from '../MainPage';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Login.Styles'
-
-const primaryColor='#3498db';
 
 class Login extends Component {
   constructor(props) {
@@ -60,9 +59,9 @@ class Login extends Component {
           label={I18n.t('auth.login.email')}
           iconClass={FontAwesomeIcon}
           iconName={'pencil'}
-          iconColor={primaryColor}
-          labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
-          inputStyle={{color: 'black'}}
+          iconColor={colors.primaryColor}
+          labelStyle={PageStyles.label}
+          inputStyle={PageStyles.input}
           onChangeText={email => this.setState({email})}
           autoCapitalize="none"
         />
@@ -70,9 +69,9 @@ class Login extends Component {
           label={I18n.t('auth.login.password')}
           iconClass={FontAwesomeIcon}
           iconName={'key'}
-          iconColor={primaryColor}
-          labelStyle={{color: 'rgba(0, 0, 0, 0.5)'}}
-          inputStyle={{color: 'black'}}
+          iconColor={colors.primaryColor}
+          labelStyle={PageStyles.label}
+          inputStyle={PageStyles.input}
           onChangeText={password => this.setState({password})}
           password={true}
           autoCapitalize="none"
@@ -92,6 +91,10 @@ class Login extends Component {
       </View>
     );
   }
+}
+
+Login.propTypes = {
+  navigator: PropTypes.object.isRequired
 }
 
 export default Login;

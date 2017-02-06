@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Switch, Text, View } from 'react-native';
-import { FormLabel, FormInput, List, ListItem } from 'react-native-elements';
+import React, { Component, PropTypes } from 'react';
+import { Switch, View } from 'react-native';
+import { List, ListItem } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import UserSettings from '../../services/UserSettings';
 import * as Notifications from '../../services/Notifications';
@@ -98,6 +98,10 @@ class Settings extends Component {
       </View>
     );
   }
+}
+
+Settings.propTypes = {
+  navigator: PropTypes.object.isRequired
 }
 
 export default Settings;

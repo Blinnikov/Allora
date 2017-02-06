@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
-import { Button } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as database from '../../../firebase/database';
 import { flags } from '../../../constants'
@@ -25,7 +24,8 @@ class WordForm extends Component {
 
   _processItem() {
     const { editMode } = this.props;
-    const wordItem = { word, translation, lang } = this.state;
+    const { word, translation, lang } = this.state;
+    const wordItem = { word, translation, lang };
     if (editMode) {
       database.updateWordItem(this.props.itemKey, wordItem);
     } else {
@@ -44,7 +44,6 @@ class WordForm extends Component {
   }
 
   render() {
-    const { actionButtonTitle } = this.props;
     return (
       <View style={CommonStyles.pageContainer}>
         <View style={PageStyles.form}>
@@ -66,9 +65,7 @@ class WordForm extends Component {
           />
           <FormLabel>{I18n.t('words.form.languageLabel')}</FormLabel>
           <Picker
-            style={{
-              paddingHorizontal: 15,
-            }}
+            style={PageStyles.picker}
             selectedValue={this.state.lang}
             onValueChange={lang => this.setState({ lang })}
           >
@@ -95,6 +92,16 @@ class WordForm extends Component {
       </View>
     );
   }
+}
+
+WordForm.propTypes = {
+  navigator: PropTypes.object.isRequired,
+  emitter: PropTypes.object.isRequired,
+  word: PropTypes.string,
+  translation: PropTypes.string,
+  lang: PropTypes.string,
+  editMode: PropTypes.bool,
+  itemKey: PropTypes.string
 }
 
 export default WordForm;

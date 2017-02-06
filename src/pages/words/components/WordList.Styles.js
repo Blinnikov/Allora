@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { sizes, colors } from '../../../constants';
+import { colors } from '../../../constants';
 
 const WordListStyles = StyleSheet.create({
   listView: {
@@ -9,8 +9,8 @@ const WordListStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#FFF',
-    borderColor: '#EEE',
+    backgroundColor: colors.$liBackgroundColor,
+    borderColor: colors.$liBorderColor,
     borderWidth: 1,
     paddingLeft: 16,
     paddingRight: 16,
@@ -26,46 +26,36 @@ const WordListStyles = StyleSheet.create({
     fontSize: 34
   },
   liTitle: {
-    color: '#333',
+    color: colors.$liTitleColor,
     fontSize: 16
   },
   liSubtitle: {
     fontSize: 12,
-    color: '#888'
+    color: colors.$liSubtitleColor
   },
   action: {
     backgroundColor: colors.actionColor,
-    borderColor: 'transparent',
+    borderColor: colors.transparent,
     borderWidth: 1,
     paddingLeft: 16,
     paddingRight: 16,
     paddingTop: 14,
     paddingBottom: 16
   },
-  actionText: {
-    color: '#FFF',
-    fontSize: 16,
-    textAlign: 'center'
-  },
   actionButtonsRow: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end'
   },
-  actionButton: {
-    marginLeft: 10,
-    marginBottom: 0
-  },
   soundButtonIcon: {
     fontSize: 40,
-    borderColor: 'blue',
-    color: '#5890FF'
+    color: colors.primaryColor
   },
-  removeButtonStyle: {
+  actionButtonStyle: {
     fontSize: 32,
     alignSelf: 'center',
     paddingVertical: 19,
-    color: '#FFF'
+    color: colors.$actionButtonTextColor
   }
 });
 

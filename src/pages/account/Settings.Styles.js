@@ -13,7 +13,7 @@ const SettingsStyles = StyleSheet.create({
   },
   rightTitle: {
     fontSize: 16,
-    color: '#999'
+    color: colors.$liRightTitleColor
   },
   rightIcon: {
     paddingRight: 10,

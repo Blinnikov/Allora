@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Animated } from 'react-native';
 
 class DynamicListItem extends Component {
@@ -53,6 +53,10 @@ class DynamicListItem extends Component {
       </Animated.View>
     );
   }
+}
+
+DynamicListItem.propTypes = {
+  children: PropTypes.object.isRequired
 }
 
 export default DynamicListItem;

@@ -5,19 +5,20 @@ const NavigationBar = StyleSheet.create({
   navBar: {
     backgroundColor: colors.barsBackgroundColor,
     borderWidth: 1,
-    borderColor: 'transparent',
-    borderBottomColor: '#EEE',
+    borderColor: colors.transparent,
+    borderBottomColor: colors.$navBarBorderBottomColor,
   },
   navBarText: {
     fontSize: 16,
     marginVertical: 10,
   },
   navBarTitleText: {
-    color: '#373E4D',
+    color: colors.$navBarTitleTextColor,
     fontWeight: '500',
     marginVertical: 9,
   },
   navBarLeftButton: {
+    flexDirection: 'row',
     paddingLeft: 20,
   },
   navBarRightButton: {
