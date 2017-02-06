@@ -6,6 +6,7 @@ import Index from '../index.ios.js';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
+  /*eslint no-unused-vars: 0*/
   const tree = renderer.create(
     <Index />
   );
