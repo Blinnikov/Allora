@@ -14,8 +14,30 @@ const ru = Object.freeze({
     }
   },
   account: {
+    title: '[RU] Account',
     tab: 'Профиль',
+    random: '[RU] Get random word',
     logout: 'Выйти'
+  },
+  settings: {
+    title: '[RU] Settings',
+    enableNotifications: '[RU] Enable notifications',
+    repeat: '[RU] Repeat every',
+    interval: {
+      notset: '[RU] Not set',
+      sing: {
+        second: '[RU] second',
+        minute: '[RU] minute',
+        hour: '[RU] hour',
+        day: '[RU] day'
+      },
+      pl: {
+        second: '[RU] seconds',
+        minute: '[RU] minutes',
+        hour: '[RU] hours',
+        day: '[RU] days'
+      }
+    },
   },
   words: {
     tab: 'Слова',
@@ -27,6 +49,7 @@ const ru = Object.freeze({
       addTitle: 'Добавить слово',
       editTitle: 'Редактирование',
       backButton: 'Назад',
+      done: 'Готово',
       wordLabel: 'Слово',
       wordPlaceholder: 'Пожалуйста введите слово',
       translationLabel: 'Перевод',
