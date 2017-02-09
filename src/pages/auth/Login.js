@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 import { colors } from '../../constants';
 
 import SignUp from './SignUp';
-import Tabs from '../Tabs';
+import Tabs from '../../navigation/Tabs';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Login.Styles';

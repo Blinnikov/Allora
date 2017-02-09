@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppState, Navigator, PushNotificationIOS } from 'react-native';
 import * as firebase from 'firebase';
 import * as Notifications from './services/Notifications';
-import Tabs from './pages/Tabs';
+import Tabs from './navigation/Tabs';
 import Login from './pages/auth/Login';
 
 class Root extends Component {

@@ -3,8 +3,8 @@ import { TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import I18n from 'react-native-i18n';
 
-import WordsTab from './words/components/WordsTab';
-import AccountTab from './account/AccountTab';
+import WordsTab from '../pages/words/components/WordsTab';
+import AccountTab from '../pages/account/AccountTab';
 
 /* eslint react/prop-types: 0 */
 const Tabs = TabNavigator({
