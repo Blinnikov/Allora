@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 import { colors } from '../../constants';
 
 import Login from './Login';
-import MainPage from '../MainPage';
+import Tabs from '../Tabs';
 
 import PageStyles from './Login.Styles';
 import CommonStyles from '../../styles/Common';
@@ -41,7 +41,7 @@ class SignUp extends Component {
 
       // Navigate to home page, the user is auto logged in
       this.props.navigator.push({
-        component: MainPage
+        component: Tabs
       });
     } catch(error) {
       this.setState({

@@ -13,11 +13,6 @@ const fullHeightContainer = {
   justifyContent: 'center'
 };
 
-const tabBarContainer = {
-  ...fullHeightContainer,
-  paddingBottom: sizes.tabBar
-};
-
 const navBarContainer = {
   ...fullHeightContainer,
   paddingTop: sizes.statusBar + sizes.navigationBar
@@ -29,7 +24,6 @@ const Common = StyleSheet.create({
   },
   pageContainer: {
     ...navBarContainer,
-    ...tabBarContainer
   },
   buttonDefault: {
     ...button,

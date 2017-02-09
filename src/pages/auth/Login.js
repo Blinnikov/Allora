@@ -8,7 +8,7 @@ import * as firebase from 'firebase';
 import { colors } from '../../constants';
 
 import SignUp from './SignUp';
-import MainPage from '../MainPage';
+import Tabs from '../Tabs';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Login.Styles';
@@ -32,7 +32,7 @@ class Login extends Component {
       const { email, password } = this.state;
       await firebase.auth().signInWithEmailAndPassword(email, password);
       this.props.navigator.push({
-        component: MainPage
+        component: Tabs
       });
     } catch (e) {
       alert(e.message);

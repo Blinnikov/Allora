@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppState, Navigator, PushNotificationIOS } from 'react-native';
 import * as firebase from 'firebase';
 import * as Notifications from './services/Notifications';
-import MainPage from './pages/MainPage';
+import Tabs from './pages/Tabs';
 import Login from './pages/auth/Login';
 
 class Root extends Component {
@@ -19,7 +19,7 @@ class Root extends Component {
 
   getInitialComponent() {
     firebase.auth().onAuthStateChanged(user => {
-      const component = user ? MainPage : Login;
+      const component = user ? Tabs : Login;
 
       this.setState({
         component,
