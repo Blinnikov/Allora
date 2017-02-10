@@ -24,6 +24,7 @@ const it = Object.freeze({
     enableNotifications: '[IT] Enable notifications',
     repeat: '[IT] Repeat every',
     interval: {
+      title: '[IT] Interval Settings',
       notset: '[IT] Not set',
       sing: {
         second: '[IT] second',

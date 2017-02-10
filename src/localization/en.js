@@ -24,6 +24,7 @@ const en = Object.freeze({
     enableNotifications: 'Enable notifications',
     repeat: 'Repeat every',
     interval: {
+      title: 'Interval Settings',
       notset: 'Not set',
       sing: {
         second: 'second',
