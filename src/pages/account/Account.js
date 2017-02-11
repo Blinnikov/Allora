@@ -1,11 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+import { NavigationActions } from 'react-navigation';
 import { View } from 'react-native';
 import { List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import * as firebase from 'firebase';
 import * as Notifications from '../../services/Notifications';
-
-import Login from '../auth/Login';
 
 import PageStyles from './Account.Styles';
 import CommonStyles from '../../styles/Common';
@@ -17,7 +16,6 @@ class Account extends Component {
     const user = firebase.auth().currentUser;
     this.state = {
       user,
-      loaded: true
     };
   }
 
@@ -33,15 +31,17 @@ class Account extends Component {
 
   async _logout() {
     await firebase.auth().signOut();
-    this.props.screenProps.rootNavigator.push({
-      component: Login
+
+    this.props.navigation.dispatch({
+      type: NavigationActions.NAVIGATE,
+      routeName: 'Login',
     });
   }
 
   render() {
     const { user } = this.state;
     return (
-      <View style={CommonStyles.fullHeightContainer}>
+      <View style={CommonStyles.pageContainer}>
         <Text h4 style={PageStyles.email}>{user.email}</Text>
         <List>
           <ListItem

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { NavigationActions } from 'react-navigation';
 import { View } from 'react-native';
 import I18n from 'react-native-i18n';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
@@ -6,9 +7,6 @@ import { Button } from 'react-native-elements';
 import { Sae } from 'react-native-textinput-effects';
 import * as firebase from 'firebase';
 import { colors } from '../../constants';
-
-import SignUp from './SignUp';
-import Tabs from '../../navigation/Tabs';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Login.Styles';
@@ -19,40 +17,26 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      loaded: true
     };
   }
 
   async login() {
-    this.setState({
-      loaded: false
-    });
-
     try {
       const { email, password } = this.state;
       await firebase.auth().signInWithEmailAndPassword(email, password);
-      this.props.navigator.push({
-        component: Tabs
-      });
     } catch (e) {
       alert(e.message);
-    } finally {
-      this.setState({
-        loaded: true
-      });
     }
   }
 
   goToSignUp() {
-    this.props.navigator.push({
-      component: SignUp
-    });
+    this.props.navigation.navigate('SignUp');
   }
 
   render() {
     return (
       <View style={[
-          CommonStyles.fullHeightContainer,
+          CommonStyles.pageContainer,
           PageStyles.loginPageContainer,
         ]}>
         <Sae
@@ -94,7 +78,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  navigator: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired
 };
 
 export default Login;
