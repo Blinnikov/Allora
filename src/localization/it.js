@@ -1,71 +1,71 @@
 const it = Object.freeze({
   common: {
-    remove: '[IT] Remove',
-    cancel: '[IT] Cancel'
+    remove: 'Rimuovere',
+    cancel: 'Annulla'
   },
   auth: {
     login: {
-      email: '[IT] Email Address',
-      password: '[IT] Password',
-      loginButton: '[IT] Login',
-      goToSignUp: '[IT] New here?',
-      signUp: '[IT] Sign Up',
-      goToLogin: '[IT] Do you already have an account?'
+      email: 'E-mail',
+      password: 'Parola d\'ordine',
+      loginButton: 'Accesso',
+      goToSignUp: 'Non ha ancora registrato?',
+      signUp: 'Registrazione',
+      goToLogin: 'Ha già un account?'
     }
   },
   account: {
-    title: '[IT] Account',
-    tab: '[IT] Account',
-    random: '[IT] Get random word',
-    logout: '[IT] Logout'
+    title: 'Il suo profilo',
+    tab: 'Profilo',
+    random: 'Prendi la parola casuale',
+    logout: 'Esci'
   },
   settings: {
-    title: '[IT] Settings',
-    enableNotifications: '[IT] Enable notifications',
-    repeat: '[IT] Repeat every',
+    title: 'Impostazioni',
+    enableNotifications: 'Consenti notifiche',
+    repeat: 'Ripetere ogni',
     interval: {
-      title: '[IT] Interval Settings',
-      notset: '[IT] Not set',
+      title: 'Periodo',
+      notset: 'Non specificato',
       sing: {
-        second: '[IT] second',
-        minute: '[IT] minute',
-        hour: '[IT] hour',
-        day: '[IT] day'
+        second: 'secondo',
+        minute: 'minuto',
+        hour: 'ora',
+        day: 'giorno'
       },
       pl: {
-        second: '[IT] seconds',
-        minute: '[IT] minutes',
-        hour: '[IT] hours',
-        day: '[IT] days'
+        second: 'secondi',
+        minute: 'minuti',
+        hour: 'ore',
+        day: 'giorni '
       }
     },
   },
   words: {
     tab: 'Parole',
     list: {
-      title: 'Le tue parole',
+      title: 'Le sue parole',
       removeMessage: 'Sei sicuro che vuoi rimuovere la parola "{{word}}"?'
     },
     form: {
-      addTitle: '[IT] Add new word',
-      editTitle: '[IT] Edit the word',
-      backButton: '[IT] Back',
+      addTitle: 'Aggiungi una parola',
+      editTitle: 'Modifica la parola',
+      backButton: 'Indietro',
       done: 'Fine',
-      wordLabel: '[IT] Word',
-      wordPlaceholder: '[IT] Please enter the word',
-      translationLabel: '[IT] Translation',
-      translationPlaceholder: '[IT] And of course the translation',
-      languageLabel: '[IT] Language',
+      wordLabel: 'Parola',
+      wordPlaceholder: 'Si prega di inserire la parola ',
+      translationLabel: 'Traduzione',
+      translationPlaceholder: 'Si prega di inserire la traduzione',
+      languageLabel: 'Lingua',
       languages: {
-        de: '[IT] German {{flag}}',
-        ru: '[IT] Russian {{flag}}',
-        en: '[IT] English {{flag}}',
-        it: '[IT] Italian {{flag}}',
-        es: '[IT] Spanish {{flag}}',
-        fr: '[IT] French {{flag}}'
+        de: 'Tedesco {{flag}}',
+        ru: 'Russo {{flag}}',
+        en: 'Inglese {{flag}}',
+        it: 'Italiano {{flag}}',
+        es: 'Spagnolo {{flag}}',
+        fr: 'Francese {{flag}}'
       },
-      addButton: '[IT] Add',
-      editButton: '[IT] Save',
+      addButton: 'Aggiungi',
+      editButton: 'Salva',
     }
   }
 });

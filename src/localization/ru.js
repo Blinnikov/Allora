@@ -14,29 +14,29 @@ const ru = Object.freeze({
     }
   },
   account: {
-    title: '[RU] Account',
+    title: 'Ваш профиль',
     tab: 'Профиль',
-    random: '[RU] Get random word',
+    random: 'Выбрать случайное слово',
     logout: 'Выйти'
   },
   settings: {
-    title: '[RU] Settings',
-    enableNotifications: '[RU] Enable notifications',
-    repeat: '[RU] Repeat every',
+    title: 'Настройки',
+    enableNotifications: 'Включить уведомления',
+    repeat: 'Повторять каждые',
     interval: {
-      title: '[RU] Interval Settings',
-      notset: '[RU] Not set',
+      title: 'Период уведомлений',
+      notset: 'Не задано',
       sing: {
-        second: '[RU] second',
-        minute: '[RU] minute',
-        hour: '[RU] hour',
-        day: '[RU] day'
+        second: 'секунда',
+        minute: 'минута',
+        hour: 'час',
+        day: 'день'
       },
       pl: {
-        second: '[RU] seconds',
-        minute: '[RU] minutes',
-        hour: '[RU] hours',
-        day: '[RU] days'
+        second: 'секунд',
+        minute: 'минут',
+        hour: 'часов',
+        day: 'дней'
       }
     },
   },
