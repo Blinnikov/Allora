@@ -3,6 +3,14 @@ import UserSettings from './UserSettings';
 import * as database from '../firebase/database';
 import { flags, intervals } from '../constants';
 
+const requestPermissions = () => {
+  PushNotificationIOS.checkPermissions(permissions => {
+    if (!permissions.alert) {
+      PushNotificationIOS.requestPermissions();
+    }
+  });
+};
+
 const getRandomMessage = () => {
   const { word, translation, lang } = database.getRandomWord();
   const flag = flags[lang];
@@ -43,4 +51,4 @@ const schedule = async () => {
   scheduleNotifications(48, interval, intervalType);
 };
 
-export { getRandomMessage, schedule, cancellAll };
+export { requestPermissions, getRandomMessage, schedule, cancellAll };
