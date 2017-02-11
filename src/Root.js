@@ -9,11 +9,19 @@ class Root extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      loaded: false
+    };
+
     this.getInitialComponent();
   }
 
   getInitialComponent() {
     firebase.auth().onAuthStateChanged(user => {
+      this.setState({
+        loaded: true
+      });
+
       // TODO: Add splash screen
       if (user) {
         this._goToRoute('MainPage');
@@ -47,6 +55,10 @@ class Root extends Component {
   }
 
   render() {
+    if (this.state.loaded) {
+      return null;
+    }
+
     return (
       <RootStack ref={nav => { this.navigator = nav; }} />
     );
