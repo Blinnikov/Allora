@@ -11,7 +11,7 @@ const Tabs = TabNavigator({
   WordsTab: {
     screen: WordsTabStack,
     navigationOptions: {
-      tabBar: () => ({
+      tabBar: (params) => ({
         label: I18n.t('words.tab'),
         icon: ({focused, tintColor}) => (
           <Icon
@@ -19,7 +19,8 @@ const Tabs = TabNavigator({
             size={26}
             style={{ color: tintColor }}
           />
-        )
+        ),
+        visible: params.state.index <= 0
       })
     }
   },
