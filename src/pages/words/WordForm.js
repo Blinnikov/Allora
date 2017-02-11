@@ -1,11 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { Picker, View } from 'react-native';
+import { Button, Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';
-import * as database from '../../../firebase/database';
-import { flags } from '../../../constants';
+import * as database from '../../firebase/database';
+import { flags } from '../../constants';
 
-import CommonStyles from '../../../styles/Common';
+import NavBarStyles from '../../styles/NavigationBar';
+import CommonStyles from '../../styles/Common';
 import PageStyles from './WordForm.Styles';
 
 class WordForm extends Component {
@@ -32,15 +33,23 @@ class WordForm extends Component {
       database.addWordItem(wordItem);
     }
 
-    this.props.navigator.pop();
+    this.props.navigation.goBack();
   }
 
-  componentDidMount() {
-    this.props.emitter.on('words.form.done', this._processItem);
-  }
-
-  componentWillUnmount() {
-    this.props.emitter.removeListener('words.form.done', this._processItem);
+  componentDidMount () {
+    const params = {
+      header: {
+        right: (
+          <View style={NavBarStyles.navBarRightButton}>
+            <Button
+                onPress={() => this._processItem()}
+                title={I18n.t('words.form.done')}
+            />
+          </View>
+        ),
+      }
+    };
+    this.props.navigation.setParams(params);
   }
 
   render() {
@@ -95,8 +104,7 @@ class WordForm extends Component {
 }
 
 WordForm.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  emitter: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired,
   word: PropTypes.string,
   translation: PropTypes.string,
   lang: PropTypes.string,

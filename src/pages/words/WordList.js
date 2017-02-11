@@ -1,15 +1,37 @@
 import React, { Component, PropTypes } from 'react';
-import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
+import { ActivityIndicator, AlertIOS, ListView, TouchableOpacity, View } from 'react-native';
 import I18n from 'react-native-i18n';
-import ListItem from './ListItem';
-import DynamicListItem from './DynamicListItem';
+import Icon from 'react-native-vector-icons/Ionicons';
+import ListItem from './components/ListItem';
+import DynamicListItem from './components/DynamicListItem';
 import WordEdit from './WordEdit';
-import * as database from '../../../firebase/database';
+import * as database from '../../firebase/database';
 
-import CommonStyles from '../../../styles/Common';
+import NavBarStyles from '../../styles/NavigationBar';
+import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
 
 class WordList extends Component {
+  static navigationOptions = {
+    header: (navigation) => {
+      // Render a button on the right side of the header
+      // When pressed switches the screen to edit mode.
+      return {
+        right: (
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate('WordAdd')}
+              >
+              <Icon name='md-add' style={[
+                  NavBarStyles.navBarRightButtonIcon
+                ]}/>
+            </TouchableOpacity>
+
+        ),
+      };
+    },
+  };
+
   constructor(props) {
     super(props);
 
@@ -92,18 +114,8 @@ class WordList extends Component {
   }
 
   _onEditButtonPress(item) {
-    const { navigator, emitter } = this.props;
-    const Component =
-      <WordEdit
-        item={item}
-        navigator={navigator}
-        emitter={emitter}
-      />;
-    navigator.push({
-      readyComponent: true,
-      component: Component,
-      title: I18n.t('words.form.editTitle')
-    });
+    const { navigation } = this.props;
+    navigation.navigate('WordEdit', { item });
   }
 
   _renderItem(item) {
@@ -137,10 +149,5 @@ class WordList extends Component {
   }
 
 }
-
-WordList.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  emitter: PropTypes.object.isRequired
-};
 
 export default WordList;
