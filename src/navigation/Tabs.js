@@ -49,8 +49,4 @@ const Tabs = TabNavigator({
    },
  });
 
-const TabsWrapper = ({ navigator }) => (
-  <Tabs screenProps={{rootNavigator: navigator}} />
-);
-
-export default TabsWrapper;
+export default Tabs;
