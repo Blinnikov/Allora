@@ -1,48 +1,43 @@
 import React, { Component } from 'react';
-import { AppState, Navigator, PushNotificationIOS } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+import { AppState } from 'react-native';
 import * as firebase from 'firebase';
 import * as Notifications from './services/Notifications';
-import Tabs from './navigation/Tabs';
-import Login from './pages/auth/Login';
+import RootStack from './navigation/RootStack';
 
 class Root extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      component: null,
-      loaded: false
-    };
 
     this.getInitialComponent();
   }
 
   getInitialComponent() {
     firebase.auth().onAuthStateChanged(user => {
-      const component = user ? Tabs : Login;
-
-      this.setState({
-        component,
-        loaded: true
-      });
+      // TODO: Add splash screen
+      if (user) {
+        this._goToRoute('MainPage');
+      }
     });
   }
 
+  _goToRoute(routeName) {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName }),
+      ]
+    });
+    this.navigator.dispatch(resetAction);
+  }
+
   componentDidMount() {
-    this._requestPermissions();
+    Notifications.requestPermissions();
     AppState.addEventListener('change', this._handleAppStateChange);
   }
 
   componentWillUnmount() {
     AppState.removeEventListener('change', this._handleAppStateChange);
-  }
-
-  _requestPermissions() {
-    PushNotificationIOS.checkPermissions(permissions => {
-      if (!permissions.alert) {
-        PushNotificationIOS.requestPermissions();
-      }
-    });
   }
 
   _handleAppStateChange(currentAppState) {
@@ -52,22 +47,8 @@ class Root extends Component {
   }
 
   render() {
-    if(!this.state.component) {
-      return null;
-    }
-
     return (
-      <Navigator
-        initialRoute={{component: this.state.component}}
-        configureScene={() => {
-          return Navigator.SceneConfigs.FloatFromRight;
-        }}
-        renderScene={(route, navigator) => {
-          if (route.component) {
-            return React.createElement(route.component, { navigator });
-          }
-        }}
-      />
+      <RootStack ref={nav => { this.navigator = nav; }} />
     );
   }
 }
