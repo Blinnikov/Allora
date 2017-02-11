@@ -5,7 +5,7 @@ import Swipeout from 'react-native-swipeout';
 import Tts from 'react-native-tts';
 import { flags } from '../../../constants';
 
-import PageStyles from './WordList.Styles';
+import PageStyles from '../WordList.Styles';
 
 const getLang = (item) => {
   if (item.lang === 'en') {
