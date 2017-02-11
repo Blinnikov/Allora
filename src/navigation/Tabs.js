@@ -3,13 +3,13 @@ import { TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import I18n from 'react-native-i18n';
 
-import WordsTab from '../pages/words/components/WordsTab';
-import AccountTab from '../pages/account/AccountTab';
+import WordsTabStack from './WordsTabStack';
+import AccountTabStack from './AccountTabStack';
 
 /* eslint react/prop-types: 0 */
 const Tabs = TabNavigator({
   WordsTab: {
-    screen: WordsTab,
+    screen: WordsTabStack,
     navigationOptions: {
       tabBar: () => ({
         label: I18n.t('words.tab'),
@@ -24,9 +24,10 @@ const Tabs = TabNavigator({
     }
   },
   AccountTab: {
-    screen: AccountTab,
+    screen: AccountTabStack,
     navigationOptions: {
-      tabBar: () => ({
+    tabBar: (params) => {
+      return {
         label: I18n.t('account.tab'),
         icon: ({focused, tintColor}) => (
           <Icon
@@ -34,11 +35,19 @@ const Tabs = TabNavigator({
             size={26}
             style={{ color: tintColor }}
           />
-        )
-      })
+        ),
+        visible: params.state.index <= 0
+      };
     }
   }
-});
+}
+}, {
+  navigationOptions: {
+     header: {
+       visible: false,
+     },
+   },
+ });
 
 const TabsWrapper = ({ navigator }) => (
   <Tabs screenProps={{rootNavigator: navigator}} />
