@@ -5,8 +5,6 @@ import I18n from 'react-native-i18n';
 import UserSettings from '../../services/UserSettings';
 import * as Notifications from '../../services/Notifications';
 
-import SettingsInterval from './Settings.Interval';
-
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Settings.Styles';
 
@@ -51,11 +49,8 @@ class Settings extends Component {
   }
 
   _goToSettingsInterval() {
-    const { navigator } = this.props;
-    navigator.push({
-      component: SettingsInterval,
-      title: 'Interval Settings'
-    });
+    const { navigation } = this.props;
+    navigation.navigate('SettingsInterval');
   }
 
   render() {
@@ -101,7 +96,7 @@ class Settings extends Component {
 }
 
 Settings.propTypes = {
-  navigator: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired
 };
 
 export default Settings;

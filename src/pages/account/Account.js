@@ -6,7 +6,6 @@ import * as firebase from 'firebase';
 import * as Notifications from '../../services/Notifications';
 
 import Login from '../auth/Login';
-import Settings from './Settings';
 
 import PageStyles from './Account.Styles';
 import CommonStyles from '../../styles/Common';
@@ -28,17 +27,13 @@ class Account extends Component {
   }
 
   _goToSettingsPage() {
-    const { navigator } = this.props;
-
-    navigator.push({
-      component: Settings,
-      title: I18n.t('settings.title')
-    });
+    const { navigation } = this.props;
+    navigation.navigate('Settings');
   }
 
   async _logout() {
     await firebase.auth().signOut();
-    this.props.rootNavigator.push({
+    this.props.screenProps.rootNavigator.push({
       component: Login
     });
   }
@@ -71,8 +66,10 @@ class Account extends Component {
 }
 
 Account.propTypes = {
-  navigator: PropTypes.object.isRequired,
-  rootNavigator: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
+  screenProps: PropTypes.shape({
+    rootNavigator: PropTypes.object.isRequired
+  })
 };
 
 export default Account;
