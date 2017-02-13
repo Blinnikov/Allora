@@ -3,6 +3,7 @@
     "react",
     "react-native"
   ],
+  "parser": "babel-eslint", // Fixes error for static class properties
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module",
