@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { NavigationActions } from 'react-navigation';
 import { View } from 'react-native';
 import I18n from 'react-native-i18n';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';

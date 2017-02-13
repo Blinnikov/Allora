@@ -4,7 +4,6 @@ import I18n from 'react-native-i18n';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ListItem from './components/ListItem';
 import DynamicListItem from './components/DynamicListItem';
-import WordEdit from './WordEdit';
 import * as database from '../../firebase/database';
 
 import NavBarStyles from '../../styles/NavigationBar';
@@ -149,5 +148,9 @@ class WordList extends Component {
   }
 
 }
+
+WordList.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default WordList;
