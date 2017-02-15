@@ -17,15 +17,13 @@ class WordList extends Component {
       // When pressed switches the screen to edit mode.
       return {
         right: (
-
             <TouchableOpacity
               onPress={() => navigation.navigate('WordAdd')}
-              >
+            >
               <Icon name='md-add' style={[
                   NavBarStyles.navBarRightButtonIcon
                 ]}/>
             </TouchableOpacity>
-
         ),
       };
     },
