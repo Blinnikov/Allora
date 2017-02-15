@@ -55,7 +55,7 @@ class Root extends Component {
   }
 
   render() {
-    if (this.state.loaded) {
+    if (!this.state.loaded) {
       return null;
     }
 
