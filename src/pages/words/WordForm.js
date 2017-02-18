@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Button, Picker, View } from 'react-native';
 import { FormLabel, FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';
-import * as database from '../../firebase/database';
+import { words as db } from '../../firebase/database';
 import { flags } from '../../constants';
 
 import NavBarStyles from '../../styles/NavigationBar';
@@ -13,7 +13,6 @@ class WordForm extends Component {
   constructor(props) {
     super(props);
 
-    this.itemsRef = database.getItemsRef();
     this.state = {
       word: props.word,
       translation: props.translation,
@@ -28,9 +27,9 @@ class WordForm extends Component {
     const { word, translation, lang } = this.state;
     const wordItem = { word, translation, lang };
     if (editMode) {
-      database.updateWordItem(this.props.itemKey, wordItem);
+      db.update(this.props.itemKey, wordItem);
     } else {
-      database.addWordItem(wordItem);
+      db.add(wordItem);
     }
 
     this.props.navigation.goBack();

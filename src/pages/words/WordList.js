@@ -4,7 +4,7 @@ import I18n from 'react-native-i18n';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ListItem from './components/ListItem';
 import DynamicListItem from './components/DynamicListItem';
-import * as database from '../../firebase/database';
+import { words as db } from '../../firebase/database';
 
 import NavBarStyles from '../../styles/NavigationBar';
 import CommonStyles from '../../styles/Common';
@@ -33,7 +33,6 @@ class WordList extends Component {
     super(props);
 
     this._data = null;
-    this.itemsRef = database.getItemsRef();
 
     this.state = {
       loading: true,
@@ -44,7 +43,7 @@ class WordList extends Component {
   }
 
   componentDidMount() {
-    this._listenForItems(this.itemsRef);
+    db.subscribe(items => this._setDataSource(items));
   }
 
   render() {
@@ -68,25 +67,11 @@ class WordList extends Component {
     );
   }
 
-  _listenForItems(itemsRef) {
-    itemsRef.on('value', snap => {
-      const items = [];
-      snap.forEach(record => {
-        const { word, translation, lang } = record.val();
-        items.unshift({
-          key: record.key,
-          word,
-          translation,
-          lang,
-          shouldRemove: false
-        });
-      });
-
-      this._data = items;
-      this.setState({
-        loading: false,
-        dataSource: this.state.dataSource.cloneWithRows(this._data)
-      });
+  _setDataSource(items) {
+    this._data = items;
+    this.setState({
+      loading: false,
+      dataSource: this.state.dataSource.cloneWithRows(this._data)
     });
   }
 
@@ -142,7 +127,7 @@ class WordList extends Component {
   }
 
   _onDidRemove(item) {
-    this.itemsRef.child(item.key).remove();
+    db.remove(item.key);
   }
 
 }
