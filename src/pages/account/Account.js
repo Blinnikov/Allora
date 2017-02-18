@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { NavigationActions } from 'react-navigation';
 import { View } from 'react-native';
 import { List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
@@ -13,7 +12,7 @@ class Account extends Component {
   constructor(props) {
     super(props);
 
-    const user = firebase.auth().currentUser;
+    const user = firebase.auth().currentUser || {};
     this.state = {
       user,
     };
@@ -31,11 +30,6 @@ class Account extends Component {
 
   async _logout() {
     await firebase.auth().signOut();
-
-    this.props.navigation.dispatch({
-      type: NavigationActions.NAVIGATE,
-      routeName: 'Login',
-    });
   }
 
   render() {
@@ -67,9 +61,6 @@ class Account extends Component {
 
 Account.propTypes = {
   navigation: PropTypes.object.isRequired,
-  screenProps: PropTypes.shape({
-    rootNavigator: PropTypes.object.isRequired
-  })
 };
 
 export default Account;

@@ -1,42 +1,29 @@
 import React, { Component } from 'react';
-import { NavigationActions } from 'react-navigation';
-import { AppState } from 'react-native';
+import { ActivityIndicator, AppState } from 'react-native';
 import * as firebase from 'firebase';
 import * as Notifications from './services/Notifications';
-import RootStack from './navigation/RootStack';
+import LoginStack from './navigation/LoginStack';
+import Tabs from './navigation/Tabs';
 
 class Root extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      authenticated: false,
       loaded: false
     };
 
-    this.getInitialComponent();
+    this._checkAuthentication();
   }
 
-  getInitialComponent() {
+  _checkAuthentication() {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({
-        loaded: true
+        loaded: true,
+        authenticated: !!user,
       });
-
-      // TODO: Add splash screen
-      if (user) {
-        this._goToRoute('MainPage');
-      }
     });
-  }
-
-  _goToRoute(routeName) {
-    const resetAction = NavigationActions.reset({
-      index: 0,
-      actions: [
-        NavigationActions.navigate({ routeName }),
-      ]
-    });
-    this.navigator.dispatch(resetAction);
   }
 
   componentDidMount() {
@@ -56,12 +43,18 @@ class Root extends Component {
 
   render() {
     if (!this.state.loaded) {
-      return null;
+      return <ActivityIndicator />;
     }
 
-    return (
-      <RootStack ref={nav => { this.navigator = nav; }} />
-    );
+    if (this.state.authenticated) {
+      return (
+        <Tabs />
+      );
+    } else {
+      return (
+        <LoginStack />
+      );
+    }
   }
 }
 
