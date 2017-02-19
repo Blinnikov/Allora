@@ -1,12 +1,11 @@
 import React, { Component, PropTypes } from 'react';
-import { ActivityIndicator, AlertIOS, ListView, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
 import I18n from 'react-native-i18n';
-import Icon from 'react-native-vector-icons/Ionicons';
 import ListItem from './components/ListItem';
 import DynamicListItem from './components/DynamicListItem';
+import WordsAddButton from '../../navigation/WordsAddButton';
 import { words as db } from '../../firebase/database';
 
-import NavBarStyles from '../../styles/NavigationBar';
 import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
 
@@ -17,13 +16,7 @@ class WordList extends Component {
       // When pressed switches the screen to edit mode.
       return {
         right: (
-            <TouchableOpacity
-              onPress={() => navigation.navigate('WordAdd')}
-            >
-              <Icon name='md-add' style={[
-                  NavBarStyles.navBarRightButtonIcon
-                ]}/>
-            </TouchableOpacity>
+            <WordsAddButton navigation={navigation} />
         ),
       };
     },
