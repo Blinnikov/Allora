@@ -40,6 +40,12 @@ const it = Object.freeze({
       }
     },
   },
+  courses: {
+    tab: '[IT] Courses',
+    list: {
+      title: '[IT] Your courses'
+    }
+  },
   words: {
     tab: 'Parole',
     list: {
