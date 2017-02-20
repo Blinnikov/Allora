@@ -3,11 +3,29 @@ import { TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import I18n from 'react-native-i18n';
 
+import CoursesTabStack from './CoursesTabStack';
 import WordsTabStack from './WordsTabStack';
 import AccountTabStack from './AccountTabStack';
 
 /* eslint react/prop-types: 0 */
 const Tabs = TabNavigator({
+  CoursesTab: {
+    screen: CoursesTabStack,
+    navigationOptions: {
+      tabBar: (params) => ({
+        label: I18n.t('courses.tab'),
+        // name={focused ? 'ios-images' : 'ios-images-outline'}
+        icon: ({focused, tintColor}) => (
+          <Icon
+            name={focused ? 'ios-albums' : 'ios-albums-outline'}
+            size={26}
+            style={{ color: tintColor }}
+          />
+        ),
+        // visible: params.state.index <= 0
+      })
+    }
+  },
   WordsTab: {
     screen: WordsTabStack,
     navigationOptions: {
