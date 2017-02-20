@@ -12,7 +12,7 @@ const Tabs = TabNavigator({
   CoursesTab: {
     screen: CoursesTabStack,
     navigationOptions: {
-      tabBar: (params) => ({
+      tabBar: () => ({
         label: I18n.t('courses.tab'),
         // name={focused ? 'ios-images' : 'ios-images-outline'}
         icon: ({focused, tintColor}) => (
@@ -22,7 +22,6 @@ const Tabs = TabNavigator({
             style={{ color: tintColor }}
           />
         ),
-        // visible: params.state.index <= 0
       })
     }
   },
