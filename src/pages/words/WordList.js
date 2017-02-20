@@ -12,8 +12,6 @@ import PageStyles from './WordList.Styles';
 class WordList extends Component {
   static navigationOptions = {
     header: (navigation) => {
-      // Render a button on the right side of the header
-      // When pressed switches the screen to edit mode.
       return {
         right: (
             <WordsAddButton navigation={navigation} />
