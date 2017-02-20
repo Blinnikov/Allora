@@ -16,7 +16,6 @@ const WordsTabStack = StackNavigator({
   WordList: {
     screen: WordList,
     navigationOptions: {
-
       header: (props, defaultHeader) => {
         return {
           ...defaultHeader,
