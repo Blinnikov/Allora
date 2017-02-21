@@ -1,13 +1,13 @@
 import * as firebase from 'firebase';
 
-const getItemsRef = () => {
+const words = () => {
   const user = firebase.auth().currentUser;
   if (!user) {
     return null;
   }
 
-  const path = `/user/${user.uid}/items`;
+  const path = `/user/${user.uid}/words`;
   return firebase.database().ref(path);
 };
 
-export default getItemsRef;
+export { words };

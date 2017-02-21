@@ -1,7 +1,7 @@
-import reference from './reference';
+import { words as wordsRef} from './references';
 
 const subscribe = (cb) => {
-  const ref = reference();
+  const ref = wordsRef();
   if (!ref) {
     return;
   }
@@ -24,7 +24,7 @@ const subscribe = (cb) => {
 };
 
 const add = ({word = '', translation = '', lang}) => {
-  reference().push({
+  wordsRef().push({
     word,
     translation,
     lang,
@@ -33,7 +33,7 @@ const add = ({word = '', translation = '', lang}) => {
 };
 
 const update = (key, {word, translation, lang}) => {
-  reference().child(key)
+  wordsRef().child(key)
     .update({
       word,
       translation,
@@ -45,7 +45,7 @@ const update = (key, {word, translation, lang}) => {
 const getRandom = () => {
   let result;
 
-  reference().on('value', snap => {
+  wordsRef().on('value', snap => {
     let i = 0;
     const rand = Math.floor(Math.random() * snap.numChildren());
 
@@ -68,7 +68,7 @@ const getRandom = () => {
 };
 
 const remove = (key) => {
-  reference().child(key).remove();
+  wordsRef().child(key).remove();
 };
 
 export { subscribe, add, update, remove, getRandom };
