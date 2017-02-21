@@ -4,7 +4,7 @@ import I18n from 'react-native-i18n';
 import ListItem from './components/ListItem';
 import DynamicListItem from './components/DynamicListItem';
 import WordsAddButton from '../../navigation/WordsAddButton';
-import { words as db } from '../../firebase/database';
+import db from '../../firebase/database';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
@@ -34,7 +34,7 @@ class WordList extends Component {
   }
 
   componentDidMount() {
-    db.subscribe(items => this._setDataSource(items));
+    db.words.subscribe(items => this._setDataSource(items));
   }
 
   render() {
@@ -118,7 +118,7 @@ class WordList extends Component {
   }
 
   _onDidRemove(item) {
-    db.remove(item.key);
+    db.words.remove(item.key);
   }
 
 }
