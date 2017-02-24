@@ -22,7 +22,7 @@ class Account extends Component {
     const res = Notifications.getRandomMessage();
     alert(res);
   }
- //
+
   _goToSettingsPage() {
     const { navigation } = this.props;
     navigation.navigate('Settings');

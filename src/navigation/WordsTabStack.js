@@ -42,7 +42,6 @@ const WordsTabStack = StackNavigator({
     screen: WordEdit,
     navigationOptions: {
       header: ({state}) => {
-        // get the "deepest" current params.
         const currentParams = getCurrentParams(state);
         const { right } = currentParams.header || {};
         return {

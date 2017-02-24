@@ -14,7 +14,6 @@ const Tabs = TabNavigator({
     navigationOptions: {
       tabBar: () => ({
         label: I18n.t('courses.tab'),
-        // name={focused ? 'ios-images' : 'ios-images-outline'}
         icon: ({focused, tintColor}) => (
           <Icon
             name={focused ? 'ios-albums' : 'ios-albums-outline'}
