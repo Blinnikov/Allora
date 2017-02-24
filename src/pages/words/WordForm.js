@@ -9,6 +9,8 @@ import NavBarStyles from '../../styles/NavigationBar';
 import CommonStyles from '../../styles/Common';
 import PageStyles from './WordForm.Styles';
 
+const availableLanguages = ['de', 'ru', 'en', 'it', 'es', 'fr'];
+
 class WordForm extends Component {
   constructor(props) {
     super(props);
@@ -77,24 +79,15 @@ class WordForm extends Component {
             selectedValue={this.state.lang}
             onValueChange={lang => this.setState({ lang })}
           >
-            <Picker.Item
-              label={I18n.t('words.form.languages.de', {flag: flags.de})}
-              value='de' />
-            <Picker.Item
-              label={I18n.t('words.form.languages.ru', {flag: flags.ru})}
-              value='ru' />
-            <Picker.Item
-              label={I18n.t('words.form.languages.en', {flag: flags.en})}
-              value='en' />
-            <Picker.Item
-              label={I18n.t('words.form.languages.it', {flag: flags.it})}
-              value='it' />
-            <Picker.Item
-              label={I18n.t('words.form.languages.es', {flag: flags.es})}
-              value='es' />
-            <Picker.Item
-              label={I18n.t('words.form.languages.fr', {flag: flags.fr})}
-              value='fr' />
+          {
+            availableLanguages.map((lang, idx) => {
+              const flag = flags[lang];
+              const label = I18n.t(`words.form.languages.${lang}`, {flag});
+              return (
+                <Picker.Item key={idx} label={label} value={lang} />
+              );
+            })
+          }
           </Picker>
         </View>
       </View>
