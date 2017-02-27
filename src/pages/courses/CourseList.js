@@ -10,13 +10,10 @@ class CourseList extends Component {
     this._data = null;
 
     this.state = {
-      loading: true,
-      // dataSource: new ListView.DataSource({
-      //   rowHasChanged: (row1, row2) => row1 !== row2
-      // })
+      loading: true
     };
   }
-  
+
   render() {
     if (this.state.loading) {
       return <ActivityIndicator
