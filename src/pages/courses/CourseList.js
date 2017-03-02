@@ -16,10 +16,12 @@ class CourseList extends Component {
 
   render() {
     if (this.state.loading) {
-      return <ActivityIndicator
-        size='large'
-        style={CommonStyles.pageContainer}
-      />;
+      return (
+        <ActivityIndicator
+          size='large'
+          style={CommonStyles.pageContainer}
+        />
+      );
     }
 
     return (
