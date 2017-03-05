@@ -13,7 +13,7 @@ class Settings extends Component {
     super(props);
 
     this.state = {
-      enableNotifications: false
+      enableNotifications: false,
     };
 
     this._loadSettings();
@@ -27,7 +27,7 @@ class Settings extends Component {
     this.setState({
       enableNotifications,
       interval,
-      intervalType
+      intervalType,
     });
   }
 
@@ -35,7 +35,7 @@ class Settings extends Component {
     const { enableNotifications } = this.state;
     const value = !enableNotifications;
     this.setState({
-      enableNotifications: value
+      enableNotifications: value,
     });
 
     UserSettings.enableNotifications = value;
@@ -93,7 +93,7 @@ class Settings extends Component {
 }
 
 Settings.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 export default Settings;

@@ -15,7 +15,7 @@ const subscribe = cb => {
         word,
         translation,
         lang,
-        shouldRemove: false
+        shouldRemove: false,
       });
     });
 
@@ -28,7 +28,7 @@ const add = ({ word = '', translation = '', lang }) => {
     word,
     translation,
     lang,
-    added: Date.now()
+    added: Date.now(),
   });
 };
 
@@ -37,7 +37,7 @@ const update = (key, { word, translation, lang }) => {
     word,
     translation,
     lang,
-    updated: Date.now()
+    updated: Date.now(),
   });
 };
 
@@ -55,7 +55,7 @@ const getRandom = () => {
           key: record.key,
           word,
           translation,
-          lang
+          lang,
         };
       }
 

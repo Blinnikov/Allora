@@ -24,7 +24,7 @@ const UserSettings = {
   },
   set notificationsIntervalType(value) {
     UserDefaults.setStringForKey(value, notificationsIntervalTypeKey);
-  }
+  },
 };
 
 export default UserSettings;

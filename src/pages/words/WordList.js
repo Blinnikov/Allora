@@ -13,9 +13,9 @@ class WordList extends Component {
   static navigationOptions = {
     header: navigation => {
       return {
-        right: <WordsAddButton navigation={navigation} />
+        right: <WordsAddButton navigation={navigation} />,
       };
-    }
+    },
   };
 
   constructor(props) {
@@ -26,8 +26,8 @@ class WordList extends Component {
     this.state = {
       loading: true,
       dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2
-      })
+        rowHasChanged: (row1, row2) => row1 !== row2,
+      }),
     };
   }
 
@@ -59,7 +59,7 @@ class WordList extends Component {
     this._data = items;
     this.setState({
       loading: false,
-      dataSource: this.state.dataSource.cloneWithRows(this._data)
+      dataSource: this.state.dataSource.cloneWithRows(this._data),
     });
   }
 
@@ -71,15 +71,15 @@ class WordList extends Component {
         {
           text: I18n.t('common.remove'),
           onPress: () => this._removeItem(key),
-          style: 'destructive'
+          style: 'destructive',
         },
         {
           text: I18n.t('common.cancel'),
           onPress: () => {},
-          style: 'cancel'
-        }
+          style: 'cancel',
+        },
       ],
-      'default'
+      'default',
     );
   }
 
@@ -107,11 +107,11 @@ class WordList extends Component {
     this._data = this._data.map(item => {
       return {
         ...item,
-        shouldRemove: item.key === key
+        shouldRemove: item.key === key,
       };
     });
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(this._data)
+      dataSource: this.state.dataSource.cloneWithRows(this._data),
     });
   }
 
@@ -121,7 +121,7 @@ class WordList extends Component {
 }
 
 WordList.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 export default WordList;

@@ -19,10 +19,10 @@ WordEdit.propTypes = {
   navigation: PropTypes.shape({
     state: PropTypes.shape({
       params: PropTypes.shape({
-        item: PropTypes.object.isRequired
-      })
-    })
-  }).isRequired
+        item: PropTypes.object.isRequired,
+      }),
+    }),
+  }).isRequired,
 };
 
 export default WordEdit;

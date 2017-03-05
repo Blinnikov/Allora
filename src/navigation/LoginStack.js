@@ -5,15 +5,15 @@ import SignUp from '../pages/auth/SignUp';
 const LoginStack = StackNavigator(
   {
     Login: {
-      screen: Login
+      screen: Login,
     },
     SignUp: {
-      screen: SignUp
-    }
+      screen: SignUp,
+    },
   },
   {
-    headerMode: 'none'
-  }
+    headerMode: 'none',
+  },
 );
 
 export default LoginStack;

@@ -15,7 +15,7 @@ class Login extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
     };
   }
 
@@ -74,7 +74,7 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 export default Login;

@@ -14,7 +14,7 @@ class Account extends Component {
 
     const user = firebase.auth().currentUser || {};
     this.state = {
-      user
+      user,
     };
   }
 
@@ -60,7 +60,7 @@ class Account extends Component {
 }
 
 Account.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 export default Account;

@@ -4,8 +4,8 @@ import { colors } from '../../constants';
 const styles = StyleSheet.create({
   email: {
     alignSelf: 'center',
-    color: colors.$accountFontColor
-  }
+    color: colors.$accountFontColor,
+  },
 });
 
 export default styles;

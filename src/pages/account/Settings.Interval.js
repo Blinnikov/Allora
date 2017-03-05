@@ -16,7 +16,7 @@ class SettingsInterval extends Component {
 
     this.state = {
       interval: '',
-      intervalType: ''
+      intervalType: '',
     };
     this._fillInitialState();
   }
@@ -26,21 +26,21 @@ class SettingsInterval extends Component {
     const intervalType = await UserSettings.notificationsIntervalType;
     this.setState({
       interval,
-      intervalType
+      intervalType,
     });
   }
 
   _checkInterval(interval) {
     UserSettings.notificationsInterval = interval;
     this.setState({
-      interval
+      interval,
     });
   }
 
   _checkIntervalType(intervalType) {
     UserSettings.notificationsIntervalType = intervalType;
     this.setState({
-      intervalType
+      intervalType,
     });
   }
 
@@ -64,7 +64,7 @@ class SettingsInterval extends Component {
                   rightIcon={{
                     name: 'ios-checkmark-outline',
                     type: 'ionicon',
-                    style: PageStyles.rightIcon
+                    style: PageStyles.rightIcon,
                   }}
                   containerStyle={PageStyles.listItem}
                 />
@@ -84,7 +84,7 @@ class SettingsInterval extends Component {
                   rightIcon={{
                     name: 'ios-checkmark-outline',
                     type: 'ionicon',
-                    style: PageStyles.rightIcon
+                    style: PageStyles.rightIcon,
                   }}
                   containerStyle={PageStyles.listItem}
                 />

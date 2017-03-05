@@ -1,7 +1,7 @@
 const it = Object.freeze({
   common: {
     remove: 'Rimuovere',
-    cancel: 'Annulla'
+    cancel: 'Annulla',
   },
   auth: {
     login: {
@@ -10,14 +10,14 @@ const it = Object.freeze({
       loginButton: 'Accesso',
       goToSignUp: 'Non ha ancora registrato?',
       signUp: 'Registrazione',
-      goToLogin: 'Ha già un account?'
-    }
+      goToLogin: 'Ha già un account?',
+    },
   },
   account: {
     title: 'Il suo profilo',
     tab: 'Profilo',
     random: 'Prendi la parola casuale',
-    logout: 'Esci'
+    logout: 'Esci',
   },
   settings: {
     title: 'Impostazioni',
@@ -30,27 +30,27 @@ const it = Object.freeze({
         second: 'secondo',
         minute: 'minuto',
         hour: 'ora',
-        day: 'giorno'
+        day: 'giorno',
       },
       pl: {
         second: 'secondi',
         minute: 'minuti',
         hour: 'ore',
-        day: 'giorni '
-      }
-    }
+        day: 'giorni ',
+      },
+    },
   },
   courses: {
     tab: '[IT] Courses',
     list: {
-      title: '[IT] Your courses'
-    }
+      title: '[IT] Your courses',
+    },
   },
   words: {
     tab: 'Parole',
     list: {
       title: 'Le sue parole',
-      removeMessage: 'Sei sicuro che vuoi rimuovere la parola "{{word}}"?'
+      removeMessage: 'Sei sicuro che vuoi rimuovere la parola "{{word}}"?',
     },
     form: {
       addTitle: 'Aggiungi una parola',
@@ -68,12 +68,12 @@ const it = Object.freeze({
         en: 'Inglese {{flag}}',
         it: 'Italiano {{flag}}',
         es: 'Spagnolo {{flag}}',
-        fr: 'Francese {{flag}}'
+        fr: 'Francese {{flag}}',
       },
       addButton: 'Aggiungi',
-      editButton: 'Salva'
-    }
-  }
+      editButton: 'Salva',
+    },
+  },
 });
 
 export default it;

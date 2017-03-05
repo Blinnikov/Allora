@@ -10,14 +10,14 @@ class DynamicListItem extends Component {
 
     this.state = {
       height: new Animated.Value(this._defaultHeight),
-      opacity: new Animated.Value(0)
+      opacity: new Animated.Value(0),
     };
   }
 
   componentDidMount() {
     Animated.timing(this.state.opacity, {
       toValue: 1,
-      duration: this._defaultTransition
+      duration: this._defaultTransition,
     }).start();
   }
 
@@ -32,14 +32,14 @@ class DynamicListItem extends Component {
   _onRemove(cb) {
     Animated.timing(this.state.height, {
       toValue: 0,
-      duration: this._defaultTransition
+      duration: this._defaultTransition,
     }).start(cb);
   }
 
   _resetHeight() {
     Animated.timing(this.state.height, {
       toValue: this._defaultHeight,
-      duration: 0
+      duration: 0,
     }).start();
   }
 
@@ -54,7 +54,7 @@ class DynamicListItem extends Component {
 }
 
 DynamicListItem.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.object.isRequired,
 };
 
 export default DynamicListItem;

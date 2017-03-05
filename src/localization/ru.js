@@ -1,7 +1,7 @@
 const ru = Object.freeze({
   common: {
     remove: 'Удалить',
-    cancel: 'Отмена'
+    cancel: 'Отмена',
   },
   auth: {
     login: {
@@ -10,14 +10,14 @@ const ru = Object.freeze({
       loginButton: 'Войти',
       goToSignUp: 'Впервые здесь?',
       signUp: 'Регистрация',
-      goToLogin: 'Уже есть аккаунт?'
-    }
+      goToLogin: 'Уже есть аккаунт?',
+    },
   },
   account: {
     title: 'Ваш профиль',
     tab: 'Профиль',
     random: 'Выбрать случайное слово',
-    logout: 'Выйти'
+    logout: 'Выйти',
   },
   settings: {
     title: 'Настройки',
@@ -30,27 +30,27 @@ const ru = Object.freeze({
         second: 'секунда',
         minute: 'минута',
         hour: 'час',
-        day: 'день'
+        day: 'день',
       },
       pl: {
         second: 'секунд',
         minute: 'минут',
         hour: 'часов',
-        day: 'дней'
-      }
-    }
+        day: 'дней',
+      },
+    },
   },
   courses: {
     tab: '[RU] Courses',
     list: {
-      title: '[RU] Your courses'
-    }
+      title: '[RU] Your courses',
+    },
   },
   words: {
     tab: 'Слова',
     list: {
       title: 'Ваши слова',
-      removeMessage: 'Вы уверены, что хотите удалить "{{word}}"?'
+      removeMessage: 'Вы уверены, что хотите удалить "{{word}}"?',
     },
     form: {
       addTitle: 'Добавить слово',
@@ -68,12 +68,12 @@ const ru = Object.freeze({
         en: 'Английский {{flag}}',
         it: 'Итальянский {{flag}}',
         es: 'Испанский {{flag}}',
-        fr: 'Французский {{flag}}'
+        fr: 'Французский {{flag}}',
       },
       addButton: 'Добавить',
-      editButton: 'Обновить'
-    }
-  }
+      editButton: 'Обновить',
+    },
+  },
 });
 
 export default ru;

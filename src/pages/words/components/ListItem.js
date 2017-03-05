@@ -38,7 +38,7 @@ class ListItem extends Component {
         ),
         backgroundColor: '#2980b9',
         underlayColor: 'rgba(0, 0, 0, 0.6)',
-        onPress: () => onEditPress(item)
+        onPress: () => onEditPress(item),
       },
       {
         component: (
@@ -46,8 +46,8 @@ class ListItem extends Component {
         ),
         backgroundColor: '#e74c3c',
         underlayColor: 'rgba(0, 0, 0, 0.6)',
-        onPress: () => onRemovePress(item)
-      }
+        onPress: () => onRemovePress(item),
+      },
     ];
 
     return (
@@ -81,7 +81,7 @@ class ListItem extends Component {
 ListItem.propTypes = {
   item: PropTypes.object.isRequired,
   onEditPress: PropTypes.func.isRequired,
-  onRemovePress: PropTypes.func.isRequired
+  onRemovePress: PropTypes.func.isRequired,
 };
 
 export default ListItem;

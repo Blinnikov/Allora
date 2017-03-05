@@ -21,9 +21,9 @@ const Tabs = TabNavigator(
               size={26}
               style={{ color: tintColor }}
             />
-          )
-        })
-      }
+          ),
+        }),
+      },
     },
     WordsTab: {
       screen: WordsTabStack,
@@ -37,9 +37,9 @@ const Tabs = TabNavigator(
               style={{ color: tintColor }}
             />
           ),
-          visible: params.state.index <= 0
-        })
-      }
+          visible: params.state.index <= 0,
+        }),
+      },
     },
     AccountTab: {
       screen: AccountTabStack,
@@ -54,19 +54,19 @@ const Tabs = TabNavigator(
                 style={{ color: tintColor }}
               />
             ),
-            visible: params.state.index <= 0
+            visible: params.state.index <= 0,
           };
-        }
-      }
-    }
+        },
+      },
+    },
   },
   {
     navigationOptions: {
       header: {
-        visible: false
-      }
-    }
-  }
+        visible: false,
+      },
+    },
+  },
 );
 
 export default Tabs;

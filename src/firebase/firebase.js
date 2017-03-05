@@ -7,7 +7,7 @@ class Firebase {
       authDomain: 'reactnativeplayground-a29b4.firebaseapp.com',
       databaseURL: 'https://reactnativeplayground-a29b4.firebaseio.com',
       storageBucket: 'reactnativeplayground-a29b4.appspot.com',
-      messagingSenderId: '260721422581'
+      messagingSenderId: '260721422581',
     });
   }
 }

@@ -20,10 +20,10 @@ const WordsTabStack = StackNavigator(
         header: (props, defaultHeader) => {
           return {
             ...defaultHeader,
-            title: I18n.t('words.list.title')
+            title: I18n.t('words.list.title'),
           };
-        }
-      }
+        },
+      },
     },
     WordAdd: {
       screen: WordAdd,
@@ -34,10 +34,10 @@ const WordsTabStack = StackNavigator(
           const { right } = currentParams.header || {};
           return {
             title: I18n.t('words.form.addTitle'),
-            right
+            right,
           };
-        }
-      }
+        },
+      },
     },
     WordEdit: {
       screen: WordEdit,
@@ -47,15 +47,15 @@ const WordsTabStack = StackNavigator(
           const { right } = currentParams.header || {};
           return {
             title: I18n.t('words.form.editTitle'),
-            right
+            right,
           };
-        }
-      }
-    }
+        },
+      },
+    },
   },
   {
     // headerMode: 'screen',
-  }
+  },
 );
 
 export default WordsTabStack;

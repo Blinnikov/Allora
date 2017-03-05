@@ -8,5 +8,5 @@ I18n.fallbacks = true;
 I18n.translations = {
   en,
   ru,
-  it
+  it,
 };

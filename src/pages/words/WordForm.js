@@ -18,7 +18,7 @@ class WordForm extends Component {
     this.state = {
       word: props.word,
       translation: props.translation,
-      lang: props.lang
+      lang: props.lang,
     };
 
     this._processItem = this._processItem.bind(this);
@@ -47,8 +47,8 @@ class WordForm extends Component {
               title={I18n.t('words.form.done')}
             />
           </View>
-        )
-      }
+        ),
+      },
     };
     this.props.navigation.setParams(params);
   }
@@ -97,7 +97,7 @@ WordForm.propTypes = {
   translation: PropTypes.string,
   lang: PropTypes.string,
   editMode: PropTypes.bool,
-  itemKey: PropTypes.string
+  itemKey: PropTypes.string,
 };
 
 export default WordForm;

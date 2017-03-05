@@ -6,7 +6,7 @@ const WordAdd = ({ navigation }) => {
 };
 
 WordAdd.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 export default WordAdd;

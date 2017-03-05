@@ -12,30 +12,30 @@ const AccountTabStack = StackNavigator(
       navigationOptions: {
         header: {
           visible: false,
-          title: I18n.t('account.title')
-        }
-      }
+          title: I18n.t('account.title'),
+        },
+      },
     },
     Settings: {
       screen: Settings,
       navigationOptions: {
         header: {
-          title: I18n.t('settings.title')
-        }
-      }
+          title: I18n.t('settings.title'),
+        },
+      },
     },
     SettingsInterval: {
       screen: SettingsInterval,
       navigationOptions: {
         header: {
-          title: I18n.t('settings.interval.title')
-        }
-      }
-    }
+          title: I18n.t('settings.interval.title'),
+        },
+      },
+    },
   },
   {
     // headerMode: 'screen',
-  }
+  },
 );
 
 export default AccountTabStack;

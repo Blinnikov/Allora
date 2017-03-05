@@ -17,7 +17,7 @@ class SignUp extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
     };
   }
 
@@ -28,7 +28,7 @@ class SignUp extends Component {
 
       this.setState({
         email: '',
-        password: ''
+        password: '',
       });
     } catch (error) {
       alert(error.message);
@@ -42,7 +42,7 @@ class SignUp extends Component {
   _goToRoute(routeName) {
     const resetAction = NavigationActions.reset({
       index: 0,
-      actions: [NavigationActions.navigate({ routeName })]
+      actions: [NavigationActions.navigate({ routeName })],
     });
     this.props.navigation.dispatch(resetAction);
   }
@@ -89,7 +89,7 @@ class SignUp extends Component {
 }
 
 SignUp.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 export default SignUp;

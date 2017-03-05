@@ -11,7 +11,7 @@ const WordsAddButton = ({ navigation }) => (
 );
 
 WordsAddButton.propTypes = {
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 export default WordsAddButton;

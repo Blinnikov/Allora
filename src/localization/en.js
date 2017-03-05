@@ -1,7 +1,7 @@
 const en = Object.freeze({
   common: {
     remove: 'Remove',
-    cancel: 'Cancel'
+    cancel: 'Cancel',
   },
   auth: {
     login: {
@@ -10,14 +10,14 @@ const en = Object.freeze({
       loginButton: 'Login',
       goToSignUp: 'New here?',
       signUp: 'Sign Up',
-      goToLogin: 'Do you already have an account?'
-    }
+      goToLogin: 'Do you already have an account?',
+    },
   },
   account: {
     title: 'Account',
     tab: 'Account',
     random: 'Get random word',
-    logout: 'Logout'
+    logout: 'Logout',
   },
   settings: {
     title: 'Settings',
@@ -30,27 +30,27 @@ const en = Object.freeze({
         second: 'second',
         minute: 'minute',
         hour: 'hour',
-        day: 'day'
+        day: 'day',
       },
       pl: {
         second: 'seconds',
         minute: 'minutes',
         hour: 'hours',
-        day: 'days'
-      }
-    }
+        day: 'days',
+      },
+    },
   },
   courses: {
     tab: 'Courses',
     list: {
-      title: 'Your courses'
-    }
+      title: 'Your courses',
+    },
   },
   words: {
     tab: 'Words',
     list: {
       title: 'Your words',
-      removeMessage: 'Are you sure you want to remove "{{word}}"?'
+      removeMessage: 'Are you sure you want to remove "{{word}}"?',
     },
     form: {
       addTitle: 'Add new word',
@@ -68,12 +68,12 @@ const en = Object.freeze({
         en: 'English {{flag}}',
         it: 'Italian {{flag}}',
         es: 'Spanish {{flag}}',
-        fr: 'French {{flag}}'
+        fr: 'French {{flag}}',
       },
       addButton: 'Add',
-      editButton: 'Save'
-    }
-  }
+      editButton: 'Save',
+    },
+  },
 });
 
 export default en;

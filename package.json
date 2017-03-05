@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "lint": "eslint .",
-    "prettier": "prettier --write --bracket-spacing --single-quote --no-jsx-bracket-same-line --trailing-comma none --print-width 80 \"src/**/!(third_party)/*.js\""
+    "prettier": "prettier --write --bracket-spacing --single-quote --no-jsx-bracket-same-line --trailing-comma all --print-width 80 \"src/**/!(third_party)/*.js\""
   },
   "dependencies": {
     "firebase": "^3.7.0",

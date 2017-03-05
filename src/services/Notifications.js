@@ -20,7 +20,7 @@ const getRandomMessage = () => {
 const scheduleNotifications = (
   count = 64,
   interval = 1,
-  intervalType = 'minute'
+  intervalType = 'minute',
 ) => {
   const intervalValue = interval * intervals[intervalType];
   let currentTimeToSchedule = Date.now();
@@ -34,7 +34,7 @@ const scheduleNotifications = (
 const scheduleSporadicNotification = date => {
   PushNotificationIOS.scheduleLocalNotification({
     alertBody: getRandomMessage(),
-    fireDate: date
+    fireDate: date,
   });
 };
 

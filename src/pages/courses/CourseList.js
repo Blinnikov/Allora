@@ -10,7 +10,7 @@ class CourseList extends Component {
     this._data = null;
 
     this.state = {
-      loading: true
+      loading: true,
     };
   }
 
