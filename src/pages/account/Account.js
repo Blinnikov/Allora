@@ -14,7 +14,7 @@ class Account extends Component {
 
     const user = firebase.auth().currentUser || {};
     this.state = {
-      user,
+      user
     };
   }
 
@@ -40,17 +40,17 @@ class Account extends Component {
         <List>
           <ListItem
             title={I18n.t('account.random')}
-            leftIcon={{name: 'ios-repeat', type: 'ionicon'}}
+            leftIcon={{ name: 'ios-repeat', type: 'ionicon' }}
             onPress={this._getRandom.bind(this)}
           />
           <ListItem
             title={I18n.t('settings.title')}
-            leftIcon={{name: 'ios-settings', type: 'ionicon'}}
+            leftIcon={{ name: 'ios-settings', type: 'ionicon' }}
             onPress={this._goToSettingsPage.bind(this)}
           />
           <ListItem
             title={I18n.t('account.logout')}
-            leftIcon={{name: 'ios-log-out', type: 'ionicon'}}
+            leftIcon={{ name: 'ios-log-out', type: 'ionicon' }}
             onPress={this._logout.bind(this)}
           />
         </List>
@@ -60,7 +60,7 @@ class Account extends Component {
 }
 
 Account.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired
 };
 
 export default Account;

@@ -7,7 +7,7 @@ import { flags } from '../../../constants';
 
 import PageStyles from '../WordList.Styles';
 
-const getLang = (item) => {
+const getLang = item => {
   if (item.lang === 'en') {
     return 'en-US';
   }
@@ -27,30 +27,31 @@ class ListItem extends Component {
   }
 
   render() {
-    const {item, onEditPress, onRemovePress} = this.props;
-    const swipeButtons =[{
-      component:  <Icon
-                    name='ios-create-outline'
-                    style={PageStyles.actionButtonStyle}
-                  />,
-      backgroundColor: '#2980b9',
-      underlayColor: 'rgba(0, 0, 0, 0.6)',
-      onPress: () => onEditPress(item)
-    }, {
-      component:  <Icon
-                    name='ios-trash-outline'
-                    style={PageStyles.actionButtonStyle}
-                  />,
-      backgroundColor: '#e74c3c',
-      underlayColor: 'rgba(0, 0, 0, 0.6)',
-      onPress: () => onRemovePress(item)
-    }];
+    const { item, onEditPress, onRemovePress } = this.props;
+    const swipeButtons = [
+      {
+        component: (
+          <Icon
+            name="ios-create-outline"
+            style={PageStyles.actionButtonStyle}
+          />
+        ),
+        backgroundColor: '#2980b9',
+        underlayColor: 'rgba(0, 0, 0, 0.6)',
+        onPress: () => onEditPress(item)
+      },
+      {
+        component: (
+          <Icon name="ios-trash-outline" style={PageStyles.actionButtonStyle} />
+        ),
+        backgroundColor: '#e74c3c',
+        underlayColor: 'rgba(0, 0, 0, 0.6)',
+        onPress: () => onRemovePress(item)
+      }
+    ];
 
     return (
-      <Swipeout
-        right={swipeButtons}
-        autoClose={true}
-      >
+      <Swipeout right={swipeButtons} autoClose={true}>
         <TouchableHighlight>
           <View style={PageStyles.li}>
             <View style={PageStyles.liIcon}>
@@ -67,10 +68,7 @@ class ListItem extends Component {
                 onPress={() => this._playSound(item)}
                 style={PageStyles.soundButton}
               >
-                <Icon
-                  name='ios-volume-up'
-                  style={PageStyles.soundButtonIcon}
-                />
+                <Icon name="ios-volume-up" style={PageStyles.soundButtonIcon} />
               </TouchableOpacity>
             </View>
           </View>

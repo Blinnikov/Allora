@@ -17,7 +17,11 @@ const getRandomMessage = () => {
   return `${flag} ${word} - ${translation}`;
 };
 
-const scheduleNotifications = (count = 64, interval = 1, intervalType = 'minute') => {
+const scheduleNotifications = (
+  count = 64,
+  interval = 1,
+  intervalType = 'minute'
+) => {
   const intervalValue = interval * intervals[intervalType];
   let currentTimeToSchedule = Date.now();
 
@@ -27,7 +31,7 @@ const scheduleNotifications = (count = 64, interval = 1, intervalType = 'minute'
   }
 };
 
-const scheduleSporadicNotification = (date) => {
+const scheduleSporadicNotification = date => {
   PushNotificationIOS.scheduleLocalNotification({
     alertBody: getRandomMessage(),
     fireDate: date
@@ -40,7 +44,7 @@ const cancellAll = () => {
 
 const schedule = async () => {
   const enableNotifications = await UserSettings.enableNotifications;
-  if(!enableNotifications) {
+  if (!enableNotifications) {
     return;
   }
 

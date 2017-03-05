@@ -11,13 +11,11 @@ import PageStyles from './WordList.Styles';
 
 class WordList extends Component {
   static navigationOptions = {
-    header: (navigation) => {
+    header: navigation => {
       return {
-        right: (
-            <WordsAddButton navigation={navigation} />
-        ),
+        right: <WordsAddButton navigation={navigation} />
       };
-    },
+    }
   };
 
   constructor(props) {
@@ -39,10 +37,9 @@ class WordList extends Component {
 
   render() {
     if (this.state.loading) {
-      return <ActivityIndicator
-        size='large'
-        style={CommonStyles.pageContainer}
-      />;
+      return (
+        <ActivityIndicator size="large" style={CommonStyles.pageContainer} />
+      );
     }
 
     return (
@@ -66,7 +63,7 @@ class WordList extends Component {
     });
   }
 
-  _onRemoveButtonPress({key, word}) {
+  _onRemoveButtonPress({ key, word }) {
     AlertIOS.prompt(
       I18n.t('words.list.removeMessage', { word }),
       null,
@@ -97,7 +94,8 @@ class WordList extends Component {
         shouldRemove={item.shouldRemove}
         onDidRemove={() => this._onDidRemove(item)}
       >
-        <ListItem item={item}
+        <ListItem
+          item={item}
           onRemovePress={() => this._onRemoveButtonPress(item)}
           onEditPress={() => this._onEditButtonPress(item)}
         />
@@ -120,11 +118,10 @@ class WordList extends Component {
   _onDidRemove(item) {
     db.words.remove(item.key);
   }
-
 }
 
 WordList.propTypes = {
-  navigation: PropTypes.object.isRequired,
+  navigation: PropTypes.object.isRequired
 };
 
 export default WordList;

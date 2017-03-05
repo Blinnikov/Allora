@@ -37,17 +37,17 @@ class WordForm extends Component {
     this.props.navigation.goBack();
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const params = {
       header: {
         right: (
           <View style={NavBarStyles.navBarRightButton}>
             <Button
-                onPress={() => this._processItem()}
-                title={I18n.t('words.form.done')}
+              onPress={() => this._processItem()}
+              title={I18n.t('words.form.done')}
             />
           </View>
-        ),
+        )
       }
     };
     this.props.navigation.setParams(params);
@@ -79,15 +79,11 @@ class WordForm extends Component {
             selectedValue={this.state.lang}
             onValueChange={lang => this.setState({ lang })}
           >
-          {
-            availableLanguages.map((lang, idx) => {
+            {availableLanguages.map((lang, idx) => {
               const flag = flags[lang];
-              const label = I18n.t(`words.form.languages.${lang}`, {flag});
-              return (
-                <Picker.Item key={idx} label={label} value={lang} />
-              );
-            })
-          }
+              const label = I18n.t(`words.form.languages.${lang}`, { flag });
+              return <Picker.Item key={idx} label={label} value={lang} />;
+            })}
           </Picker>
         </View>
       </View>

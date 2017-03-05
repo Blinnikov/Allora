@@ -8,7 +8,7 @@ const WordFormStyles = StyleSheet.create({
     marginBottom: 15
   },
   picker: {
-    paddingHorizontal: 15,
+    paddingHorizontal: 15
   },
   addButton: {
     marginTop: 10,

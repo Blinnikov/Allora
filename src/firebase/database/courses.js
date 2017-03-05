@@ -1,15 +1,14 @@
 import { courses as ref } from './references';
 
-const add = (course) => {
+const add = course => {
   ref().push(course);
 };
 
 const update = (key, course) => {
-  ref().child(key)
-    .update(course);
+  ref().child(key).update(course);
 };
 
-const remove = (key) => {
+const remove = key => {
   ref().child(key).remove();
 };
 

@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 
-const _userEntityRef = (entity) => {
+const _userEntityRef = entity => {
   const user = firebase.auth().currentUser;
   if (!user) {
     return null;

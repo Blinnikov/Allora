@@ -2,15 +2,18 @@ import { StackNavigator } from 'react-navigation';
 import Login from '../pages/auth/Login';
 import SignUp from '../pages/auth/SignUp';
 
-const LoginStack = StackNavigator({
-  Login: {
-    screen: Login
+const LoginStack = StackNavigator(
+  {
+    Login: {
+      screen: Login
+    },
+    SignUp: {
+      screen: SignUp
+    }
   },
-  SignUp: {
-    screen: SignUp
-  },
-}, {
-  headerMode: 'none',
-});
+  {
+    headerMode: 'none'
+  }
+);
 
 export default LoginStack;

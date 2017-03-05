@@ -52,47 +52,44 @@ class SettingsInterval extends Component {
       <View style={CommonStyles.pageContainer}>
         <View style={PageStyles.form}>
           <List>
-            {
-              availableIntervals.map(availableInterval => {
-                const hideChevron = availableInterval !== interval;
+            {availableIntervals.map(availableInterval => {
+              const hideChevron = availableInterval !== interval;
 
-                return (
-                  <ListItem key={availableInterval}
-                    title={availableInterval}
-                    onPress={() => this._checkInterval(availableInterval)}
-                    hideChevron={hideChevron}
-                    rightIcon={{
-                      name: 'ios-checkmark-outline',
-                      type: 'ionicon',
-                      style: PageStyles.rightIcon
-                    }}
-                    containerStyle={PageStyles.listItem}
-                  />
-                );
-              })
-            }
+              return (
+                <ListItem
+                  key={availableInterval}
+                  title={availableInterval}
+                  onPress={() => this._checkInterval(availableInterval)}
+                  hideChevron={hideChevron}
+                  rightIcon={{
+                    name: 'ios-checkmark-outline',
+                    type: 'ionicon',
+                    style: PageStyles.rightIcon
+                  }}
+                  containerStyle={PageStyles.listItem}
+                />
+              );
+            })}
           </List>
           <List>
-            {
-              availableTypes.map(availableType => {
-                const hideChevron = availableType !== intervalType;
+            {availableTypes.map(availableType => {
+              const hideChevron = availableType !== intervalType;
 
-                return (
-                  <ListItem
-                    key={availableType}
-                    onPress={() => this._checkIntervalType(availableType)}
-                    title={I18n.t(`settings.interval.${plural}.${availableType}`)}
-                    hideChevron={hideChevron}
-                    rightIcon={{
-                      name: 'ios-checkmark-outline',
-                      type: 'ionicon',
-                      style: PageStyles.rightIcon
-                    }}
-                    containerStyle={PageStyles.listItem}
-                  />
-                );
-              })
-            }
+              return (
+                <ListItem
+                  key={availableType}
+                  onPress={() => this._checkIntervalType(availableType)}
+                  title={I18n.t(`settings.interval.${plural}.${availableType}`)}
+                  hideChevron={hideChevron}
+                  rightIcon={{
+                    name: 'ios-checkmark-outline',
+                    type: 'ionicon',
+                    style: PageStyles.rightIcon
+                  }}
+                  containerStyle={PageStyles.listItem}
+                />
+              );
+            })}
           </List>
         </View>
       </View>

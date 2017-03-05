@@ -9,7 +9,7 @@ const CoursesTabStack = StackNavigator({
       header: (props, defaultHeader) => {
         return {
           ...defaultHeader,
-          title: I18n.t('courses.list.title'),
+          title: I18n.t('courses.list.title')
         };
       }
     }

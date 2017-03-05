@@ -36,7 +36,7 @@ class DynamicListItem extends Component {
     }).start(cb);
   }
 
-  _resetHeight(){
+  _resetHeight() {
     Animated.timing(this.state.height, {
       toValue: this._defaultHeight,
       duration: 0
@@ -46,9 +46,7 @@ class DynamicListItem extends Component {
   render() {
     const { opacity, height } = this.state;
     return (
-      <Animated.View
-        style={{opacity, height}}
-      >
+      <Animated.View style={{ opacity, height }}>
         {this.props.children}
       </Animated.View>
     );

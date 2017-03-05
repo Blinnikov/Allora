@@ -38,7 +38,7 @@ const it = Object.freeze({
         hour: 'ore',
         day: 'giorni '
       }
-    },
+    }
   },
   courses: {
     tab: '[IT] Courses',
@@ -71,7 +71,7 @@ const it = Object.freeze({
         fr: 'Francese {{flag}}'
       },
       addButton: 'Aggiungi',
-      editButton: 'Salva',
+      editButton: 'Salva'
     }
   }
 });

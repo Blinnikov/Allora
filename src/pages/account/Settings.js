@@ -77,18 +77,15 @@ class Settings extends Component {
               }
             />
           </List>
-          {
-            enableNotifications && (
-              <List>
-                <ListItem
-                  title={I18n.t('settings.repeat')}
-                  rightTitle={message}
-                  rightTitleStyle={PageStyles.rightTitle}
-                  onPress={() => this._goToSettingsInterval()}
-                />
-              </List>
-            )
-          }
+          {enableNotifications &&
+            <List>
+              <ListItem
+                title={I18n.t('settings.repeat')}
+                rightTitle={message}
+                rightTitleStyle={PageStyles.rightTitle}
+                onPress={() => this._goToSettingsInterval()}
+              />
+            </List>}
         </View>
       </View>
     );

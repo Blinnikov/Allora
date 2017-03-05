@@ -30,7 +30,7 @@ class SignUp extends Component {
         email: '',
         password: ''
       });
-    } catch(error) {
+    } catch (error) {
       alert(error.message);
     }
   }
@@ -42,19 +42,14 @@ class SignUp extends Component {
   _goToRoute(routeName) {
     const resetAction = NavigationActions.reset({
       index: 0,
-      actions: [
-        NavigationActions.navigate({ routeName }),
-      ]
+      actions: [NavigationActions.navigate({ routeName })]
     });
     this.props.navigation.dispatch(resetAction);
   }
 
   render() {
     return (
-      <View style={[
-          CommonStyles.pageContainer,
-          PageStyles.loginPageContainer
-        ]}>
+      <View style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}>
         <Sae
           label={I18n.t('auth.login.email')}
           iconClass={FontAwesomeIcon}
@@ -62,7 +57,7 @@ class SignUp extends Component {
           iconColor={colors.primaryColor}
           labelStyle={PageStyles.label}
           inputStyle={PageStyles.input}
-          onChangeText={email => this.setState({email})}
+          onChangeText={email => this.setState({ email })}
           autoCapitalize="none"
         />
         <Sae
@@ -72,7 +67,7 @@ class SignUp extends Component {
           iconColor={colors.primaryColor}
           labelStyle={PageStyles.label}
           inputStyle={PageStyles.input}
-          onChangeText={password => this.setState({password})}
+          onChangeText={password => this.setState({ password })}
           password={true}
           autoCapitalize="none"
         />

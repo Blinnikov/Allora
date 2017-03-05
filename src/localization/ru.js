@@ -38,7 +38,7 @@ const ru = Object.freeze({
         hour: 'часов',
         day: 'дней'
       }
-    },
+    }
   },
   courses: {
     tab: '[RU] Courses',
@@ -71,7 +71,7 @@ const ru = Object.freeze({
         fr: 'Французский {{flag}}'
       },
       addButton: 'Добавить',
-      editButton: 'Обновить',
+      editButton: 'Обновить'
     }
   }
 });

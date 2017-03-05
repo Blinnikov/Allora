@@ -1,6 +1,6 @@
 import { words as ref } from './references';
 
-const subscribe = (cb) => {
+const subscribe = cb => {
   const _ref = ref();
   if (!_ref) {
     return;
@@ -23,7 +23,7 @@ const subscribe = (cb) => {
   });
 };
 
-const add = ({word = '', translation = '', lang}) => {
+const add = ({ word = '', translation = '', lang }) => {
   ref().push({
     word,
     translation,
@@ -32,14 +32,13 @@ const add = ({word = '', translation = '', lang}) => {
   });
 };
 
-const update = (key, {word, translation, lang}) => {
-  ref().child(key)
-    .update({
-      word,
-      translation,
-      lang,
-      updated: Date.now()
-    });
+const update = (key, { word, translation, lang }) => {
+  ref().child(key).update({
+    word,
+    translation,
+    lang,
+    updated: Date.now()
+  });
 };
 
 const getRandom = () => {
@@ -56,7 +55,7 @@ const getRandom = () => {
           key: record.key,
           word,
           translation,
-          lang,
+          lang
         };
       }
 
@@ -67,7 +66,7 @@ const getRandom = () => {
   return result;
 };
 
-const remove = (key) => {
+const remove = key => {
   ref().child(key).remove();
 };
 

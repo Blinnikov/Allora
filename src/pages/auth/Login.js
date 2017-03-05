@@ -15,7 +15,7 @@ class Login extends Component {
     super(props);
     this.state = {
       email: '',
-      password: '',
+      password: ''
     };
   }
 
@@ -34,10 +34,7 @@ class Login extends Component {
 
   render() {
     return (
-      <View style={[
-          CommonStyles.pageContainer,
-          PageStyles.loginPageContainer,
-        ]}>
+      <View style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}>
         <Sae
           label={I18n.t('auth.login.email')}
           iconClass={FontAwesomeIcon}
@@ -45,7 +42,7 @@ class Login extends Component {
           iconColor={colors.primaryColor}
           labelStyle={PageStyles.label}
           inputStyle={PageStyles.input}
-          onChangeText={email => this.setState({email})}
+          onChangeText={email => this.setState({ email })}
           autoCapitalize="none"
         />
         <Sae
@@ -55,7 +52,7 @@ class Login extends Component {
           iconColor={colors.primaryColor}
           labelStyle={PageStyles.label}
           inputStyle={PageStyles.input}
-          onChangeText={password => this.setState({password})}
+          onChangeText={password => this.setState({ password })}
           password={true}
           autoCapitalize="none"
         />
