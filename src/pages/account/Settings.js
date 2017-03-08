@@ -44,8 +44,12 @@ class Settings extends Component {
     }
   }
 
-  componentWillReceiveProps() {
-    this._loadSettings();
+  componentDidMount() {
+    this.props.navigation.addListener('focus', () => this._loadSettings());
+  }
+
+  componentWillUnmount() {
+    this.props.navigation.removeListener('focus', () => this._loadSettings());
   }
 
   _goToSettingsInterval() {

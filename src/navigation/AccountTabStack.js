@@ -1,11 +1,12 @@
 import { StackNavigator } from 'react-navigation';
+import { enhance } from 'react-navigation-addons';
 import I18n from 'react-native-i18n';
 
 import Account from '../pages/account/Account';
 import Settings from '../pages/account/Settings';
 import SettingsInterval from '../pages/account/Settings.Interval';
 
-const AccountTabStack = StackNavigator(
+const AccountTabStack = enhance(StackNavigator)(
   {
     Account: {
       screen: Account,
