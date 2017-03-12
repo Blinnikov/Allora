@@ -40,6 +40,7 @@ class Login extends Component {
           inputStyle={PageStyles.input}
           onChangeText={email => this.setState({ email })}
           placeholder={I18n.t('auth.login.email')}
+          keyboardType='email-address'
         />
         <FormInput
           value={this.state.password}
