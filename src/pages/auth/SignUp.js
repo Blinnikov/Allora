@@ -2,11 +2,9 @@ import React, { Component, PropTypes } from 'react';
 import { NavigationActions } from 'react-navigation';
 import { View } from 'react-native';
 import I18n from 'react-native-i18n';
-import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
-import { Sae } from 'react-native-textinput-effects';
+import { FormInput } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 import * as firebase from 'firebase';
-import { colors } from '../../constants';
 
 import PageStyles from './Login.Styles';
 import CommonStyles from '../../styles/Common';
@@ -50,26 +48,22 @@ class SignUp extends Component {
   render() {
     return (
       <View style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}>
-        <Sae
-          label={I18n.t('auth.login.email')}
-          iconClass={FontAwesomeIcon}
-          iconName={'pencil'}
-          iconColor={colors.primaryColor}
-          labelStyle={PageStyles.label}
+        <FormInput
+          value={this.state.email}
+          autoCapitalize="none"
+          containerStyle={PageStyles.inputContainer}
           inputStyle={PageStyles.input}
           onChangeText={email => this.setState({ email })}
-          autoCapitalize="none"
+          placeholder={I18n.t('auth.login.email')}
         />
-        <Sae
-          label={I18n.t('auth.login.password')}
-          iconClass={FontAwesomeIcon}
-          iconName={'key'}
-          iconColor={colors.primaryColor}
-          labelStyle={PageStyles.label}
+        <FormInput
+          value={this.state.password}
+          autoCapitalize="none"
+          containerStyle={PageStyles.inputContainer}
           inputStyle={PageStyles.input}
           onChangeText={password => this.setState({ password })}
-          password={true}
-          autoCapitalize="none"
+          placeholder={I18n.t('auth.login.password')}
+          secureTextEntry
         />
         <Button
           title={I18n.t('auth.login.signUp')}
