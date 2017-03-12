@@ -22,6 +22,7 @@ const colors = Object.freeze({
 
   transparent: 'transparent',
   bodyBackgroundColor: '#EFF0F3',
+  bodyBackgroundColorNew: 'white',
   barsBackgroundColor: '#F9F9F9',
   actionColor: '#24CE84',
   primaryColor: '#5890FF'
