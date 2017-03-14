@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ActivityIndicator, AppState } from 'react-native';
-import * as firebase from 'firebase';
+import { authentication } from 'allora-core';
 import * as Notifications from './services/Notifications';
 import LoginStack from './navigation/LoginStack';
 import Tabs from './navigation/Tabs';
@@ -18,7 +18,7 @@ class Root extends Component {
   }
 
   _checkAuthentication() {
-    firebase.auth().onAuthStateChanged(user => {
+    authentication.onChange(user => {
       this.setState({
         loaded: true,
         authenticated: !!user,

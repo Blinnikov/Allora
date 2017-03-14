@@ -1,6 +1,6 @@
 import { PushNotificationIOS } from 'react-native';
+import { storage } from 'allora-core';
 import UserSettings from './UserSettings';
-import db from '../firebase/database';
 import { flags, intervals } from '../constants';
 
 const requestPermissions = () => {
@@ -12,7 +12,7 @@ const requestPermissions = () => {
 };
 
 const getRandomMessage = () => {
-  const { word, translation, lang } = db.words.getRandom();
+  const { word, translation, lang } = storage.words.getRandom();
   const flag = flags[lang];
   return `${flag} ${word} - ${translation}`;
 };

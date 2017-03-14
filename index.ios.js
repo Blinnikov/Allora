@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-import Firebase from './src/firebase/firebase';
+import { storage }from 'allora-core';
 import './src/localization';
 
 import Root from './src/Root';
@@ -9,6 +9,6 @@ console.ignoredYellowBox = [
    'Behaviour of screenProps has changed',
 ];
 
-Firebase.init();
+storage.init();
 
 AppRegistry.registerComponent('Allora', () => Root);

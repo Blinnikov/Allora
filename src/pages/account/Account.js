@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
+import { authentication } from 'allora-core';
 import { List, ListItem, Text } from 'react-native-elements';
 import I18n from 'react-native-i18n';
-import * as firebase from 'firebase';
 
 import PageStyles from './Account.Styles';
 import CommonStyles from '../../styles/Common';
@@ -11,7 +11,7 @@ class Account extends Component {
   constructor(props) {
     super(props);
 
-    const user = firebase.auth().currentUser || {};
+    const user = authentication.getCurrentUser();
     this.state = {
       user,
     };
@@ -23,7 +23,7 @@ class Account extends Component {
   }
 
   async _logout() {
-    await firebase.auth().signOut();
+    await authentication.logout();
   }
 
   render() {

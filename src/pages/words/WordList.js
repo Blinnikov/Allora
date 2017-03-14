@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
+import { storage } from 'allora-core';
 import I18n from 'react-native-i18n';
 import ListItem from './components/ListItem';
 import DynamicListItem from './components/DynamicListItem';
 import WordsAddButton from '../../navigation/WordsAddButton';
-import db from '../../firebase/database';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
@@ -32,7 +32,7 @@ class WordList extends Component {
   }
 
   componentDidMount() {
-    db.words.subscribe(items => this._setDataSource(items));
+    storage.words.subscribe(items => this._setDataSource(items));
   }
 
   render() {
@@ -116,7 +116,7 @@ class WordList extends Component {
   }
 
   _onDidRemove(item) {
-    db.words.remove(item.key);
+    storage.words.remove(item.key);
   }
 }
 

@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { View } from 'react-native';
+import { authentication } from 'allora-core';
 import { FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';
 import { Button } from 'react-native-elements';
-import * as firebase from 'firebase';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Login.Styles';
@@ -20,7 +20,7 @@ class Login extends Component {
   async login() {
     try {
       const { email, password } = this.state;
-      await firebase.auth().signInWithEmailAndPassword(email, password);
+      await authentication.login(email, password);
     } catch (e) {
       alert(e.message);
     }

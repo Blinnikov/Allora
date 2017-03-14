@@ -9,7 +9,7 @@
     "prettier": "prettier --write --bracket-spacing --single-quote --no-jsx-bracket-same-line --trailing-comma all --print-width 80 \"src/**/!(third_party)/*.js\""
   },
   "dependencies": {
-    "firebase": "^3.7.0",
+    "allora-core": "git+https://github.com/allora-app/Allora-Core.git",
     "react": "15.4.1",
     "react-native": "0.42.0",
     "react-native-elements": "^0.9.7",

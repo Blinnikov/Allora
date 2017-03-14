@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Button, Picker, View } from 'react-native';
+import { storage } from 'allora-core';
 import { FormLabel, FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';
-import db from '../../firebase/database';
 import { flags } from '../../constants';
 
 import NavBarStyles from '../../styles/NavigationBar';
@@ -29,9 +29,9 @@ class WordForm extends Component {
     const { word, translation, lang } = this.state;
     const wordItem = { word, translation, lang };
     if (editMode) {
-      db.words.update(this.props.itemKey, wordItem);
+      storage.words.update(this.props.itemKey, wordItem);
     } else {
-      db.words.add(wordItem);
+      storage.words.add(wordItem);
     }
 
     this.props.navigation.goBack();

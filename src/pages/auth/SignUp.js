@@ -1,10 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { NavigationActions } from 'react-navigation';
 import { View } from 'react-native';
+import { authentication } from 'allora-core';
 import I18n from 'react-native-i18n';
 import { FormInput } from 'react-native-elements';
 import { Button } from 'react-native-elements';
-import * as firebase from 'firebase';
 
 import PageStyles from './Login.Styles';
 import CommonStyles from '../../styles/Common';
@@ -22,7 +22,7 @@ class SignUp extends Component {
   async signUp() {
     try {
       const { email, password } = this.state;
-      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      await authentication.createUser(email, password);
 
       this.setState({
         email: '',
