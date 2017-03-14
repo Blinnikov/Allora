@@ -4,7 +4,6 @@ import { colors } from '../../constants';
 const style = StyleSheet.create({
   loginPageContainer: {
     paddingHorizontal: 16,
-    backgroundColor: colors.bodyBackgroundColorNew,
   },
   label: {
     color: colors.$loginLabelColor,

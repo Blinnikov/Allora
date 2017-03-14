@@ -29,7 +29,7 @@ class Account extends Component {
   render() {
     const { user } = this.state;
     return (
-      <View style={CommonStyles.pageContainer}>
+      <View style={CommonStyles.pageAltContainer}>
         <Text h4 style={PageStyles.email}>{user.email}</Text>
         <List>
           <ListItem

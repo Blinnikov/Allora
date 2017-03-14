@@ -67,7 +67,7 @@ class Settings extends Component {
     }
 
     return (
-      <View style={CommonStyles.pageContainer}>
+      <View style={CommonStyles.pageAltContainer}>
         <View style={PageStyles.form}>
           <List>
             <ListItem

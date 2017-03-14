@@ -49,7 +49,7 @@ class SettingsInterval extends Component {
     const plural = interval === '1' ? 'sing' : 'pl';
 
     return (
-      <View style={CommonStyles.pageContainer}>
+      <View style={CommonStyles.pageAltContainer}>
         <View style={PageStyles.form}>
           <List>
             {availableIntervals.map(availableInterval => {

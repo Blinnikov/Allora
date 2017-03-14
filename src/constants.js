@@ -21,8 +21,8 @@ const colors = Object.freeze({
   $loginLabelColor: 'rgba(0, 0, 0, 0.5)',
 
   transparent: 'transparent',
-  bodyBackgroundColor: '#EFF0F3',
-  bodyBackgroundColorNew: 'white',
+  bodyBackgroundColor: 'white',
+  bodyAltBackgroundColor: '#EFF0F3',
   barsBackgroundColor: '#F9F9F9',
   actionColor: '#24CE84',
   primaryColor: '#5890FF'

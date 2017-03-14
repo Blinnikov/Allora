@@ -6,12 +6,20 @@ const button = {
   marginRight: 0,
 };
 
+const container = {
+  flex: 1,
+  flexDirection: 'column',
+  backgroundColor: colors.bodyBackgroundColor,
+  justifyContent: 'center',
+};
+
 const Common = StyleSheet.create({
   pageContainer: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: colors.bodyBackgroundColor,
-    justifyContent: 'center',
+    ...container
+  },
+  pageAltContainer: {
+    ...container,
+    backgroundColor: colors.bodyAltBackgroundColor,
   },
   buttonDefault: {
     ...button,
