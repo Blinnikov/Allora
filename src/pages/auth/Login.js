@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Image, KeyboardAvoidingView, View } from 'react-native';
+import { Image, KeyboardAvoidingView } from 'react-native';
 import { authentication } from 'allora-core';
 import { FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';

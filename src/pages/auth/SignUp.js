@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { NavigationActions } from 'react-navigation';
-import { Image, KeyboardAvoidingView, View } from 'react-native';
+import { Image, KeyboardAvoidingView } from 'react-native';
 import { authentication } from 'allora-core';
 import I18n from 'react-native-i18n';
 import { FormInput } from 'react-native-elements';
