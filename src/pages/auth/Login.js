@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
+import { Image, View } from 'react-native';
 import { authentication } from 'allora-core';
 import { FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';
@@ -7,6 +7,9 @@ import { Button } from 'react-native-elements';
 
 import CommonStyles from '../../styles/Common';
 import PageStyles from './Login.Styles';
+
+// TODO: For iPhone Plus - LogoBig, for others - Logo
+const logoImg = require('../../img/LogoBig.png');
 
 class Login extends Component {
   constructor(props) {
@@ -33,6 +36,7 @@ class Login extends Component {
   render() {
     return (
       <View style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}>
+        <Image style={PageStyles.logoBig} source={logoImg} />
         <FormInput
           value={this.state.email}
           autoCapitalize="none"
