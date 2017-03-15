@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Image, View } from 'react-native';
+import { Image, KeyboardAvoidingView, View } from 'react-native';
 import { authentication } from 'allora-core';
 import { FormInput } from 'react-native-elements';
 import I18n from 'react-native-i18n';
@@ -35,7 +35,10 @@ class Login extends Component {
 
   render() {
     return (
-      <View style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}>
+      <KeyboardAvoidingView
+        behavior='padding'
+        style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}
+      >
         <Image style={PageStyles.logoBig} source={logoImg} />
         <FormInput
           value={this.state.email}
@@ -67,7 +70,7 @@ class Login extends Component {
           buttonStyle={[CommonStyles.buttonDefault, CommonStyles.buttonLogin]}
           textStyle={CommonStyles.buttonDefaultText}
         />
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
