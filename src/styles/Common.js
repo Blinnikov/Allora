@@ -15,7 +15,7 @@ const container = {
 
 const Common = StyleSheet.create({
   pageContainer: {
-    ...container
+    ...container,
   },
   pageAltContainer: {
     ...container,

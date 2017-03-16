@@ -68,7 +68,7 @@ class Login extends Component {
   render() {
     return (
       <KeyboardAvoidingView
-        behavior='padding'
+        behavior="padding"
         style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}
       >
         <Animated.Image
@@ -82,7 +82,7 @@ class Login extends Component {
           inputStyle={PageStyles.input}
           onChangeText={email => this.setState({ email })}
           placeholder={I18n.t('auth.login.email')}
-          keyboardType='email-address'
+          keyboardType="email-address"
         />
         <FormInput
           value={this.state.password}

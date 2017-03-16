@@ -56,7 +56,7 @@ class DynamicListItem extends Component {
 DynamicListItem.propTypes = {
   children: PropTypes.object.isRequired,
   shouldRemove: PropTypes.bool,
-  onDidRemove: PropTypes.func
+  onDidRemove: PropTypes.func,
 };
 
 export default DynamicListItem;
