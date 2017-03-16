@@ -1,25 +1,56 @@
 import React, { Component, PropTypes } from 'react';
 import { NavigationActions } from 'react-navigation';
-import { Image, KeyboardAvoidingView } from 'react-native';
+import { Animated, Keyboard, KeyboardAvoidingView } from 'react-native';
 import { authentication } from 'allora-core';
 import I18n from 'react-native-i18n';
 import { FormInput } from 'react-native-elements';
 import { Button } from 'react-native-elements';
 
-import PageStyles from './Login.Styles';
+import PageStyles, { logoBigEdge, logoSmallEdge } from './Login.Styles';
 import CommonStyles from '../../styles/Common';
 
-// TODO: For iPhone Plus - LogoBig, for others - Logo
-const logoImg = require('../../img/LogoBig.png');
+// TODO: Check actual pixel density
+const pixelDensity = 3;
+const logo2x = require('../../img/Logo_2x.png');
+const logo3x = require('../../img/Logo_3x.png');
+const logoImg = pixelDensity === 3 ? logo3x : logo2x;
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
 
+    this.imageHeight = new Animated.Value(logoBigEdge);
     this.state = {
       email: '',
       password: '',
     };
+
+    this.keyboardWillShow = this.keyboardWillShow.bind(this);
+    this.keyboardWillHide = this.keyboardWillHide.bind(this);
+  }
+
+  componentWillMount() {
+    Keyboard.addListener('keyboardWillShow', this.keyboardWillShow);
+    Keyboard.addListener('keyboardWillHide', this.keyboardWillHide);
+  }
+
+  componentWillUnmount() {
+    Keyboard.removeListener('keyboardWillShow', this.keyboardWillShow);
+    Keyboard.removeListener('keyboardWillHide', this.keyboardWillHide);
+  }
+
+  keyboardWillShow(event) {
+    Animated.timing(this.imageHeight, {
+      duration: event.duration,
+      toValue: logoSmallEdge,
+    }).start();
+  }
+
+  keyboardWillHide(event) {
+    Animated.timing(this.imageHeight, {
+      duration: event.duration,
+      toValue: logoBigEdge,
+    }).start();
   }
 
   async signUp() {
@@ -54,7 +85,10 @@ class SignUp extends Component {
         behavior='padding'
         style={[CommonStyles.pageContainer, PageStyles.loginPageContainer]}
       >
-        <Image style={PageStyles.logoBig} source={logoImg} />
+        <Animated.Image
+          style={[PageStyles.logo, { height: this.imageHeight }]}
+          source={logoImg}
+        />
         <FormInput
           value={this.state.email}
           autoCapitalize="none"
