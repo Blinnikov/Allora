@@ -2,17 +2,8 @@ import { Dimensions, StyleSheet } from 'react-native';
 import { colors } from '../../constants';
 
 const window = Dimensions.get('window');
-const logoBigEdge = 0.8 * window.width;
-const logoSmallEdge = 0.4 * window.width;
-
-const getImageStyle = (edge) => {
-  return {
-    height: edge,
-    width: edge,
-    alignSelf: 'center',
-    marginBottom: 20,
-  };
-};
+export const logoBigEdge = 0.8 * window.width;
+export const logoSmallEdge = 0.4 * window.width;
 
 const style = StyleSheet.create({
   loginPageContainer: {
@@ -21,11 +12,10 @@ const style = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
   },
-  logoBig: {
-    ...getImageStyle(logoBigEdge)
-  },
-  logoSmall: {
-    ...getImageStyle(logoSmallEdge)
+  logo: {
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginBottom: 20,
   },
   label: {
     color: colors.$loginLabelColor,
