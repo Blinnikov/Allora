@@ -6,7 +6,7 @@ const it = Object.freeze({
   auth: {
     login: {
       email: 'E-mail',
-      password: 'Parola d\'ordine',
+      password: 'Password',
       loginButton: 'Accesso',
       goToSignUp: 'Non ha ancora registrato?',
       signUp: 'Registrazione',
