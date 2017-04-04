@@ -1,0 +1,13 @@
+[ignore]
+.*/node_modules/react-native
+.*/node_modules/react-navigation
+.*/react/node_modules/.*
+
+[include]
+
+[libs]
+
+[options]
+
+[version]
+^0.42.0
