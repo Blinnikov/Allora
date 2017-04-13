@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "allora-core": "git+https://github.com/allora-app/Allora-Core.git",
-    "react": "15.4.2",
+    "react": "15.5.4",
     "react-native": "0.42.0",
     "react-native-elements": "^0.10.3",
     "react-native-i18n": "^1.0.0",
