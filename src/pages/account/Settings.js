@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Switch, View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import I18n from 'react-native-i18n';

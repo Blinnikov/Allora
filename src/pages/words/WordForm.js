@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Picker, View } from 'react-native';
 import { storage } from 'allora-core';
 import { FormLabel, FormInput } from 'react-native-elements';

@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
 import { storage } from 'allora-core';
 import I18n from 'react-native-i18n';
