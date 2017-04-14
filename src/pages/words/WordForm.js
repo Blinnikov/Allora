@@ -40,16 +40,14 @@ class WordForm extends Component {
 
   componentDidMount() {
     const params = {
-      header: {
-        right: (
-          <View style={NavBarStyles.navBarRightButton}>
-            <Button
-              onPress={() => this._processItem()}
-              title={I18n.t('words.form.done')}
-            />
-          </View>
-        ),
-      },
+      headerRight: (
+        <View style={NavBarStyles.navBarRightButton}>
+          <Button
+            onPress={() => this._processItem()}
+            title={I18n.t('words.form.done')}
+          />
+        </View>
+      ),
     };
     this.props.navigation.setParams(params);
   }

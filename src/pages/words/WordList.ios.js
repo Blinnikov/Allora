@@ -11,12 +11,10 @@ import CommonStyles from '../../styles/Common';
 import PageStyles from './WordList.Styles';
 
 class WordList extends Component {
-  static navigationOptions = {
-    header: navigation => {
-      return {
-        right: <WordsAddButton navigation={navigation} />,
-      };
-    },
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: <WordsAddButton navigation={navigation} />,
+    };
   };
 
   constructor(props) {

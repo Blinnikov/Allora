@@ -16,40 +16,32 @@ const WordsTabStack = StackNavigator(
   {
     WordList: {
       screen: WordList,
-      navigationOptions: {
-        header: (props, defaultHeader) => {
-          return {
-            ...defaultHeader,
-            title: I18n.t('words.list.title'),
-          };
-        },
-      },
+      navigationOptions: (props, defaultHeader) => ({
+        ...defaultHeader,
+        headerTitle: I18n.t('words.list.title'),
+      }),
     },
     WordAdd: {
       screen: WordAdd,
-      navigationOptions: {
-        header: ({ state }) => {
-          // get the "deepest" current params.
-          const currentParams = getCurrentParams(state);
-          const { right } = currentParams.header || {};
-          return {
-            title: I18n.t('words.form.addTitle'),
-            right,
-          };
-        },
+      navigationOptions: ({ navigation }) => {
+        // get the "deepest" current params.
+        const currentParams = getCurrentParams(navigation.state);
+        const headerRight = currentParams.headerRight;
+        return {
+          headerTitle: I18n.t('words.form.addTitle'),
+          headerRight,
+        };
       },
     },
     WordEdit: {
       screen: WordEdit,
-      navigationOptions: {
-        header: ({ state }) => {
-          const currentParams = getCurrentParams(state);
-          const { right } = currentParams.header || {};
-          return {
-            title: I18n.t('words.form.editTitle'),
-            right,
-          };
-        },
+      navigationOptions: ({ navigation }) => {
+        const currentParams = getCurrentParams(navigation.state);
+        const headerRight = currentParams.headerRight;
+        return {
+          headerTitle: I18n.t('words.form.editTitle'),
+          headerRight,
+        };
       },
     },
   },

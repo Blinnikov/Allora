@@ -5,14 +5,10 @@ import CourseList from '../pages/courses/CourseList';
 const CoursesTabStack = StackNavigator({
   CourseList: {
     screen: CourseList,
-    navigationOptions: {
-      header: (props, defaultHeader) => {
-        return {
-          ...defaultHeader,
-          title: I18n.t('courses.list.title'),
-        };
-      },
-    },
+    navigationOptions: (props, defaultHeader) => ({
+      ...defaultHeader,
+      headerTitle: I18n.t('courses.list.title'),
+    }),
   },
 });
 

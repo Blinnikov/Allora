@@ -11,26 +11,20 @@ const AccountTabStack = enhance(StackNavigator)(
     Account: {
       screen: Account,
       navigationOptions: {
-        header: {
-          visible: false,
-          title: I18n.t('account.title'),
-        },
+        headerVisible: false,
+        headerTitle: I18n.t('account.title'),
       },
     },
     Settings: {
       screen: Settings,
       navigationOptions: {
-        header: {
-          title: I18n.t('settings.title'),
-        },
+        headerTitle: I18n.t('settings.title'),
       },
     },
     SettingsInterval: {
       screen: SettingsInterval,
       navigationOptions: {
-        header: {
-          title: I18n.t('settings.interval.title'),
-        },
+        headerTitle: I18n.t('settings.interval.title'),
       },
     },
   },
