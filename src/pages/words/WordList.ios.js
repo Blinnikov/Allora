@@ -91,7 +91,7 @@ class WordList extends Component {
           onRemovePress={() => this._onRemoveButtonPress(item)}
           onEditPress={() => this._onEditButtonPress(item)}
         />
-    </DynamicListItem>
+      </DynamicListItem>
     );
   }
 
@@ -103,7 +103,7 @@ class WordList extends Component {
       };
     });
     this.setState({
-      data
+      data,
     });
   }
 
