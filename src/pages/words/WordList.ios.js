@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ActivityIndicator, AlertIOS, ListView, View } from 'react-native';
-import { storage } from 'allora-core';
+import { AlertIOS, ActivityIndicator, FlatList, View } from 'react-native';
 import I18n from 'react-native-i18n';
-import ListItem from './components/ListItem';
+import { storage } from 'allora-core';
 import DynamicListItem from './components/DynamicListItem';
+import ListItem from './components/ListItem';
 import WordsAddButton from '../../navigation/WordsAddButton';
 
 import CommonStyles from '../../styles/Common';
@@ -20,13 +20,9 @@ class WordList extends Component {
   constructor(props) {
     super(props);
 
-    this._data = null;
-
     this.state = {
       loading: true,
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2,
-      }),
+      data: null,
     };
   }
 
@@ -43,22 +39,19 @@ class WordList extends Component {
 
     return (
       <View style={CommonStyles.pageContainer}>
-        <ListView
+        <FlatList
           style={PageStyles.listView}
-          automaticallyAdjustContentInsets={false}
-          removeClippedSubviews={false}
-          dataSource={this.state.dataSource}
-          renderRow={this._renderItem.bind(this)}
+          data={this.state.data}
+          renderItem={this._renderItem.bind(this)}
         />
       </View>
     );
   }
 
   _setDataSource(items) {
-    this._data = items;
     this.setState({
       loading: false,
-      dataSource: this.state.dataSource.cloneWithRows(this._data),
+      data: items,
     });
   }
 
@@ -87,7 +80,7 @@ class WordList extends Component {
     navigation.navigate('WordEdit', { item });
   }
 
-  _renderItem(item) {
+  _renderItem({ item }) {
     return (
       <DynamicListItem
         shouldRemove={item.shouldRemove}
@@ -98,19 +91,19 @@ class WordList extends Component {
           onRemovePress={() => this._onRemoveButtonPress(item)}
           onEditPress={() => this._onEditButtonPress(item)}
         />
-      </DynamicListItem>
+    </DynamicListItem>
     );
   }
 
   _removeItem(key) {
-    this._data = this._data.map(item => {
+    const data = this.state.data.map(item => {
       return {
         ...item,
         shouldRemove: item.key === key,
       };
     });
     this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(this._data),
+      data
     });
   }
 
