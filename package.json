@@ -24,7 +24,7 @@
     "react-navigation-addons": "git+https://github.com/satya164/react-navigation-addons"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.2",
+    "babel-eslint": "^7.2.3",
     "babel-preset-react-native": "1.9.1",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.0",
