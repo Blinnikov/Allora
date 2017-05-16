@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "allora-core": "git+https://github.com/allora-app/Allora-Core.git",
-    "prop-types": "^15.5.8",
+    "prop-types": "^15.5.10",
     "react": "^16.0.0-alpha.6",
     "react-addons-shallow-compare": "^15.5.2",
     "react-native": "^0.43.4",
