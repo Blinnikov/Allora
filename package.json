@@ -15,7 +15,7 @@
     "react-addons-shallow-compare": "15.6.0",
     "react-native": "^0.44.2",
     "react-native-elements": "0.13.0",
-    "react-native-i18n": "^1.0.0",
+    "react-native-i18n": "2.0.1",
     "react-native-swipeout": "git+https://github.com/dancormier/react-native-swipeout",
     "react-native-tts": "^1.3.0",
     "react-native-userdefaults-ios": "^0.1.3",
